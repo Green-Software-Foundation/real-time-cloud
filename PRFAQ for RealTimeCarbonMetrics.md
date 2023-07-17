@@ -1,4 +1,4 @@
-[THIS IS A PRE-DRAFT PR-FAQ EVERYTHING HERE IS SPECULATIVE, NO CLOUD PROVIDERS HAVE AGREED TO DO ANYTHING YET]
+[THIS IS A DRAFT PR-FAQ EVERYTHING HERE IS SPECULATIVE, NO CLOUD PROVIDERS HAVE AGREED TO DO ANYTHING YET]
 
 **AMAZON, MICROSOFT AND GOOGLE JOINTLY ANNOUNCE SUPPORT FOR GREEN SOFTWARE FOUNDATION STANDARDIZED REAL-TIME ENERGY AND CARBON METRICS**
 
@@ -26,7 +26,7 @@ Microsoft VP Sustainability Melanie Nakagawa said [MADE UP QUOTE]_"When we helpe
 
 Harness CEO Jyoti Bansai said [APPROVED REAL QUOTE] _"We always wanted to provide our customers the ability to view their carbon footprint in the context of their cloud cost spend and idle/unused resources across all cloud providers. By ingesting the MEC-RT data, we may finally be able to get the information we need in a standard form"__._
 
-Salesforce VP Sustainability Patrick Flynn said[MADE UP QUOTE]_"Salesforce is dedicated to using its full power to save the planet, and that means we need to be able to measure and optimize our own workloads, and to be able to tell our customers what the carbon footprint of their use of Salesforce amounts to. In the past we've used crude carbon footprint estimation methods, and we're excited to be able to give much more precise and actionable data to our engineers and customers"._
+Salesforce VP Sustainability Patrick Flynn said [MADE UP QUOTE]_"Salesforce is dedicated to using its full power to save the planet, and that means we need to be able to measure and optimize our own workloads, and to be able to tell our customers what the carbon footprint of their use of Salesforce amounts to. In the past we've used crude carbon footprint estimation methods, and we're excited to be able to give much more precise and actionable data to our engineers and customers"._
 
 CloudZero CEO Erik Petersen said [APPROVED REAL QUOTE]_“Sustainability has long been a concern for cloud engineering teams. But for as long as it’s been on engineers’ minds, the missing link in making sustainability a non-functional requirement has been the data. Every engineering decision is a buying decision — and consequently, an emissions decision — but without real-time data on cloud infrastructure’s cost and carbon consequences, engineers haven’t been able to prioritize efficiency as they build. MEC-RT is a crucial step in establishing a universal definition of cloud sustainability; now it’s up to organizations to quantify and optimize their cloud efficiency in the name of sustainability — an existentially urgent concern for all of us.” — Erik Peterson CTO and Founder, CloudZero_.
 
@@ -36,7 +36,7 @@ To learn more, go to [https://greensoftware.foundation/projects](https://greenso
 
 **Question:** Why are the quotes made up?
 
-**Answer:** The quotes are initially intended to indicate how we think key supporters will react to this announcement. The people are real, but the words are suggested. As this document is shared and refined, they will be replaced by real quotes. Jyoti Bansai of Harness approved his quote. Erik Petersen has been asked for a real quote. Other people mentioned have not been contacted directly, although versions of this document have been supplied to AWS, Azure and GCP.
+**Answer:** The quotes are initially intended to indicate how we think key supporters will react to this announcement. The people are real, but the words are suggested. As this document is shared and refined, they will be replaced by real quotes. Jyoti Bansai of Harness and Erik Petersen of CloudZero approved their quotes. Other people mentioned have not been contacted directly, although versions of this document were supplied to AWS, Azure and GCP before it was published.
 
 **Question:** Why do cloud providers need to support MEC-RT? Should other cloud providers implement it as well?
 
@@ -48,11 +48,11 @@ To learn more, go to [https://greensoftware.foundation/projects](https://greenso
 
 **Question:** What are the security issues around energy measurement?
 
-**Answer:** There is a class of attacks that use very accurate measurements of CPU energy use to detect the different code paths that decryption algorithms take when they check whether keys are valid, and these can be used to break the algorithm. In addition, in a multi-tenant platform there may be more than one customer workload sharing a physical host, and the energy usage of that host is affected by the total workload in ways that break the strong isolation guarantees made by cloud providers. By providing energy data summaries at one minute intervals the energy data is good enough for carbon estimation, and if necessary can be dithered to mask any signal that could possibly cause security issues.
+**Answer:** There is a class of attacks that use very accurate measurements of CPU energy use to detect the different code paths that decryption algorithms take when they check whether keys are valid, and these can be used to break the algorithm. In addition, in a multi-tenant platform there may be more than one customer workload sharing a physical host, and the energy usage of that host is measured as a whole, not on a per-virtual-machine basis, which breaks the strong isolation guarantees made by cloud providers. By providing energy data summaries at one minute intervals the energy data is good enough for carbon estimation, and if necessary can be dithered to mask any signal that could possibly cause security issues. There is an [Intel CVE](https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/advisory-guidance/running-average-power-limit-energy-reporting.html) on this subject.
 
 **Question:** What metric format does MEC-RT use?
 
-**Answer:** MEC-RT uses the same OpenMetrics standard for metrics as Prometheus and other recent tools. Each data point consists of a timestamp, a metric, and name/value pairs that describe it. Metrics consist of metadata such as name, type, units, and a stream of data points. [https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md)
+**Answer:** The initial proposal is that MEC-RT uses the same OpenMetrics standard for metrics as Prometheus and other recent tools. Each data point consists of a timestamp, a metric, and name/value pairs that describe it. Metrics consist of metadata such as name, type, units, and a stream of data points. [https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md)
 
 **Question:** What carbon footprint information is currently available from cloud providers?
 
@@ -72,7 +72,7 @@ To learn more, go to [https://greensoftware.foundation/projects](https://greenso
 
 **Question:** What is the California supply chain rule?
 
-**Answer: The rule is in progress as of June, but should be settled one way it the other by October, which is the suggested date of the PRFAQ. https://www.motherjones.com/environment/2023/06/california-bill-climate-corporate-data-accountability-supply-chain-carbon-emissions/**
+**Answer: The rule is in progress as of June, but should be settled one way or the other by October, which is the suggested date of the PRFAQ. https://www.motherjones.com/environment/2023/06/california-bill-climate-corporate-data-accountability-supply-chain-carbon-emissions/**
 
 **Question:**
 
