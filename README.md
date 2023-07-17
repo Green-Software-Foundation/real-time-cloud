@@ -7,4 +7,4 @@ Many software as a service (SaaS) providers run multi-tenant workloads on cloud 
 # History
 This standard was initially proposed as part of a [talk by Adrian Cockcroft at QCon London in March 2023](https://github.com/adrianco/slides/blob/master/Cloud%20DevSusOps%20London.pdf) that summarized the currently available carbon footprint information from the three largest cloud providers, AWS, Azure and GCP. These monthly resolution summaries are aimed at audit reporting, and the proposal was that real time data would enable new kinds of reporting, optimization and tools, and that all the cloud providers should provide the same data.
 
-In June 2023 this proposal was written up as a PRFAQ and discussed with the GSF Standards Working Group, who decided to recommend that it become a project, which was created by the GSF in July 2023.
+In June 2023 this proposal was [written up as a PRFAQ](https://github.com/Green-Software-Foundation/real-time-cloud/blob/main/PRFAQ%20for%20RealTimeCarbonMetrics.md) and discussed with the GSF Standards Working Group, who decided to recommend that it become a project, which was created by the GSF in July 2023.
