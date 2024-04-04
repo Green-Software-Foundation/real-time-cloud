@@ -1,0 +1,27 @@
+name:  Action Item
+description: Task to be completed
+title: "[Action Item]"
+labels: ["Action Item"]
+projects: ["Add project"]
+assignees: 
+- adrianco
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Outline Action Item Details
+      description: Outline Action Item Details
+      placeholder: Tell us what you see
+      value: "Add details"
+    validations:
+      required: true
+  - type: dropdown
+    id: TF-Groups
+    attributes:
+      label: Issue dependency with other WGs Groups
+      multiple: true
+      options:
+        - No Dependency
+        - Community WG
+        - Opensource WG
+        - Policy WG
