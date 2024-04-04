@@ -1,0 +1,27 @@
+name:  Documentation
+description: Specification observations
+title: "[Documentation]"
+labels: ["documentation"]
+projects: ["Add project"]
+assignees: 
+- adrianco
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Outline Action Item Details
+      description: Outline Action Item Details
+      placeholder: Tell us what you see
+      value: "Add details for proposed changes or additions."
+    validations:
+      required: true
+  - type: dropdown
+    id: TF-Groups
+    attributes:
+      label: Issue dependency with other WG Groups
+      multiple: true
+      options:
+        - No Dependency
+        - Community WG
+        - Opensource WG
+        - Policy WG
