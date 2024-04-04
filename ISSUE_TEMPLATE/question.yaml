@@ -1,0 +1,27 @@
+name:  Question
+description: Specification questions
+title: "[Question]"
+labels: ["question"]
+projects: ["Add project"]
+assignees:
+- adrianco
+body:
+  - type: textarea
+    id: Question
+    attributes:
+      label: Question
+      description: Question submission for group members
+      placeholder: Tell us what you see
+      value: "Question submission details"
+    validations:
+      required: true
+  - type: dropdown
+    id: Groups
+    attributes:
+      label: Issue dependency with other WGs
+      multiple: true
+      options:
+        - No Dependency
+        - Community WG
+        - Opensource WG
+        - Policy WG
