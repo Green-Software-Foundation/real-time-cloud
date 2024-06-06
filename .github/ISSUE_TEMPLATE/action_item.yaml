@@ -1,8 +1,8 @@
 name:  Action Item
 description: Task to be completed
-title: "[Action Item]"
+title: "[AI]"
 labels: ["Action Item"]
-projects: ["Add project"]
+projects: ["Real-Time Cloud"]
 assignees: 
 - adrianco
 body:
