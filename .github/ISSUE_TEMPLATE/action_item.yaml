@@ -1,10 +1,11 @@
 name:  Action Item
 description: Task to be completed
 title: "[AI]"
-labels: ["Action Item"]
+labels: ["action item"]
 projects: ["Real-Time Cloud"]
 assignees: 
-- adrianco
+  - adrianco
+  - PindyBhullar
 body:
   - type: textarea
     id: what-happened
