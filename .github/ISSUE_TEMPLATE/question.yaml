@@ -2,9 +2,10 @@ name:  Question
 description: Specification questions
 title: "[Question]"
 labels: ["question"]
-projects: ["Add project"]
-assignees:
-- adrianco
+projects: ["Real-Time Cloud"]
+assignees: 
+  - adrianco
+  - PindyBhullar
 body:
   - type: textarea
     id: Question
