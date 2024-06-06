@@ -2,9 +2,10 @@ name:  Documentation
 description: Specification observations
 title: "[Documentation]"
 labels: ["documentation"]
-projects: ["Add project"]
+projects: ["Real-Time Cloud"]
 assignees: 
-- adrianco
+  - adrianco
+  - PindyBhullar
 body:
   - type: textarea
     id: what-happened
