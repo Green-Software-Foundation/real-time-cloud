@@ -10,7 +10,7 @@ Many software as a service (SaaS) providers run multi-tenant workloads on cloud 
 # Current Activity
 The initial work is focused on collecting and discussing existing information, and a context miro board has been created that is being used to crowdsource relevant information about power and carbon data sources and how they are created and used from end to end. The miro is [publicly readable here](https://miro.com/app/board/uXjVM1o59N4=/?share_link_id=388311040102) and screenshots are stored in this repo. It is proposed that slowly changing reference data will be shared via the [GSF Impact Framework](https://github.com/Green-Software-Foundation/if), and so far this includes Power Usage Efficiency (PUE), Carbon Free Energy, and Power Purchase Agreement location information. There are issues tracking the development of each of these.
 
-![Miro Summary](./sup_file/rtc-miro-2023-12-18.png)
+![Miro Summary](./sup_file/rtc-miro-2024-07-01.png)
 
 # History
 This standard was initially proposed as part of a talk by Adrian Cockcroft at QCon London in March 2023, that was updated and presented again at the CNCF Sustainability Week in October 2023. [March slides,](https://github.com/adrianco/slides/blob/master/Cloud%20DevSusOps%20London.pdf) [October slides.](https://github.com/adrianco/slides/blob/master/Cloud%20DevSusOps%20Oct23.pdf) that summarized the currently available carbon footprint information from the three largest cloud providers, AWS, Azure and GCP. These monthly resolution summaries are aimed at audit reporting, and the proposal was that real time data would enable new kinds of reporting, optimization and tools, and that all the cloud providers should provide the same data.
