@@ -1,212 +1,97 @@
-year,cloud-provider,cloud-region,cfe-region,em-zone-id,wt-region-id,location,geolocation,provider-cfe-hourly,provider-cfe-annual,power-usage-effectiveness,water-usage-effectiveness,provider-carbon-intensity-market-annual,provider-carbon-intensity-average-consumption-hourly,grid-carbon-intensity-average-consumption-annual,grid-carbon-intensity-marginal-consumption-annual,grid-carbon-intensity-average-production-annual,grid-carbon-intensity,
-2022,Google Cloud,asia-east1,Taiwan,TW,TW,Taiwan,"25.0375,121.5625",0.18,,1.120,,0,453,,,,,https://sustainability.google/operating-sustainably/water-stewardship/
-2022,Google Cloud,asia-east2,Hong Kong,HK,HK,Hong Kong,"22.3,114.2",0.28,,,,0,360,,,,,
-2022,Google Cloud,asia-northeast1,Tokyo,JP-TK,JP_TK,Tokyo,"35.6897,139.692",0.16,,,,0,463,,535.9531592,,536,
-2022,Google Cloud,asia-northeast2,Kansai,JP-KN,JP_KN,Osaka,"34.6939,135.502",0.32,,,,0,383,,550.5322311,,551,
-2022,Google Cloud,asia-northeast3,South Korea,KR,KOR,Seoul,"37.56,126.99",0.31,,,,0,425,,686.0136038,,686,
-2022,Google Cloud,asia-south1,Maharashtra,IN-MH,IND,Mumbai,"19.0761,72.8775",0.24,,,,0,555,,679.4097431,,679,
-2022,Google Cloud,asia-south2,Uttar Pradesh,IN-UP,IND,Delhi,"28.6092,76.9798",0.23,,,,0,632,,679.4097431,,679,
-2022,Google Cloud,asia-southeast1,Singapore,SG,SGP,Singapore,"1.3,103.8",0.04,,1.200,,0,372,,409.1860208,,409,
-2022,Google Cloud,asia-southeast2,Indonesia,ID,ID,Jakarta,"-6.2507,106.869",0.13,,,,0,580,,,,,
-2022,Google Cloud,australia-southeast1,New South Wales,AUS-NSW,NEM_NSW,Sydney,"-33.8678,151.21",0.27,,,,0,538,,770.3638355,,770,
-2022,Google Cloud,australia-southeast2,Victoria,AUS-VIC,NEM_VIC,Melbourne,"-37.8142,144.963",0.34,,,,0,490,,664.5903366,,665,
-2022,Google Cloud,europe-central2,Poland,PL,PL,Warsaw,"52.23,21.0111",0.24,,,,0,738,,852.3941505,,852,
-2022,Google Cloud,europe-north1,Finland,FI,FI,Finland,"60.1708,24.9375",0.97,,1.090,,0,112,,784.9591618,,785,
-2022,Google Cloud,europe-southwest1,Spain,ES,ES,Madrid,"40.3333,-3.8667",0.67,,,,0,160,,370.288102,,370,
-2022,Google Cloud,europe-west1,Belgium,BE,BE,Belgium,"51.1333,4.5667",0.8,,1.090,,0,123,,411.1523178,,411,
-2022,Google Cloud,europe-west2,Great Britain,GB,UK,London,"51.726,-0.3",0.85,,,,0,166,,427.7283704,,428,
-2022,Google Cloud,europe-west3,Germany,DE,DE,Frankfurt,"50.1106,8.6822",0.96,,,,0,413,,741.7175367,,742,
-2022,Google Cloud,europe-west4,Netherlands,NL,NL,Netherlands,"51.9167,4.5",0.57,,1.070,,0,317,,487.2176839,,487,
-2022,Google Cloud,europe-west6,Switzerland,CH,CH,Zurich,"47.3744,8.5411",0.85,,,,0,118,,,,,
-2022,Google Cloud,europe-west8,North Italy,IT,IT,Milan,"45.4669,9.19",0.42,,,,0,323,,385.8847276,,386,
-2022,Google Cloud,europe-west9,France,FR,FR,Paris,"48.8567,2.3522",0.87,,,,0,71,,383.7390836,,384,
-2022,Google Cloud,europe-west12,North Italy,IT,IT,Turin,"45.0792,7.6761",0.42,,,,0,323,,385.8847276,,386,
-2022,Google Cloud,me-west1,Israel,IL,IL,Tel Aviv,"32.0167,34.7667",0.02,,,,0,476,,,,,
-2022,Google Cloud,northamerica-northeast1,Quebec,CA-QC,HQ,Montréal,"45.5089,-73.5617",1,,,,0,0,,462.2451779,,462,
-2022,Google Cloud,northamerica-northeast2,Ontario,CA-ON,IESO_NORTH,Toronto,"43.7417,-79.3733",0.9,,,,0,36,,356.8894651,,357,
-2022,Google Cloud,southamerica-east1,Central Brazil,BR-CS,BRA,São Paulo,"-3.45,-68.95",0.89,,,,0,65,,571.4267992,,571,
-2022,Google Cloud,southamerica-west1,Chile,CL-SEN,CHL,Santiago,"-33.4372,-70.6506 ",0.9,,1.090,,0,165,,615.8448463,,616,
-2022,Google Cloud,us-central1,MISO,US-MIDW-MISO,MISO_MASON_CITY,Iowa,"41.5725,-93.6105 ",0.92,,1.110,,0,445,,539.2510271,,539,
-2022,Google Cloud,us-east1,SC,US-CAR-SC,SC,South Carolina,"34.8354,-82.3646 ",0.26,,1.100,,0,532,,727.5301036,,728,
-2022,Google Cloud,us-east4,PJM,US-MIDA-PJM,PJM_DC,Northern Virginia,"39.1057,-77.5544 ",0.6,,1.080,,0,354,429,565.3840343,,565,
-2022,Google Cloud,us-east5,PJM,US-MIDA-PJM,PJM_SOUTHWEST_OH,Columbus,"41.4366,-97.3565 ",0.6,,1.130,,0,354,429,565.1671385,,565,
-2022,Google Cloud,us-south1,ERCOT,US-TEX-ERCO,ERCOT_NORTHCENTRAL,Dallas,"44.9221,-123.313 ",0.41,,1.140,,0,342,,441.0116857,,441,
-2022,Google Cloud,us-west1,BPA,US-NW-BPAT,BPA,Oregon,"45.5372,-122.3955 ",0.89,,1.100,,0,67,,427.1886293,,427,
-2022,Google Cloud,us-west2,CAISO,US-CAL-CISO,LDWP,Los Angeles,"34.1141,-118.4068 ",0.56,,,,0,202,,501.0230748,,501,
-2022,Google Cloud,us-west3,PACE,US-NW-PACE,PACE,Salt Lake City,"40.7776,-111.9311 ",0.31,,,,0,606,,664.0421037,,664,
-2022,Google Cloud,us-west4,NVE,US-NW-NEVP,NEVP,Las Vegas,"35.6011,-105.2206 ",0.27,,1.090,,0,396,,456.7534925,,457,
-2022,Amazon Web Services,us-east-2,PJM,US-MIDA-PJM,PJM_SOUTHWEST_OH,US East (Ohio),"39.8689,-84.3292 ",,1.00,1.150,0.190,0,,,565.1671385,,565,
-2022,Amazon Web Services,us-east-1,PJM,US-MIDA-PJM,PJM_DC,US East (N. Virginia),"39.1057,-77.5544 ",,1.00,1.150,0.190,0,,,565.3840343,,565,
-2022,Amazon Web Services,us-west-1,CAISO,US-CAL-CISO,CAISO_NORTH,US West (N. California),"36.7783,-119.417931",,1.00,1.150,0.190,0,,,392.7840553,,393,
-2022,Amazon Web Services,us-west-2,BPA,US-NW-BPAT,BPA,US West (Oregon),"45.5371,-122.65 ",,1.00,1.150,0.190,0,,,427.1886293,,427,
-2022,Amazon Web Services,af-south-1,South Africa,ZA,ZA,Africa (Cape Town),"-33.9253,18.4239 ",,,1.150,0.190,,,,,,,
-2022,Amazon Web Services,ap-east-1,Hong Kong,HK,HK,Asia Pacific (Hong Kong),"22.3,114.2",,,1.150,0.190,,,,,,,
-2022,Amazon Web Services,ap-south-2,Hyderabad,IN-SO,IND,Asia Pacific (Hyderabad),"17.385,78.4867 ",,1.00,1.150,0.190,0,,,679.4097431,,679,
-2022,Amazon Web Services,ap-southeast-3,Indonesia,ID,ID,Asia Pacific (Jakarta),"-6.175,106.8275 ",,,1.150,0.190,,,,,,,
-2022,Amazon Web Services,ap-southeast-4,Victoria,AUS-VIC,NEM_VIC,Asia Pacific (Melbourne),"-37.8142,144.963",,,1.150,0.190,,,,664.5903366,,665,
-2022,Amazon Web Services,ap-south-1,Maharashtra,IN-WE,IND,Asia Pacific (Mumbai),"19.0761,72.8775",,1.00,1.150,0.190,0,,,679.4097431,,679,
-2022,Amazon Web Services,ap-northeast-3,Kansai,JP-KN,JP_KN,Asia Pacific (Osaka),"34.6939,135.502",,,1.150,0.190,,,,550.5322311,,551,
-2022,Amazon Web Services,ap-northeast-2,South Korea,KR,KOR,Asia Pacific (Seoul),"37.56,126.99",,,1.150,0.190,,,,686.0136038,,686,
-2022,Amazon Web Services,ap-southeast-1,Singapore,SG,SGP,Asia Pacific (Singapore),"1.3,103.8",,,1.150,0.190,,,,409.1860208,,409,
-2022,Amazon Web Services,ap-southeast-2,New South Wales,AUS-NSW,NEM_NSW,Asia Pacific (Sydney),"-33.8678,151.21",,,1.150,0.190,,,,770.3638355,,770,
-2022,Amazon Web Services,ap-northeast-1,Tokyo,JP-TK,JP_TK,Asia Pacific (Tokyo),"35.6897,139.692",,,1.150,0.190,,,,535.9531592,,536,
-2022,Amazon Web Services,ca-central-1,Quebec,CA-QC,HQ,Canada (Central),"45.5089,-73.5617",,1.00,1.150,0.190,0,,,462.2451779,,462,
-2022,Amazon Web Services,eu-central-1,Germany,DE,DE,Europe (Frankfurt),"50.1106,8.6822",,1.00,1.150,0.190,0,,,741.7175367,,742,
-2022,Amazon Web Services,eu-west-1,Ireland,IE,IE,Europe (Ireland),"53.35,-6.2603 ",,1.00,1.150,0.190,0,,,507.95177,,508,
-2022,Amazon Web Services,eu-west-2,Great Britain,GB,UK,Europe (London),"51.726,-0.3",,1.00,1.150,0.190,0,,,427.7283704,,428,
-2022,Amazon Web Services,eu-south-1,North Italy,IT,IT,Europe (Milan),"45.4669,9.19",,1.00,1.150,0.190,0,,,385.8847276,,386,
-2022,Amazon Web Services,eu-west-3,France,FR,FR,Europe (Paris),"48.8567,2.3522",,1.00,1.150,0.190,0,,,383.7390836,,384,
-2022,Amazon Web Services,eu-south-2,Spain,ES,ES,Europe (Spain),"40.3333,-3.8667",,1.00,1.150,0.190,0,,,370.288102,,370,
-2022,Amazon Web Services,eu-north-1,Sweden,SE,SE,Europe (Stockholm),"59.3294,18.0686 ",,1.00,1.150,0.190,0,,,781.7946219,,782,
-2022,Amazon Web Services,eu-central-2,Switzerland,CH,CH,Europe (Zurich),"47.3744,8.5411",,1.00,1.150,0.190,0,,,778.7844238,,779,
-2022,Amazon Web Services,il-central-1,Israel,IL,IL,Israel (Tel Aviv),"32.0167,34.7667",,,1.150,0.190,,,,,,,
-2022,Amazon Web Services,me-south-1,Bahrain,BH,BH,Middle East (Bahrain),"26.219,50.538 ",,,1.150,0.190,,,,,,,
-2022,Amazon Web Services,me-central-1,United Arab Emirates,AE,AE,Middle East (UAE),"25.2631,55.2972 ",,,1.150,0.190,,,,,,,
-2022,Amazon Web Services,sa-east-1,Central Brazil,BR-CS,BRA,South America (São Paulo),"-3.45,-68.95",,,1.150,0.190,,,,571.4267992,,571,
-2022,Amazon Web Services,us-gov-east-1,PJM,US-MIDA-PJM,PJM_DC,GovCloud (US East),"39.1057,-77.5544 ",,1.00,1.150,0.190,0,,,565.3840343,,565,
-2022,Amazon Web Services,us-gov-west-1,BPA,US-NW-BPAT,BPA,GovCloud (US West),"45.5371,-122.65 ",,1.00,1.150,0.190,0,,,427.1886293,,427,
-2022,Amazon Web Services,cn-north-1,,,,China (Beijing),"39.904,116.4075 ",,1.00,1.150,0.190,0,,,,,,
-2022,Amazon Web Services,cn-northwest-1,,,,China (Ningxia),"38.4795,106.2254 ",,1.00,1.150,0.190,0,,,,,,
-2022,Microsoft Azure,southeastasia,southeastasia,SG,SGP,Singapore,"1.352,103.835",,0.13,1.358,2.060,,,,409.1860208,,409,
-2022,Microsoft Azure,brazilsouth,Brazil,BR-CS,BRA,Brazil,"-22.939, -47.045",,0.05,1.120,0.039,,,,571.4267992,,571,
-2022,Microsoft Azure,northeurope,Finland,FI,FI,Finland,"60.2065, 24.6753",,0.10,1.120,0.010,,,,784.9591618,,785,
-2022,Microsoft Azure,asiapacific,Indonesia,ID,ID,Indonesia,"-6.219, 106.867",,0.13,1.320,1.900,,,,,,,
-2022,Microsoft Azure,newzealandnorth,New Zealand,NZ,NZ,New Zealand,"-36.867, 174.751",,,1.120,0.000,,,,,,,
-2022,Microsoft Azure,swedencentral,Sweden,SE,SE,Sweden,"59.329,18.067",1,1.00,1.172,0.160,0,,,781.7946219,,782,
-2022,Microsoft Azure,australiaeast,New South Wales,AUS-NSW,NEM_NSW,Australia East,"-33.889, 151.067",,0.28,1.120,0.012,,,,,,,
-2022,Microsoft Azure,australiasoutheast,Victoria,AUS-VIC,NEM_VIC,Australia Southeast,"-37.725, 145.067",,0.28,1.120,0.012,,,,,,,
-2022,Microsoft Azure,denmarkeast,Denmark,DK,DK,Denmark,"55.685, 12.584",,0.10,1.160,0.010,,,,659.8866462,,660,
-2022,Microsoft Azure,greececentral,Greece,GR,GR,Greece Central,"37.987, 23.745",,,1.120,0.102,,,,437.5870529,,438,
-2022,Microsoft Azure,italynorth,North Italy,IT,IT,Italy North,"45.4669,9.19",,0.15,1.120,0.023,,,,385.8847276,,386,
-2022,Microsoft Azure,polandcentral,Poland,PL,PL,Poland Central,"52.23,21.0111",,,1.120,0.023,,,,852.3941505,,852,
-2022,Microsoft Azure,taiwannorth,Taiwan,TW,TW,Taiwan,"25.0375,121.5625",,,1.200,1.000,,,,,,,
-2022,Microsoft Azure,austriaeast,Austria,AT,AT,Austria East,"48.217, 16.493",,0.79,1.120,0.023,,,,632.1527284,,632,
-2022,Microsoft Azure,northeurope,Ireland,IE,IE,Ireland,"53.35,-6.2603 ",,0.49,1.197,0.030,,,,507.95177,,508,
-2022,Microsoft Azure,westeurope,Netherlands,NL,NL,Netherlands,"51.9167,4.5",,0.79,1.158,0.080,,,,487.2176839,,487,
-2022,Microsoft Azure,indiasouthcentral,India,IND,IND,India South Central,"17.385,78.4867 ",,0.46,1.430,0.000,,,,679.4097431,,679,
-2022,Microsoft Azure,mexicocentral,Mexico,MX_SIN,MX_SIN,Mexico Central,"20.631, -100.428",,,1.120,0.056,,,,421.9293015,,422,
-2022,Microsoft Azure,spaincentral,Spain,ES,ES,Spain Central,"40.44,-3.679",,0.15,1.120,,,,,370.288102,,370,
-2022,Microsoft Azure,westus3,,,,Arizona: west US 3,"33.471,-112.056",,0.47,1.223,2.240,,,,,,,
-2022,Microsoft Azure,eastus3,SOCO,US-SE-SOCO,SOCO,Georgia: East US 3,"33.76,-84.401",,0.08,1.120,0.060,,,,533.5899463,,534,
-2022,Microsoft Azure,northcentralus,MISO,US-MIDW-MISO,MISO,Illinois: North Central US,"41.832,-87.673",,0.70,1.346,0.790,,,,,,,
-2022,Microsoft Azure,centralus,MISO,US-MIDW-MISO,MISO,Iowa: Central US,"41.573,-93.608",,1.00,1.160,0.190,0,,,,,,
-2022,Microsoft Azure,southcentralus,ERCOT,US-TEX-ERCO,ERCOT,Texas: South Central US,"29.453,-98.508",,1.00,1.307,1.820,0,,,,,,
-2022,Microsoft Azure,eastus,PJM,US-MIDA-PJM,PJM_DC,Virginia: East US,"36.68,-78.377",,0.70,1.144,0.170,,,,,,,
-2022,Microsoft Azure,eastus2,PJM,US-MIDA-PJM,PJM_DC,Virginia: East US 2,"36.68,-78.377",,0.70,1.144,0.170,,,,,,,
-2022,Microsoft Azure,westus,BPA,US-NW-BPAT,BPA,Washington: West US,"47.247,-119.82",,0.47,1.156,1.090,,,,427.1886293,,427,
-2022,Microsoft Azure,westcentralus,,,,Wyoming: West Central US,"41.130,-104.83",,0.47,1.125,0.230,,,,,,,
-2021,Google Cloud,asia-east1,Taiwan,TW,TW,Taiwan,,0.17,,,,0,456,,,,,
-2021,Google Cloud,asia-east2,Hong Kong,HK,HK,Hong Kong,,0.28,,,,0,360,,,,,
-2021,Google Cloud,asia-northeast1,Tokyo,JP-TK,JP_TK,Tokyo,,0.16,,,,0,464,,,,,
-2021,Google Cloud,asia-northeast2,Kansai,JP-KN,JP_KN,Osaka,,0.31,,,,0,384,,,,,
-2021,Google Cloud,asia-northeast3,South Korea,KR,KOR,Seoul,,0.31,,,,0,425,,,,,
-2021,Google Cloud,asia-south1,Maharashtra,IN-MH,IND,Mumbai,,0.1,,,,0,670,,,,,
-2021,Google Cloud,asia-south2,Uttar Pradesh,IN-UP,IND,Delhi,,0.08,,,,0,671,,,,,
-2021,Google Cloud,asia-southeast1,Singapore,SG,SGP,Singapore,,0.04,,,,0,372,,,,,
-2021,Google Cloud,asia-southeast2,Indonesia,ID,,Jakarta,,0.13,,,,0,580,,,,,
-2021,Google Cloud,australia-southeast1,New South Wales,AUS-NSW,NEM_NSW,Sydney,,0.21,,,,0,598,,,,,
-2021,Google Cloud,australia-southeast2,Victoria,AUS-VIC,NEM_VIC,Melbourne,,0.31,,,,0,521,,,,,
-2021,Google Cloud,europe-central2,Poland,PL,PL,Warsaw,,0.2,,,,0,576,,,,,
-2021,Google Cloud,europe-north1,Finland,FI,FI,Finland,,0.91,,,,0,127,,,,,
-2021,Google Cloud,europe-southwest1,Spain,ES,ES,Madrid,,0,,,,0,121,,,,,
-2021,Google Cloud,europe-west1,Belgium,BE,BE,Belgium,,0.82,,,,0,110,,,,,
-2021,Google Cloud,europe-west2,Great Britain,GB,UK,London,,0.57,,,,0,172,,,,,
-2021,Google Cloud,europe-west3,Germany,DE,DE,Frankfurt,,0.6,,,,0,269,,,,,
-2021,Google Cloud,europe-west4,Netherlands,NL,NL,Netherlands,,0.53,,,,0,283,,,,,
-2021,Google Cloud,europe-west6,Switzerland,CH,CH,Zurich,,0.85,,,,0,86,,,,,
-2021,Google Cloud,europe-west8,North Italy,IT,IT,Milan,,0,,,,0,298,,,,,
-2021,Google Cloud,europe-west9,France,FR,FR,Paris,,0,,,,0,59,,,,,
-2021,Google Cloud,northamerica-northeast1,Quebec,CA-QC,HQ,Montréal,,1,,,,0,0,,,,,
-2021,Google Cloud,northamerica-northeast2,Ontario,CA-ON,IESO_NORTH,Toronto,,0.92,,,,0,29,,,,,
-2021,Google Cloud,southamerica-east1,Central Brazil,BR-CS,BRA,São Paulo,,0.78,,,,0,129,,,,,
-2021,Google Cloud,southamerica-west1,Chile,CL-SEN,CHL,Santiago,,0.69,,,,0,190,,,,,
-2021,Google Cloud,us-central1,MISO,US-MIDW-MISO,MISO_MASON_CITY,Iowa,,0.97,,,,0,394,,,,,
-2021,Google Cloud,us-east1,SC,US-CAR-SC,SC,South Carolina,,0.25,,,,0,434,,,,,
-2021,Google Cloud,us-east4,PJM,US-MIDA-PJM,PJM_DC,Northern Virginia,,0.64,,,,0,309,442,,,,
-2021,Google Cloud,us-east5,PJM,US-MIDA-PJM,PJM_SOUTHWEST_OH,Columbus,,0.64,,,,0,309,442,,,,
-2021,Google Cloud,us-south1,ERCOT,US-TEX-ERCO,ERCOT_NORTHCENTRAL,Dallas,,0.4,,,,0,296,,,,,
-2021,Google Cloud,us-west1,BPA,US-NW-BPAT,BPA,Oregon,,0.88,,,,0,60,,,,,
-2021,Google Cloud,us-west2,CAISO,US-CAL-CISO,LDWP,Los Angeles,,0.53,,,,0,190,,,,,
-2021,Google Cloud,us-west3,PACE,US-NW-PACE,PACE,Salt Lake City,,0.31,,,,0,448,,,,,
-2021,Google Cloud,us-west4,NVE,US-NW-NEVP,NEVP,Las Vegas,,0.21,,,,0,365,,,,,
-2021,Amazon Web Services,us-east-2,PJM,US-MIDA-PJM,PJM_SOUTHWEST_OH,US East (Ohio),,,0.95,,,,,,,,,
-2021,Amazon Web Services,us-east-1,PJM,US-MIDA-PJM,PJM_DC,US East (N. Virginia),,,0.95,,,,,,,,,
-2021,Amazon Web Services,us-west-1,CAISO,US-CAL-CISO,CAISO_NORTH,US West (N. California),,,0.95,,,,,,,,,
-2021,Amazon Web Services,us-west-2,BPA,US-NW-BPAT,BPA,US West (Oregon),,,0.95,,,,,,,,,
-2021,Amazon Web Services,af-south-1,South Africa,ZA,ZA,Africa (Cape Town),,,,,,,,,,,,
-2021,Amazon Web Services,ap-east-1,Hong Kong,HK,HK,Asia Pacific (Hong Kong),,,,,,,,,,,,
-2021,Amazon Web Services,ap-south-2,,,IND,Asia Pacific (Hyderabad),,,,,,,,,,,,
-2021,Amazon Web Services,ap-southeast-3,Indonesia,ID,ID,Asia Pacific (Jakarta),,,,,,,,,,,,
-2021,Amazon Web Services,ap-southeast-4,Victoria,AUS-VIC,NEM_VIC,Asia Pacific (Melbourne),,,,,,,,,,,,
-2021,Amazon Web Services,ap-south-1,Maharashtra,IN-MH,IND,Asia Pacific (Mumbai),,,,,,,,,,,,
-2021,Amazon Web Services,ap-northeast-3,Kansai,JP-KN,JP_KN,Asia Pacific (Osaka),,,,,,,,,,,,
-2021,Amazon Web Services,ap-northeast-2,South Korea,KR,KOR,Asia Pacific (Seoul),,,,,,,,,,,,
-2021,Amazon Web Services,ap-southeast-1,Singapore,SG,SGP,Asia Pacific (Singapore),,,,,,,,,,,,
-2021,Amazon Web Services,ap-southeast-2,New South Wales,AUS-NSW,NEM_NSW,Asia Pacific (Sydney),,,,,,,,,,,,
-2021,Amazon Web Services,ap-northeast-1,Tokyo,JP-TK,JP_TK,Asia Pacific (Tokyo),,,,,,,,,,,,
-2021,Amazon Web Services,ca-central-1,Quebec,CA-QC,HQ,Canada (Central),,,0.95,,,,,,,,,
-2021,Amazon Web Services,eu-central-1,Germany,DE,DE,Europe (Frankfurt),,,0.95,,,,,,,,,
-2021,Amazon Web Services,eu-west-1,Ireland,IE,IE,Europe (Ireland),"53.35,-6.2603 ",,0.95,,,,,,,,,
-2021,Amazon Web Services,eu-west-2,Great Britain,GB,UK,Europe (London),,,0.95,,,,,,,,,
-2021,Amazon Web Services,eu-south-1,North Italy,IT,IT,Europe (Milan),,,0.95,,,,,,,,,
-2021,Amazon Web Services,eu-west-3,France,FR,FR,Europe (Paris),,,0.95,,,,,,,,,
-2021,Amazon Web Services,eu-north-1,Spain,ES,SE,Europe (Stockholm),,,0.95,,,,,,,,,
-2021,Amazon Web Services,il-central-1,Israel,IL,IL,Israel (Tel Aviv),,,,,,,,,,,,
-2021,Amazon Web Services,me-south-1,Bahrain,BH,BH,Middle East (Bahrain),,,,,,,,,,,,
-2021,Amazon Web Services,me-central-1,United Arab Emirates,AE,AE,Middle East (UAE),,,,,,,,,,,,
-2021,Amazon Web Services,sa-east-1,Central Brazil,BR-CS,BRA,South America (São Paulo),,,,,,,,,,,,
-2021,Amazon Web Services,us-gov-east-1,PJM,US-MIDA-PJM,PJM_DC,GovCloud (US East),,,0.95,,,,,,,,,
-2021,Amazon Web Services,us-gov-west-1,BPA,US-NW-BPAT,BPA,GovCloud (US West),,,0.95,,,,,,,,,
-2021,Amazon Web Services,cn-north-1,,,,China (Beijing),,,,,,,,,,,,
-2021,Amazon Web Services,cn-northwest-1,,,,China (Ningxia),,,,,,,,,,,,
-2020,Google Cloud,asia-east1,Taiwan,TW,TW,Taiwan,,0.18,,,,0,540,,,,,
-2020,Google Cloud,asia-east2,Hong Kong,HK,HK,Hong Kong,,0,,,,0,453,,,,,
-2020,Google Cloud,asia-northeast1,Tokyo,JP-TK,JP_TK,Tokyo,,0.12,,,,0,554,,,,,
-2020,Google Cloud,asia-northeast2,Kansai,JP-KN,JP_KN,Osaka,,0,,,,0,442,,,,,
-2020,Google Cloud,asia-northeast3,South Korea,KR,KOR,Seoul,,0.31,,,,0,457,,,,,
-2020,Google Cloud,asia-south1,Maharashtra,IN-MH,IND,Mumbai,,0.12,,,,0,721,,,,,
-2020,Google Cloud,asia-south2,Uttar Pradesh,IN-UP,IND,Delhi,,0,,,,0,657,,,,,
-2020,Google Cloud,asia-southeast1,Singapore,SG,SGP,Singapore,,0.04,,,,0,493,,,,,
-2020,Google Cloud,asia-southeast2,Indonesia,ID,ID,Jakarta,,0,,,,0,647,,,,,
-2020,Google Cloud,australia-southeast1,New South Wales,AUS-NSW,NEM_NSW,Sydney,,0.11,,,,0,727,,,,,
-2020,Google Cloud,australia-southeast2,Victoria,AUS-VIC,NEM_VIC,Melbourne,,0,,,,0,691,,,,,
-2020,Google Cloud,europe-central2,Poland,PL,PL,Warsaw,,0,,,,0,622,,,,,
-2020,Google Cloud,europe-north1,Belgium,BE,BE,Finland,,0.94,,,,0,133,,,,,
-2020,Google Cloud,europe-west1,Great Britain,GB,UK,Belgium,,0.79,,,,0,212,,,,,
-2020,Google Cloud,europe-west2,Germany,DE,DE,London,,0.59,,,,0,231,,,,,
-2020,Google Cloud,europe-west3,Netherlands,NL,NL,Frankfurt,,0.63,,,,0,293,,,,,
-2020,Google Cloud,europe-west4,Switzerland,CH,CH,Netherlands,,0.6,,,,0,410,,,,,
-2020,Google Cloud,europe-west6,North Italy,IT,IT,Zurich,,0,,,,0,87,,,,,
-2020,Google Cloud,northamerica-northeast1,Quebec,CA-QC,HQ,Montréal,,0,,,,0,27,,,,,
-2020,Google Cloud,southamerica-east1,Central Brazil,BR-CS,BRA,São Paulo,,0.88,,,,0,103,,,,,
-2020,Google Cloud,us-central1,MISO,US-MIDW-MISO,MISO_MASON_CITY,Iowa,,0.93,,,,0,454,,,,,
-2020,Google Cloud,us-east1,SC,US-CAR-SC,SC,South Carolina,,0.27,,,,0,480,,,,,
-2020,Google Cloud,us-east4,PJM,US-MIDA-PJM,PJM_DC,Northern Virginia,,0.58,,,,0,361,,,,,
-2020,Google Cloud,us-west1,BPA,US-NW-BPAT,BPA,Oregon,,0.9,,,,0,78,,,,,
-2020,Google Cloud,us-west2,CAISO,US-CAL-CISO,LDWP,Los Angeles,,0.54,,,,0,253,,,,,
-2020,Google Cloud,us-west3,PACE,US-NW-PACE,PACE,Salt Lake City,,0.28,,,,0,533,,,,,
-2020,Google Cloud,us-west4,NVE,US-NW-NEVP,NEVP,Las Vegas,,0.19,,,,0,455,,,,,
-2019,Google Cloud,asia-east1,Taiwan,TW,TW,Taiwan,,0.19,,,,0,541,,,,,
-2019,Google Cloud,asia-east2,Hong Kong,HK,HK,Hong Kong,,0,,,,0,506,,,,,
-2019,Google Cloud,asia-northeast1,Tokyo,JP-TK,JP_TK,Tokyo,,0,,,,0,569,,,,,
-2019,Google Cloud,asia-northeast2,Kansai,JP-KN,JP_KN,Osaka,,0,,,,0,414,,,,,
-2019,Google Cloud,asia-northeast3,South Korea,KR,KOR,Seoul,,0,,,,0,490,,,,,
-2019,Google Cloud,asia-south1,Maharashtra,IN-MH,IND,Mumbai,,0,,,,0,752,,,,,
-2019,Google Cloud,asia-southeast1,Singapore,SG,SGP,Singapore,,0.03,,,,0,493,,,,,
-2019,Google Cloud,asia-southeast2,Indonesia,ID,ID,Jakarta,,0,,,,0,647,,,,,
-2019,Google Cloud,australia-southeast1,New South Wales,AUS-NSW,NEM_NSW,Sydney,,0.11,,,,0,725,,,,,
-2019,Google Cloud,europe-north1,Victoria,AUS-VIC,NEM_VIC,Finland,,0.77,,,,0,181,,,,,
-2019,Google Cloud,europe-west1,Belgium,BE,BE,Belgium,,0.68,,,,0,196,,,,,
-2019,Google Cloud,europe-west2,Great Britain,GB,UK,London,,0.54,,,,0,257,,,,,
-2019,Google Cloud,europe-west3,Germany,DE,DE,Frankfurt,,0.61,,,,0,319,,,,,
-2019,Google Cloud,europe-west4,Netherlands,NL,NL,Netherlands,,0.61,,,,0,474,,,,,
-2019,Google Cloud,europe-west6,Switzerland,CH,CH,Zurich,,0,,,,0,87,,,,,
-2019,Google Cloud,northamerica-northeast1,Quebec,CA-QC,HQ,Montreal,,0,,,,0,27,,,,,
-2019,Google Cloud,southamerica-east1,Central Brazil,BR-CS,BRA,Sao Paulo,,0.87,,,,0,109,,,,,
-2019,Google Cloud,us-central1,MISO,US-MIDW-MISO,MISO_MASON_CITY,Iowa,,0.78,,,,0,479,,,,,
-2019,Google Cloud,us-east1,SC,US-CAR-SC,SC,South Carolina,,0.19,,,,0,500,,,,,
-2019,Google Cloud,us-east4,PJM,US-MIDA-PJM,PJM_DC,Northern Virginia,,0.41,,,,0,383,,,,,
-2019,Google Cloud,us-west1,BPA,US-NW-BPAT,BPA,Oregon,,0.89,,,,0,117,,,,,
-2019,Google Cloud,us-west2,CAISO,US-CAL-CISO,LDWP,Los Angeles,,0.55,,,,0,248,,,,,
-2019,Google Cloud,us-west3,PACE,US-NW-PACE,PACE,Salt Lake City,,0.25,,,,0,561,,,,,
-2019,Google Cloud,us-west4,NVE,US-NW-NEVP,NEVP,Las Vegas,,0.13,,,,0,491,,,,,
+cfe-region,em-zone-id,wt-region-id,location,geolocation,provider-cfe-hourly,provider-cfe-annual,power-usage-effectiveness,water-usage-effectiveness,provider-carbon-intensity-market-annual,provider-carbon-intensity-average-consumption-hourly,grid-carbon-intensity-average-consumption-annual,grid-carbon-intensity-marginal-consumption-annual,grid-carbon-intensity-average-production-annual,grid-carbon-intensity
+Taiwan,TW,TW,Taiwan,"25.0375,121.5625",0.18,,1.120,,0,453,,,,
+Hong Kong,HK,HK,Hong Kong,"22.3,114.2",0.28,,,,0,360,,,,
+Tokyo,JP-TK,JP_TK,Tokyo,"35.6897,139.692",0.16,,,,0,463,,535.9531592,,536
+Kansai,JP-KN,JP_KN,Osaka,"34.6939,135.502",0.32,,,,0,383,,550.5322311,,551
+South Korea,KR,KOR,Seoul,"37.56,126.99",0.31,,,,0,425,,686.0136038,,686
+Maharashtra,IN-MH,IND,Mumbai,"19.0761,72.8775",0.24,,,,0,555,,679.4097431,,679
+Uttar Pradesh,IN-UP,IND,Delhi,"28.6092,76.9798",0.23,,,,0,632,,679.4097431,,679
+Singapore,SG,SGP,Singapore,"1.3,103.8",0.04,,1.200,,0,372,,409.1860208,,409
+Indonesia,ID,ID,Jakarta,"-6.2507,106.869",0.13,,,,0,580,,,,
+New South Wales,AUS-NSW,NEM_NSW,Sydney,"-33.8678,151.21",0.27,,,,0,538,,770.3638355,,770
+Victoria,AUS-VIC,NEM_VIC,Melbourne,"-37.8142,144.963",0.34,,,,0,490,,664.5903366,,665
+Poland,PL,PL,Warsaw,"52.23,21.0111",0.24,,,,0,738,,852.3941505,,852
+Finland,FI,FI,Finland,"60.1708,24.9375",0.97,,1.090,,0,112,,784.9591618,,785
+Spain,ES,ES,Madrid,"40.3333,-3.8667",0.67,,,,0,160,,370.288102,,370
+Belgium,BE,BE,Belgium,"51.1333,4.5667",0.8,,1.090,,0,123,,411.1523178,,411
+Great Britain,GB,UK,London,"51.726,-0.3",0.85,,,,0,166,,427.7283704,,428
+Germany,DE,DE,Frankfurt,"50.1106,8.6822",0.96,,,,0,413,,741.7175367,,742
+Netherlands,NL,NL,Netherlands,"51.9167,4.5",0.57,,1.070,,0,317,,487.2176839,,487
+Switzerland,CH,CH,Zurich,"47.3744,8.5411",0.85,,,,0,118,,,,
+North Italy,IT,IT,Milan,"45.4669,9.19",0.42,,,,0,323,,385.8847276,,386
+France,FR,FR,Paris,"48.8567,2.3522",0.87,,,,0,71,,383.7390836,,384
+North Italy,IT,IT,Turin,"45.0792,7.6761",0.42,,,,0,323,,385.8847276,,386
+Israel,IL,IL,Tel Aviv,"32.0167,34.7667",0.02,,,,0,476,,,,
+Quebec,CA-QC,HQ,Montréal,"45.5089,-73.5617",1,,,,0,0,,462.2451779,,462
+Ontario,CA-ON,IESO_NORTH,Toronto,"43.7417,-79.3733",0.9,,,,0,36,,356.8894651,,357
+Central Brazil,BR-CS,BRA,São Paulo,"-3.45,-68.95",0.89,,,,0,65,,571.4267992,,571
+Chile,CL-SEN,CHL,Santiago,"-33.4372,-70.6506 ",0.9,,1.090,,0,165,,615.8448463,,616
+MISO,US-MIDW-MISO,MISO_MASON_CITY,Iowa,"41.5725,-93.6105 ",0.92,,1.110,,0,445,,539.2510271,,539
+SC,US-CAR-SC,SC,South Carolina,"34.8354,-82.3646 ",0.26,,1.100,,0,532,,727.5301036,,728
+PJM,US-MIDA-PJM,PJM_DC,Northern Virginia,"39.1057,-77.5544 ",0.6,,1.080,,0,354,429,565.3840343,,565
+PJM,US-MIDA-PJM,PJM_SOUTHWEST_OH,Columbus,"41.4366,-97.3565 ",0.6,,1.130,,0,354,429,565.1671385,,565
+ERCOT,US-TEX-ERCO,ERCOT_NORTHCENTRAL,Dallas,"44.9221,-123.313 ",0.41,,1.140,,0,342,,441.0116857,,441
+BPA,US-NW-BPAT,BPA,Oregon,"45.5372,-122.3955 ",0.89,,1.100,,0,67,,427.1886293,,427
+CAISO,US-CAL-CISO,LDWP,Los Angeles,"34.1141,-118.4068 ",0.56,,,,0,202,,501.0230748,,501
+PACE,US-NW-PACE,PACE,Salt Lake City,"40.7776,-111.9311 ",0.31,,,,0,606,,664.0421037,,664
+NVE,US-NW-NEVP,NEVP,Las Vegas,"35.6011,-105.2206 ",0.27,,1.090,,0,396,,456.7534925,,457
+PJM,US-MIDA-PJM,PJM_SOUTHWEST_OH,US East (Ohio),"39.8689,-84.3292 ",,1.00,1.150,0.190,0,,,565.1671385,,565
+PJM,US-MIDA-PJM,PJM_DC,US East (N. Virginia),"39.1057,-77.5544 ",,1.00,1.150,0.190,0,,,565.3840343,,565
+CAISO,US-CAL-CISO,CAISO_NORTH,US West (N. California),"36.7783,-119.417931",,1.00,1.150,0.190,0,,,392.7840553,,393
+BPA,US-NW-BPAT,BPA,US West (Oregon),"45.5371,-122.65 ",,1.00,1.150,0.190,0,,,427.1886293,,427
+South Africa,ZA,ZA,Africa (Cape Town),"-33.9253,18.4239 ",,,1.150,0.190,,,,,,
+Hong Kong,HK,HK,Asia Pacific (Hong Kong),"22.3,114.2",,,1.150,0.190,,,,,,
+Hyderabad,IN-SO,IND,Asia Pacific (Hyderabad),"17.385,78.4867 ",,1.00,1.150,0.190,0,,,679.4097431,,679
+Indonesia,ID,ID,Asia Pacific (Jakarta),"-6.175,106.8275 ",,,1.150,0.190,,,,,,
+Victoria,AUS-VIC,NEM_VIC,Asia Pacific (Melbourne),"-37.8142,144.963",,,1.150,0.190,,,,664.5903366,,665
+Maharashtra,IN-WE,IND,Asia Pacific (Mumbai),"19.0761,72.8775",,1.00,1.150,0.190,0,,,679.4097431,,679
+Kansai,JP-KN,JP_KN,Asia Pacific (Osaka),"34.6939,135.502",,,1.150,0.190,,,,550.5322311,,551
+South Korea,KR,KOR,Asia Pacific (Seoul),"37.56,126.99",,,1.150,0.190,,,,686.0136038,,686
+Singapore,SG,SGP,Asia Pacific (Singapore),"1.3,103.8",,,1.150,0.190,,,,409.1860208,,409
+New South Wales,AUS-NSW,NEM_NSW,Asia Pacific (Sydney),"-33.8678,151.21",,,1.150,0.190,,,,770.3638355,,770
+Tokyo,JP-TK,JP_TK,Asia Pacific (Tokyo),"35.6897,139.692",,,1.150,0.190,,,,535.9531592,,536
+Quebec,CA-QC,HQ,Canada (Central),"45.5089,-73.5617",,1.00,1.150,0.190,0,,,462.2451779,,462
+Germany,DE,DE,Europe (Frankfurt),"50.1106,8.6822",,1.00,1.150,0.190,0,,,741.7175367,,742
+Ireland,IE,IE,Europe (Ireland),"53.35,-6.2603 ",,1.00,1.150,0.190,0,,,507.95177,,508
+Great Britain,GB,UK,Europe (London),"51.726,-0.3",,1.00,1.150,0.190,0,,,427.7283704,,428
+North Italy,IT,IT,Europe (Milan),"45.4669,9.19",,1.00,1.150,0.190,0,,,385.8847276,,386
+France,FR,FR,Europe (Paris),"48.8567,2.3522",,1.00,1.150,0.190,0,,,383.7390836,,384
+Spain,ES,ES,Europe (Spain),"40.3333,-3.8667",,1.00,1.150,0.190,0,,,370.288102,,370
+Sweden,SE,SE,Europe (Stockholm),"59.3294,18.0686 ",,1.00,1.150,0.190,0,,,781.7946219,,782
+Switzerland,CH,CH,Europe (Zurich),"47.3744,8.5411",,1.00,1.150,0.190,0,,,778.7844238,,779
+Israel,IL,IL,Israel (Tel Aviv),"32.0167,34.7667",,,1.150,0.190,,,,,,
+Bahrain,BH,BH,Middle East (Bahrain),"26.219,50.538 ",,,1.150,0.190,,,,,,
+United Arab Emirates,AE,AE,Middle East (UAE),"25.2631,55.2972 ",,,1.150,0.190,,,,,,
+Central Brazil,BR-CS,BRA,South America (São Paulo),"-3.45,-68.95",,,1.150,0.190,,,,571.4267992,,571
+PJM,US-MIDA-PJM,PJM_DC,GovCloud (US East),"39.1057,-77.5544 ",,1.00,1.150,0.190,0,,,565.3840343,,565
+BPA,US-NW-BPAT,BPA,GovCloud (US West),"45.5371,-122.65 ",,1.00,1.150,0.190,0,,,427.1886293,,427
+,,,China (Beijing),"39.904,116.4075 ",,1.00,1.150,0.190,0,,,,,
+,,,China (Ningxia),"38.4795,106.2254 ",,1.00,1.150,0.190,0,,,,,
+southeastasia,SG,SGP,Singapore,"1.352,103.835",,0.13,1.358,2.060,,,,409.1860208,,409
+Brazil,BR-CS,BRA,Brazil,"-22.939, -47.045",,0.05,1.120,0.039,,,,571.4267992,,571
+Finland,FI,FI,Finland,"60.2065, 24.6753",,0.10,1.120,0.010,,,,784.9591618,,785
+Indonesia,ID,ID,Indonesia,"-6.219, 106.867",,0.13,1.320,1.900,,,,,,
+New Zealand,NZ,NZ,New Zealand,"-36.867, 174.751",,,1.120,0.000,,,,,,
+Sweden,SE,SE,Sweden,"59.329,18.067",1,1.00,1.172,0.160,0,,,781.7946219,,782
+New South Wales,AUS-NSW,NEM_NSW,Australia East,"-33.889, 151.067",,0.28,1.120,0.012,,,,,,
+Victoria,AUS-VIC,NEM_VIC,Australia Southeast,"-37.725, 145.067",,0.28,1.120,0.012,,,,,,
+Denmark,DK,DK,Denmark,"55.685, 12.584",,0.10,1.160,0.010,,,,659.8866462,,660
+Greece,GR,GR,Greece Central,"37.987, 23.745",,,1.120,0.102,,,,437.5870529,,438
+North Italy,IT,IT,Italy North,"45.4669,9.19",,0.15,1.120,0.023,,,,385.8847276,,386
+Poland,PL,PL,Poland Central,"52.23,21.0111",,,1.120,0.023,,,,852.3941505,,852
+Taiwan,TW,TW,Taiwan,"25.0375,121.5625",,,1.200,1.000,,,,,,
+Austria,AT,AT,Austria East,"48.217, 16.493",,0.79,1.120,0.023,,,,632.1527284,,632
+Ireland,IE,IE,Ireland,"53.35,-6.2603 ",,0.49,1.197,0.030,,,,507.95177,,508
+Netherlands,NL,NL,Netherlands,"51.9167,4.5",,0.79,1.158,0.080,,,,487.2176839,,487
+India,IND,IND,India South Central,"17.385,78.4867 ",,0.46,1.430,0.000,,,,679.4097431,,679
+Mexico,MX_SIN,MX_SIN,Mexico Central,"20.631, -100.428",,,1.120,0.056,,,,421.9293015,,422
+Spain,ES,ES,Spain Central,"40.44,-3.679",,0.15,1.120,,,,,370.288102,,370
+,,,Arizona: west US 3,"33.471,-112.056",,0.47,1.223,2.240,,,,,,
+SOCO,US-SE-SOCO,SOCO,Georgia: East US 3,"33.76,-84.401",,0.08,1.120,0.060,,,,533.5899463,,534
+MISO,US-MIDW-MISO,MISO,Illinois: North Central US,"41.832,-87.673",,0.70,1.346,0.790,,,,,,
+MISO,US-MIDW-MISO,MISO,Iowa: Central US,"41.573,-93.608",,1.00,1.160,0.190,0,,,,,
+ERCOT,US-TEX-ERCO,ERCOT,Texas: South Central US,"29.453,-98.508",,1.00,1.307,1.820,0,,,,,
+PJM,US-MIDA-PJM,PJM_DC,Virginia: East US,"36.68,-78.377",,0.70,1.144,0.170,,,,,,
+PJM,US-MIDA-PJM,PJM_DC,Virginia: East US 2,"36.68,-78.377",,0.70,1.144,0.170,,,,,,
+BPA,US-NW-BPAT,BPA,Washington: West US,"47.247,-119.82",,0.47,1.156,1.090,,,,427.1886293,,427
+,,,Wyoming: West Central US,"41.130,-104.83",,0.47,1.125,0.230,,,,,,
