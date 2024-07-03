@@ -80,7 +80,7 @@ Cloud providers have different definitions for the data they currently provide. 
 - **Average vs. Marginal** - The **average** carbon intensity gives the total emissions mixture over a time period. The **marginal** emissions account for changes in demand and depend on what kind of energy source is used to supply variable demand, with other energy sources providing base load capacity. For example, many regions use gas-powered peaker plants overnight so that marginal carbon could be purely from gas. At other times, the same region may be curtailing solar power during the day so that marginal carbon would be purely from solar. The average carbon would report the proportional mix of these sources.
 - **Not Available** - Accessing blank or unavailable data should cause an exception and interrupt an Impact Framework calculation.
 
-### Cloud Region Metadata
+### Cloud Region Metadata Table
 
 | Name                                                 | Units                      | Example               | Description                                                                                                                                                                                                       |
 | ---------------------------------------------------- | -------------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
