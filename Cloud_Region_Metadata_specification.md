@@ -16,7 +16,7 @@ This specification outlines the necessity for real-time carbon reporting to addr
 
 
 ### Objective
-The objective of this project is to standardize and clarify the cloud region metadata for efficient and accurate usage by cloud service providers and users. This project aims to address the discrepancies and variations in data reporting methodologies and definitions among different cloud providers and promote alignment towards standard definitions in future updates.
+This specification aims to standardize and clarify cloud region metadata for efficient and accurate usage by cloud service providers and users. It also aims to address discrepancies and variations in data reporting methodologies and definitions among different cloud providers and promote alignment toward standard definitions in future updates.
 
 ### Scope
 
