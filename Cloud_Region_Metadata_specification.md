@@ -1,4 +1,8 @@
-## Cloud Region Metadata
+---
+version: 0.0.1
+---
+
+## Cloud Region Metadata 
 
 ### Introduction
 
@@ -25,6 +29,17 @@ Each cloud region has a power usage effectiveness (PUE) and a water usage effect
 Cloud providers have Net Zero goals, calculated using the market method. This method allows for energy-based offsets, including private Power Purchase Agreements (PPAs), tradable Renewable Energy Credits (RECs), and carbon offsets. They report the net carbon on a region-by-region basis. For many regions, this is already zero.
 
 Cloud providers have different definitions for the data they currently provide. Part of the goal of the GSF real-time cloud project is to clarify those differences and request that standard definitions and alignment occur in future updates. [Gap: Google provides location-based carbon data. Request AWS and Azure match what Google provides.]
+
+## Normative references
+There are no normative references in this document.
+
+## Terms and definitions
+
+For the purposes of this document, the following terms and definitions apply.
+
+ISO and IEC maintain terminological databases for use in standardization at the following addresses:
+-	ISO Online browsing platform: available at https://www.iso.org/obp
+-	IEC Electropedia: available at http://www.electropedia.org/
 
 ### Metric Naming Scheme
 
@@ -60,18 +75,8 @@ Cloud providers have different definitions for the data they currently provide. 
 | grid-carbon-intensity                                | gCO2e/kWh                  | 686                   | Specific named output for Impact Framework model that is consumed by SCI-o. It’s defined by SCI to be location based and is currently set to the same value as grid-carbon-intensity-marginal-consumption-annual. |
 
 ### References
-- Amazon Renewable Energy Methodology
-https://sustainability.aboutamazon.com/renewable-energy-methodology.pdf
-
-- Amazon Carbon Methodology
-https://sustainability.aboutamazon.com/carbon-methodology.pdf
-
-- Azure Datacenter Fact Sheets for 2022
-https://web.archive.org/web/20240308233631/https://datacenters.microsoft.com/globe/fact-sheets/
-
-- Google Carbon-Free Energy by Region
-https://cloud.google.com/sustainability/region-carbon
-
-- Google Sustainability Report for 2023
-https://www.gstatic.com/gumdrop/sustainability/google-2023-environmental-report.pdf#page=90
-
+- [Amazon Renewable Energy Methodology](https://sustainability.aboutamazon.com/renewable-energy-methodology.pdf)
+- [Amazon Carbon Methodology](https://sustainability.aboutamazon.com/carbon-methodology.pdf)
+- [Azure Datacenter Fact Sheets for 2022](https://web.archive.org/web/20240308233631/https://datacenters.microsoft.com/globe/fact-sheets/)
+- [Google Carbon-Free Energy by Region](https://cloud.google.com/sustainability/region-carbon)
+- [Google Sustainability Report for 2023](https://www.gstatic.com/gumdrop/sustainability/google-2023-environmental-report.pdf#page=90)
