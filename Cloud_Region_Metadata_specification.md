@@ -2,9 +2,9 @@
 
 ### Introduction
 
-Cloud providers are recognized as significant procurers of renewable energy globally. This specification addresses the need for accurate and timely carbon information provision to customers utilizing cloud services, aiming to align with regulatory requirements across various jurisdictions.
+Cloud providers are recognized as significant global procurers of renewable energy. This specification addresses the need for accurate and timely carbon information provision to customers utilizing cloud services, aiming to align with regulatory requirements across various jurisdictions.
 
-Historically, cloud providers have supplied carbon information to their customers on a monthly basis, often with a delay of several months. Consequently, customers have been compelled to estimate the real-time carbon footprint of their cloud workloads using incomplete public information, leading to overestimations.
+Historically, cloud providers have supplied carbon information to their customers every month, often with a delay of several months. Consequently, customers have been compelled to estimate the real-time carbon footprint of their cloud workloads using incomplete public information, leading to overestimations.
 
 To meet regulatory standards in the UK, Europe, California, and emerging elsewhere, cloud providers are required to supply real-time carbon metrics. Recognizing this need, cloud providers have developed custom silicon and system designs to optimize for low power consumption and mitigate the carbon footprint within the supply chain. The efficiency gains achieved, in conjunction with renewable energy purchases, enable direct comparisons with data centre alternatives for specific workloads.
 
@@ -22,26 +22,17 @@ Carbon-free energy includes nuclear and is distinct from the definition of renew
 
 Each cloud region has a power usage effectiveness (PUE) and a water usage effectiveness (WUE) that may be reported. Energy usage at the system level should be multiplied by the PUE ratio to account for losses due to cooling and energy distribution and storage within the cloud provider’s facilities. WUE is measured as litres per kilowatt and is reported for each Azure region. AWS provides a global average WUE, and Google does not currently provide WUE data [Gap: we request AWS and Google match what Azure provides].  PUE data is published on different schedules; Google currently provides quarterly and trailing 12-month data for data centre facilities that it owns, which is a subset of its cloud regions but doesn’t match the names of data centres to cloud region names. AWS doesn’t provide any specific PUE data but claims it operates in the global range from 1.07-1.15. Azure provides PUE and WUE data that matches all its regions. [Gap: We request that AWS and Google match what Azure provides.]
 
-Cloud providers have Net Zero goals, which are calculated using the market method. This method allows for energy-based offsets, including private Power Purchase Agreements (PPAs) and tradable Renewable Energy Credits (RECs), as well as carbon offsets. They report the net carbon on a region-by-region basis. For many regions, this is already zero.
+Cloud providers have Net Zero goals, calculated using the market method. This method allows for energy-based offsets, including private Power Purchase Agreements (PPAs), tradable Renewable Energy Credits (RECs), and carbon offsets. They report the net carbon on a region-by-region basis. For many regions, this is already zero.
 
 Cloud providers have different definitions for the data they currently provide. Part of the goal of the GSF real-time cloud project is to clarify those differences and request that standard definitions and alignment occur in future updates. [Gap: Google provides location-based carbon data. Request AWS and Azure match what Google provides.]
 
 ### Metric Naming Scheme
 
-#### Provider vs. Grid 
-- Some data is cloud **provider** specific, and some is generic data for the local **grid**.
-
-#### 24x7 vs. Hourly vs. Annual
-- Some provider metrics use a 24x7 hourly energy matching scheme, and report data based on an **hourly** weighted average, this is labelled hourly (rather than 24x7). Other metrics are generated based on annual averages and labelled **annual**.
-
-#### Location vs. Market 
-- The Greenhouse Gas Protocol specifies **location** and **market** methodologies for carbon reporting. Market methodology allows energy to be purchased across grids, but AWS states that it purchases within grids “wherever feasible”, and reports **market** data on a per-grid basis.
-
-#### Consumption vs. Production
-- Within a grid, the energy sources add up to a production-based metric; however, energy flows between grids across interconnects, and the actual energy mix **consumption** in a region takes this into account.
-
-#### Average vs. Marginal
-- The **average** carbon intensity gives the total emissions mixture over a time period. The **marginal** emissions account for changes in demand and depend on what kind of energy source is being used to supply variable demand, with other energy sources providing base load capacity. For example, many regions use gas-powered peaker plants overnight, so marginal carbon could be purely from gas. At other times, the same region may be curtailing solar power during the day, so marginal carbon would be purely from solar. The average carbon would report the proportional mix of these sources.
+- **Provider vs. Grid** - Some data is cloud **provider** specific, and some is generic data for the local **grid**.
+- **24x7 vs. Hourly vs. Annual** - Some provider metrics use a 24x7 hourly energy matching scheme, and report data based on an **hourly** weighted average, this is labelled hourly (rather than 24x7). Other metrics are generated based on annual averages and labelled **annual**.
+- **Location vs. Market** — The Greenhouse Gas Protocol specifies **location ** and **market ** methodologies for carbon reporting. Market methodology allows energy to be purchased across grids, but AWS states that it purchases within grids “wherever feasible” and reports **market** data on a per-grid basis.
+- **Consumption vs. Production** - Within a grid, the energy sources add up to a production-based metric; however, energy flows between grids across interconnects, and the actual energy mix **consumption** in a region takes this into account.
+- **Average vs. Marginal** - The **average** carbon intensity gives the total emissions mixture over a time period. The **marginal** emissions account for changes in demand and depend on what kind of energy source is used to supply variable demand, with other energy sources providing base load capacity. For example, many regions use gas-powered peaker plants overnight so that marginal carbon could be purely from gas. At other times, the same region may be curtailing solar power during the day so that marginal carbon would be purely from solar. The average carbon would report the proportional mix of these sources.
 
 #### Not Available
 - Accessing blank or unavailable data should cause an exception and interrupt an Impact Framework calculation.
