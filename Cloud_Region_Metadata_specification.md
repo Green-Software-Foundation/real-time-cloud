@@ -78,9 +78,7 @@ Cloud providers have different definitions for the data they currently provide. 
 - **Location vs. Market** — The Greenhouse Gas Protocol specifies **location ** and **market ** methodologies for carbon reporting. Market methodology allows energy to be purchased across grids, but AWS states that it purchases within grids “wherever feasible” and reports **market** data on a per-grid basis.
 - **Consumption vs. Production** - Within a grid, the energy sources add up to a production-based metric; however, energy flows between grids across interconnects, and the actual energy mix **consumption** in a region takes this into account.
 - **Average vs. Marginal** - The **average** carbon intensity gives the total emissions mixture over a time period. The **marginal** emissions account for changes in demand and depend on what kind of energy source is used to supply variable demand, with other energy sources providing base load capacity. For example, many regions use gas-powered peaker plants overnight so that marginal carbon could be purely from gas. At other times, the same region may be curtailing solar power during the day so that marginal carbon would be purely from solar. The average carbon would report the proportional mix of these sources.
-
-#### Not Available
-- Accessing blank or unavailable data should cause an exception and interrupt an Impact Framework calculation.
+- **Not Available** - Accessing blank or unavailable data should cause an exception and interrupt an Impact Framework calculation.
 
 ### Cloud Region Metadata
 
