@@ -44,10 +44,10 @@ The project aims to enhance the accuracy of the carbon emissions model for cloud
 - **Standard Definitions and Alignment:**
    - Establish guidelines for standard definitions and alignment of cloud region metadata, carbon models, and data reporting methodologies among cloud providers (e.g., AWS and Azure aligning with Google's location-based carbon data).
 
-## Normative references
+### Normative references
 There are no normative references in this document.
 
-## Terms and definitions
+### Terms and definitions
 
 For the purposes of this document, the following terms and definitions apply.
 
@@ -55,7 +55,8 @@ ISO and IEC maintain terminological databases for use in standardization at the 
 -	ISO Online browsing platform: available at https://www.iso.org/obp
 -	IEC Electropedia: available at http://www.electropedia.org/
 
-## Overview
+### Description
+
 A user of the cloud region metadata can specify which cloud provider and region they use to run a workload and get all the relevant metadata about that region. Cloud region metadata is published annually and lags by 6-18 months, so the year must be specified, or the latest data should be used. The annual average location-based marginal grid-carbon-intensity value required for SCI-o is provided when available. Because of differences between cloud providers, data providers and reporting methodologies, there are several possible carbon models, and data may not be available (NA). Attempting to consume a not-available or blank metric should cause any calculations to fail.
 
 The data provider keys for Electricity Maps and WattTime are returned to allow real-time lookup via their APIs, and the annual average carbon intensity is reported for each grid region for each cloud provider model.
