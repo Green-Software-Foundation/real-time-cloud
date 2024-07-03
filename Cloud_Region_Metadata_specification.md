@@ -2,8 +2,6 @@
 
 ### Introduction
 
-Title: Real-Time Carbon Reporting Specification for Cloud Providers
-
 Cloud providers are recognized as significant procurers of renewable energy globally. This specification addresses the need for accurate and timely carbon information provision to customers utilizing cloud services, aiming to align with regulatory requirements across various jurisdictions.
 
 Historically, cloud providers have supplied carbon information to their customers on a monthly basis, often with a delay of several months. Consequently, customers have been compelled to estimate the real-time carbon footprint of their cloud workloads using incomplete public information, leading to overestimations.
