@@ -1,20 +1,34 @@
 ## Cloud Region Metadata
 
 ### Introduction
-A user of the cloud region metadata can specify which cloud provider and region they are using to run a workload and get all the relevant metadata about that region. Cloud region metadata is published annually and is always lagging by 6-18 months, so the year must be specified, or the latest data should be used. The annual average location-based marginal grid-carbon-intensity value required for SCI-o is provided when available. Because of differences between cloud providers, data providers and reporting methodologies, there are several possible carbon models, and data may not be available (NA). Attempting to consume a not-available or blank metric should cause any calculations to fail.
+
+Title: Real-Time Carbon Reporting Specification for Cloud Providers
+
+1. Introduction
+
+Cloud providers are recognized as significant procurers of renewable energy globally. This specification addresses the need for accurate and timely carbon information provision to customers utilizing cloud services, aiming to align with regulatory requirements across various jurisdictions.
+
+Historically, cloud providers have supplied carbon information to their customers on a monthly basis, often with a delay of several months. Consequently, customers have been compelled to estimate the real-time carbon footprint of their cloud workloads using incomplete public information, leading to overestimations.
+
+To meet regulatory standards in the UK, Europe, California, and emerging elsewhere, cloud providers are required to supply real-time carbon metrics. Recognizing this need, cloud providers have developed custom silicon and system designs to optimize for low power consumption and mitigate the carbon footprint within the supply chain. The efficiency gains achieved, in conjunction with renewable energy purchases, enable direct comparisons with data centre alternatives for specific workloads.
+
+This specification outlines the necessity for real-time carbon reporting to address these concerns and proposes a standardized approach to achieve accurate and timely carbon footprint estimates for cloud workloads. Additionally, it highlights the significance of metadata disclosure by cloud providers for the regions they operate in and the ongoing efforts to consolidate and distribute this information as a singular data source.
+
+### Scope
+
+A user of the cloud region metadata can specify which cloud provider and region they use to run a workload and get all the relevant metadata about that region. Cloud region metadata is published annually and lags by 6-18 months, so the year must be specified, or the latest data should be used. The annual average location-based marginal grid-carbon-intensity value required for SCI-o is provided when available. Because of differences between cloud providers, data providers and reporting methodologies, there are several possible carbon models, and data may not be available (NA). Attempting to consume a not-available or blank metric should cause any calculations to fail.
 
 The data provider keys for Electricity Maps and WattTime are returned to allow real-time lookup via their APIs, and the annual average carbon intensity is reported for each grid region for each cloud provider model.
 
-### Scope
-Cloud providers have their own private carbon-free generation capacity, and they report a proportion of their energy consumption that is offset by carbon-free energy flowing within a “Carbon-Free Energy grid region”. This can reduce their effective grid carbon intensity and is taken into account by the market method that is used for Net Zero reporting, but is not included in the location based method that is required by SCI. The carbon-free energy calculation can be performed on a 24x7 hourly basis and accumulated over the year or on an annual total basis. CFE data is missing for regions that are not yet operational.
+Cloud providers have their own private carbon-free generation capacity, and they report a proportion of their energy consumption offset by carbon-free energy flowing within a “Carbon-Free Energy grid region”. This can reduce their effective grid carbon intensity and is taken into account by the market method that is used for Net Zero reporting, but is not included in the location based method that is required by SCI. The carbon-free energy calculation can be performed on a 24x7 hourly basis and accumulated over the year or on an annual total basis. CFE data is missing for regions that are not yet operational.
 
 Carbon-free energy includes nuclear and is distinct from the definition of renewable energy.
 
 Each cloud region has a power usage effectiveness (PUE) and a water usage effectiveness (WUE) that may be reported. Energy usage at the system level should be multiplied by the PUE ratio to account for losses due to cooling and energy distribution and storage within the cloud provider’s facilities. WUE is measured as litres per kilowatt and is reported for each Azure region. AWS provides a global average WUE, and Google does not currently provide WUE data [Gap: we request AWS and Google match what Azure provides].  PUE data is published on different schedules; Google currently provides quarterly and trailing 12-month data for data centre facilities that it owns, which is a subset of its cloud regions but doesn’t match the names of data centres to cloud region names. AWS doesn’t provide any specific PUE data but claims it operates in the global range from 1.07-1.15. Azure provides PUE and WUE data that matches all its regions. [Gap: We request that AWS and Google match what Azure provides.]
 
-Cloud providers have Net Zero goals, which are calculated using the market method, which allows for energy-based offsets, including private Power Purchase Agreements (PPAs) and tradable Renewable Energy Credits (RECs), as well as carbon offsets. They report the net carbon on a region-by-region basis. This is already zero for many regions.
+Cloud providers have Net Zero goals, which are calculated using the market method. This method allows for energy-based offsets, including private Power Purchase Agreements (PPAs) and tradable Renewable Energy Credits (RECs), as well as carbon offsets. They report the net carbon on a region-by-region basis. For many regions, this is already zero.
 
-Cloud providers have different definitions for the data they currently provide. Part of the goal of the GSF real-time cloud project is to clarify those differences and request that common definitions and alignment occur in future updates. [Gap: Google provides location-based carbon data. Request AWS and Azure match what Google provides.]
+Cloud providers have different definitions for the data they currently provide. Part of the goal of the GSF real-time cloud project is to clarify those differences and request that standard definitions and alignment occur in future updates. [Gap: Google provides location-based carbon data. Request AWS and Azure match what Google provides.]
 
 ### Metric Naming Scheme
 
