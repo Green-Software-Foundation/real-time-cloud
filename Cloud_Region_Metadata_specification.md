@@ -20,36 +20,30 @@ The objective of this project is to standardize and clarify the cloud region met
 
 ### Scope
 
-The project aims to enhance the accuracy of the carbon emissions model for cloud-based workloads. This will involve establishing a standard mechanism for cloud providers to share more detailed and useful information, using the same data schema. The scope also includes enabling real-time updates to provide minute-level granularity for energy usage and hourly or daily granularity for carbon intensity.
+The project aims to enhance the accuracy of the carbon emissions model for cloud-based workloads. This will involve establishing a standard mechanism for cloud providers to share more detailed and useful information using the same data schema. The scope also includes enabling real-time updates to provide minute-level granularity for energy usage and hourly or daily granularity for carbon intensity.
 
-1. Cloud Region Metadata:
+- **Cloud Region Metadata:**
    - Define standard parameters for cloud region metadata, including cloud provider and region specifications.
    - Establish guidelines for annual updates and data lag management (6-18 months), with emphasis on specifying the year or using the latest available data.
    - Clarify the annual average location-based marginal grid-carbon-intensity value for SCI-o, along with its availability and handling of NA data.
-
-2. Standardizing Carbon Models and Data Reporting:
+- **Standardizing Carbon Models and Data Reporting:**
    - Identify and clarify the multiple carbon models used by different cloud providers.
    - Address the variability of carbon data availability and handling of blank or not-available metrics.
-
-3. Real-time Data Lookup and Provider Keys:
+- **Real-time Data Lookup and Provider Keys:**
    - Define the process for real-time lookup of cloud region data via APIs provided by data providers such as Electricity Maps and WattTime.
    - Establish protocols for annual average carbon intensity reporting for each grid region under each cloud provider's model.
-
-4. Carbon-Free Energy and Renewable Energy Definitions:
-   - Define carbon-free energy and its inclusion of nuclear energy, distinct from the definition of renewable energy.
-   - Address the absence of carbon-free energy data for regions not yet operational.
-
-5. Power and Water Usage Effectiveness (PUE and WUE):
+- **Carbon-Free Energy and Renewable Energy Definitions:**
+   - Define carbon-free energy and its inclusion of nuclear energy, which is distinct from the definition of renewable energy.
+   - Address the absence of carbon-free energy data for regions that are not yet operational.
+- **Power and Water Usage Effectiveness (PUE and WUE):**
    - Standardize reporting of power usage effectiveness (PUE) and water usage effectiveness (WUE) for each cloud region.
-   - Alignment of WUE reporting among cloud providers (e.g., Google matching what Azure provides) and addressing the variation in PUE data publication schedules.
-
-6. Net Zero Reporting and Goals:
+   - Align WUE reporting among cloud providers (e.g., Google matching what Azure provides) and address the variation in PUE data publication schedules.
+- **Net Zero Reporting and Goals:**
    - Define the market method for calculating Net Zero goals, including energy-based offsets such as PPAs, RECs, and carbon offsets.
    - Reporting and aligning net carbon data on a region-by-region basis and addressing regions that achieve zero net carbon emissions.
-
-7. Standard Definitions and Alignment:
+- **Standard Definitions and Alignment:**
    - Establish guidelines for standard definitions and alignment of cloud region metadata, carbon models, and data reporting methodologies among cloud providers (e.g., AWS and Azure aligning with Google's location-based carbon data).
-   - 
+
 ## Normative references
 There are no normative references in this document.
 
