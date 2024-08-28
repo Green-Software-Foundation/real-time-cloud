@@ -23,16 +23,33 @@ Any untracked attendees will be added by the GSF team below:
 
 ## Agenda
 - [ ] Approve agenda
-- [ ] Approve [previous Meeting Minutes]()
+- [ ] N/A
 
-## Add Topic
+## Introductions
 - [ ] Add topic
 
-## Add Topic
-- [ ] Add topic
+## What's the background of the project?
+- [ ] link to Readme
 
-## Add Topic
-- [ ] Add topic
+## Why are you doing it?
+- [ ] Add details
+
+## What is the project scope?
+- [ ] Add details
+
+## Who's doing what?
+- [ ] Add details
+
+## How are you going to work together?
+- [ ] Communications plan
+- [ ] Member Collaboration
+- [ ] GitHub overview
+
+## What does success look like?
+- [ ] Add details
+
+## Workshop feedback
+- [ ] Add details
 
 ## Weekly Reminders 
 - [ ] - Newsletter submission - Topics that should be added to this week's GSF Digest
