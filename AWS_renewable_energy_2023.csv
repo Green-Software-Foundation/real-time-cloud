@@ -1,0 +1,178 @@
+business,name,city,state,country,energyType,date,size,longitude,latitude,aws_percent,aws_size_MW
+AWS,Amazon Wind Farm Indiana - Fowler Ridge,Benton County,Indiana,US,Wind farm,2016,150,-87.269,40.641,100%,150
+AWS,Amazon Wind Farm Ohio - Timber Road,Paulding County,Ohio,US,Wind farm,2016,100,-84.546,41.132,100%,100
+AWS,Amazon Solar Farm Virginia - Eastern Shore,Accomack County,Virginia,US,Solar farm,2016,80,-75.598,37.905,100%,80
+AWS,Amazon Solar Farm Virginia - Buckingham,Buckingham County,Virginia,US,Solar farm,2017,20,-78.536,37.59,100%,20
+AWS,Amazon Solar Farm Virginia - Scott,Powhatan County,Virginia,US,Solar farm,2017,20,-77.902,37.554,100%,20
+AWS,Amazon Solar Farm Virginia - Sappony,Sussex County,Virginia,US,Solar farm,2017,20,-77.248,36.938,100%,20
+AWS,Amazon Solar Farm Virginia - Southampton,Southampton County,Virginia,US,Solar farm,2017,100,-77.185,36.674,100%,100
+AWS,Amazon Solar Farm Virginia - New Kent,New Kent County,Virginia,US,Solar farm,2017,20,-76.993,37.469,100%,20
+AWS,Amazon Wind Farm North Carolina - Desert Wind,Perquimans and Pasquotank counties,North Carolina,US,Wind farm,2017,208,-76.456,36.229,100%,208
+AWS,Amazon Wind Farm California - Tehachapi,Kern County,California,US,Wind farm,2020,46.8,-118.45,35.123,100%,46.8
+AWS,Amazon Solar Farm Virginia - Gretna,Pittsylvania County,Virginia,US,Solar farm,2020,45,-79.425,36.781,100%,45
+AWS,Amazon Wind Farm Ireland - Cork,Cork,Ireland,Ireland,Wind farm,2020,23.2,-8.565,51.921,100%,23.2
+"65% AWS, 35% Amazon.com",Amazon Solar Farm Spain - Cabrera,Seville,Spain,Spain,Solar farm,2020,149,-5.985,37.389,35%,52.15
+AWS,Amazon Wind Farm Sweden - Bäckhammar,Bäckhammar,Sweden,Sweden,Wind farm,2020,91,14.283,59.283,100%,91
+AWS,Amazon Wind Farm Kansas - Iron Star,Ford County,Kansas,US,Wind farm,2021,239,-99.89,37.65,100%,239
+AWS,Amazon Wind Farm Nebraska - Little Blue,Hastings City,Nebraska,US,Wind farm,2021,250,-98.69,40.255,100%,250
+AWS,Amazon Wind Farm Kansas - Irish Creek,Frankfort City,Kansas,US,Wind farm,2021,301.7,-96.244,39.415,100%,301.7
+AWS,Amazon Solar Farm Ohio - Hilllcrest,Brown County,Ohio,US,Solar farm,2021,200,-83.902,39.09,100%,200
+AWS,Amazon Solar Farm North Carolina - Hawtree Creek,Warren County,North Carolina,US,Solar farm,2021,65,-78.104,36.53,100%,65
+AWS,Amazon Solar Farm Virginia - Fort Powhatan,Prince George County,Virginia,US,Solar farm,2021,150,-77.08,37.26,100%,150
+AWS,Amazon Wind Farm Scotland - Beinn an Tuirc 3,Argyll and Bute,Scotland,United Kingdom,Wind farm,2021,50,-5.591,55.534,100%,50
+AWS,Amazon Solar Farm Spain - Hijar I,Zaragoza,Spain,Spain,Solar farm,2021,49,-0.889,41.649,100%,49
+"90% AWS, 10% Amazon.com",Amazon Solar Farm China - Shandong,Shandong,China,China,Solar farm,2021,100,118.88,37.67,90%,90
+AWS,Amazon Solar Farm Australia - Suntop,New South Wales,Australia,Australia,Solar farm,2021,105,148.829,-32.583,100%,105
+AWS,Amazon Solar Farm Australia - Gunnedah,New South Wales,Australia,Australia,Solar farm,2021,60,150.349,-30.941,100%,60
+"15% AWS, 55% Amazon.com, 30% Devices",Amazon Solar Farm Canada - Travers,Alberta,Alberta,Canada,Solar farm,2022,375,-112.73,50.25,55%,206.25
+AWS,Amazon Texas Great Prairie Wind Farm,Hansford County,Texas,US,Wind farm,2022,868.56,-101.392,36.497,100%,868.56
+AWS,Amazon Wind Farm Illinois - Midland,Henry County,Illinois,US,Wind farm,2022,100,-90.014,41.263,100%,100
+AWS,Amazon Wind Farm Illinois - Crescent Ridge,Bureau County,Illinois,US,Wind farm,2022,54,-89.853,41.238,100%,54
+AWS,Amazon Solar Farm Illinois - Junction,Lee County,Illinois,US,Solar farm,2022,100,-89.37,41.49,100%,100
+AWS,Amazon Solar Farm Kentucky - Garrard,Garrard County,Kentucky,US,Solar farm,2022,50,-84.574,37.595,100%,50
+AWS,Amazon Solar Farm Virginia - Powells Creek,Halifax County,Virginia,US,Solar farm,2022,70,-79.028,36.55,100%,70
+AWS,Amazon Solar Farm Virginia - Crystal Hill,Halifax County,Virginia,US,Solar farm,2022,65,-78.929,36.695,100%,65
+AWS,Amazon Solar Farm Virginia - Sunnybrook,Halifax,Virginia,US,Solar farm,2022,51,-78.83,36.8,100%,51
+AWS,Amazon Solar Farm Virginia - Carvers Creek,Gloucester County,Virginia,US,Solar farm,2022,130,-76.608,37.548,100%,130
+AWS,Amazon Solar Farm Delaware - Solidago,New Castle County,Delaware,US,Solar farm,2022,50,-75.754,39.395,100%,50
+AWS,Amazon Wind Farm Ireland - Donegal,Donegal,Ireland,Ireland,Wind farm,2022,91.2,-8.058,54.648,100%,91.2
+"55% AWS, 45% Amazon.com",Amazon Wind Farm UK - Kennoxhead (Phase 1),"Kennoxhead, South Lanarkshire",Scotland,United Kingdom,Wind farm,2022,60,-3.88,55.505,45%,27
+"50% AWS, 50% Amazon.com",Amazon Solar Farm Italy - Mazara,Italy,Italy,Italy,Solar farm,2022,40,12.644,37.798,50%,20
+"50% AWS, 50% Amazon.com",Amazon Solar Farm Italy - Paterno,Italy,Italy,Italy,Solar farm,2022,26.4,14.84,37.515,50%,13.2
+"90% AWS, 10% Amazon.com",Amazon Wind Farm Sweden - Hastkullen,Sweden,Sweden,Sweden,Wind farm,2022,275,17.729,63.428,10%,27.5
+AWS,Amazon Wind Farm Sweden – Nysäter,"Sundvall, Västernorrland",Sweden,Sweden,Wind farm,2022,122,17.729,63.428,100%,122
+AWS,Amazon Solar Farm South Africa - Adams,Northern Cape Province,South Africa,South Africa,Solar farm,2022,10,23.004,-27.388,100%,10
+AWS,Amazon Solar Farm Singapore II,Singapore,Singapore,Singapore,Solar farm,2022,14,103.634,1.298,100%,14
+AWS,Amazon Solar Farm Singapore I,Singapore,Singapore,Singapore,Solar farm,2022,50,103.82,1.352,100%,50
+"80% AWS, 20% Amazon.com",Amazon Wind Farm Australia - Hawkesdale,Hawkesdale,Victoria,Australia,Wind farm,2022,96.6,142.346,-38.133,80%,77.28
+AWS,Amazon Solar Farm Canada - Lathom,Newell,Alberta,Canada,Solar farm,2023,80,-113.23,50.72,100%,80
+AWS,Amazon Wind Farm Oklahoma – Ponderosa II,Beaver,Oklahoma,US,Wind farm,2023,100,-100.66,36.74,100%,100
+AWS,Amazon Solar Farm Missouri - Altona,Audrain County,Missouri,US,Solar farm,2023,30,-92.141,39.284,100%,30
+AWS,Amazon Solar Farm Missouri - Envoy,Audrain County,Missouri,US,Solar farm,2023,50,-91.835,39.154,100%,50
+AWS,Amazon Solar Farm Louisiana - Oak Ridge,Morehouse,Louisiana,US,Solar farm,2023,200,-91.788,32.575,100%,200
+AWS,Amazon Solar Farm Illinois - Warren,Warren County,Illinois,US,Solar farm,2023,35,-90.669,40.896,100%,35
+AWS,Amazon Solar Farm Arkansas - Big Cypress,Crittenden,Arkansas,US,Solar farm,2023,120,-90.194,35.185,100%,120
+AWS,Amazon Solar Farm Mississippi – Potlatch,Scott County,Mississippi,US,Solar farm,2023,175,-89.731,32.517,100%,175
+"0.4% AWS, 99.6% Amazon.com",Amazon Solar Farm Mississippi - Cane Creek,Clarke,Mississippi,US,Solar farm,2023,78.5,-88.69,32.04,4%,3.14
+AWS,Amazon Solar Farm Kentucky - Caldwell,Caldwell County,Kentucky,US,Solar farm,2023,100,-88,37.16,100%,100
+AWS,Amazon Solar Farm Indiana - Randolph,Randolph County,Indiana,US,Solar farm,2023,100,-85.135,40.035,100%,100
+AWS,Amazon Solar Farm Ohio - Timber Road,Paulding County,Ohio,US,Solar farm,2023,50,-84.726,41.092,100%,50
+AWS,Amazon Solar Farm Ohio - Mark Center,Defiance,Ohio,US,Solar farm,2023,90,-84.611,41.282,100%,90
+AWS,Amazon Solar Farm Ohio - Great Bear,Van Wert County,Ohio,US,Solar farm,2023,46,-84.58,40.94,100%,46
+AWS,Amazon Solar Farm Ohio - Blue Harvest,Putnam County,Ohio,US,Solar farm,2023,50,-84.274,41.092,100%,50
+AWS,Amazon Solar Farm Ohio - Nestlewood,Brown and Clermont Counties,Ohio,US,Solar farm,2023,80,-84.017,38.926,100%,80
+AWS,Amazon Solar Farm Ohio - Dodson Creek,Highland County,Ohio,US,Solar farm,2023,100,-83.5,39.22,100%,100
+AWS,Amazon Solar Farm Ohio - Ross County,Ross County,Ohio,US,Solar farm,2023,100,-83.35,39.35,100%,100
+AWS,Amazon Solar Farm Ohio - Yellowbud,Ross County,Ohio,US,Solar farm,2023,274,-83.15,39.55,100%,274
+AWS,Amazon Solar Farm Ohio - Union,Union County,Ohio,US,Solar farm,2023,293,-83,40,100%,293
+AWS,Amazon Solar Farm Ohio - Union Ridge,Licking County,Ohio,US,Solar farm,2023,108,-82.647,39.991,100%,108
+AWS,Amazon Solar Farm Virginia - Axton,Pittsylvania County,Virginia,US,Solar farm,2023,200,-79.696,36.691,100%,200
+AWS,Amazon Solar Farm Virginia - Alton Post,Halifax,Virginia,US,Solar farm,2023,75,-79.033,36.569,100%,75
+AWS,Amazon Solar Farm Pennsylvania - Ridgeway,McKean County,Pennsylvania,US,Solar farm,2023,90,-78.515,41.696,100%,90
+AWS,Amazon Solar Farm Virginia - Foxglove,Frederick County,Virginia,US,Solar farm,2023,55,-78.271,39.065,100%,55
+AWS,Amazon Solar Farm Pennsylvania - Potter,Potter County,Pennsylvania,US,Solar farm,2023,30,-78.044,41.835,100%,30
+AWS,Amazon Wind Farm Ireland - Ardderroo (Phase 1),Galway,Ireland,Ireland,Wind farm,2023,91,-8.83,53.35,100%,91
+AWS,Amazon Wind Farm Northern Ireland - Ballykeel,United Kingdom,United Kingdom,United Kingdom,Wind farm,2023,16.1,-5.914,54.856,100%,16.1
+"50% AWS, 50% Amazon.com",Amazon Solar Farm Spain - IV,Spain,Spain,Spain,Solar farm,2023,92,-5.767,39.303,50%,46
+"50% AWS, 50% Amazon.com",Amazon Solar Farm Spain lll,Spain,Spain,Spain,Solar farm,2023,364,-5.767,39.303,50%,182
+AWS,Amazon Solar Farm Spain – I,Spain,Spain,Spain,Solar farm,2023,28.6,-4.644,42.135,100%,28.6
+AWS,Amazon Solar Farm Spain – Alamo,Spain,Spain,Spain,Solar Farm,2023,100,-4.059,40.039,100%,100
+AWS,Amazon Solar Farm Spain III,Spain,Spain,Spain,Solar farm,2023,152,-2.65,40,100%,152
+AWS,Amazon Wind Farm Spain – I,Spain,Spain,Spain,Wind farm,2023,60,-1.089,40.667,100%,60
+AWS,Amazon Wind Farm - San Bartolome,"Municipality of Aguilon, in the province of Zaragoza (Aragon), Spain",Spain,Spain,Wind farm,2023,38.6,-0.955,41.305,100%,38.6
+"50% AWS, 50% Amazon.com",Amazon Solar Farm France - Prechac,France,France,France,Solar farm,2023,15,-0.365,44.428,50%,7.5
+AWS,Amazon Solar Farm Italy - Castelvetrano,Italy,Italy,Italy,Solar Farm,2023,39.6,12.771,37.737,100%,39.6
+AWS,Amazon Wind Farm Sweden - Kallamossen,Sweden,Sweden,Sweden,Wind farm,2023,258,20.666,65.327,100%,258
+AWS,Amazon Wind Farm Finland - Kalajoki,Finland,Finland,Finland,Wind farm,2023,63.84,23.927,64.196,100%,63.84
+AWS,Amazon Wind Farm Finland - Puskakorpi,Finland,Finland,Finland,Wind farm,2023,53,24.184,64.404,100%,53
+AWS,Amazon Wind Farm Finland - Kyyjärvi,Finland,Finland,Finland,Wind farm,2023,36,24.847,63.097,100%,36
+AWS,Amazon Solar Farm India - Rajasthan Jaisalmer,Rajasthan,India,India,Solar farm,2023,210,71.043,26.315,100%,210
+"25% AWS, 75% Amazon.com",Amazon Solar Farm India - Rajasthan Bhadla,Rajasthan,India,India,Solar farm,2023,100,72.477,27.508,75%,75
+AWS,Amazon Solar Farm India - Rajasthan Bikaner,Rajasthan,India,India,Solar farm,2023,110,73.023,28.854,100%,110
+AWS,Amazon Solar Farm Missouri - Blue Bird,Warren County,Missouri,US,Solar farm,2023,139,91.138,38.894,100%,139
+AWS,Amazon Wind Farm China – Qian'an,China,China,China,Wind farm,2023,100,123.65,44.95,100%,100
+AWS,Amazon Wind Farm China – Daqing,China,China,China,Wind farm,2023,100,124.867,46.533,100%,100
+AWS,Amazon Solar Farm Japan I,Japan,Japan,Japan,Solar farm,2023,22,139.421,36.311,100%,22
+AWS,Amazon Solar Farm Honshu,Japan,Japan,Japan,Solar farm,2023,38,140.376,35.705,100%,38
+AWS,Amazon Solar + Storage Farm California - Silver Peak,San Bernardino County,California,US,Solar farm,2024,50,-117.454,34.609,100%,50
+AWS,Amazon Solar + Storage California - Baldy Mesa,San Bernardino County,California,US,Solar farm,2024,150,-117.454,34.61,100%,150
+AWS,Amazon Solar + Storage Arizona - McFarland,Yuma County,Arizona,US,Solar farm,2024,300,-113.481,32.951,100%,300
+AWS,Amazon Solar Farm Texas - Desert Willow,Swisher County,Texas,US,Solar farm,2024,175,-102.967,34.484,100%,175
+AWS,Amazon Wind Farm Texas - Montgomery Ranch,Foard and Knox County,Texas,US,Wind farm,2024,200,-99.63,33.84,100%,200
+AWS,Amazon Solar Farm Texas – Lake Whitney,Bosque County,Texas,US,Solar farm,2024,200,-97.393,31.844,100%,200
+AWS,Amazon Solar Farm Louisiana – St Landry,St Landry Parish,Louisiana,US,Solar farm,2024,100,-91.967,30.511,100%,100
+AWS,Amazon Wind Farm Mississippi - Delta Wind,Tunica County,Mississippi,US,Wind farm,2024,184,-90.398,34.501,100%,184
+AWS,Amazon Solar Farm Mississippi - Ragsdale,Madison County,Mississippi,US,Solar farm,2024,100,-90,32.549999,100%,100
+AWS,Amazon Solar Farm Arkansas - Crooked Lake,Mississippi,Arkansas,US,Solar farm,2024,175,-89.79,35.92,100%,175
+AWS,Amazon Solar Farm Indiana - Maple,Huntington County,Indiana,US,Solar farm,2024,35,-85.38,40.694,100%,35
+AWS,Amazon Solar Farm Indiana - Randolph II,Randolph County,Indiana,US,Solar farm,2024,150,-85.17,40.145,100%,150
+AWS,Amazon Solar Farm Ohio - Highland,Highland County,Ohio,US,Solar farm,2024,300,-83.795,39.071,100%,300
+AWS,Amazon Solar Farm Ohio - Madison Fields,Madison County,Ohio,US,Solar farm,2024,180,-83.486,40.082,100%,180
+AWS,Amazon Solar Farm Ohio - Fayette,Fayette,Ohio,US,Solar farm,2024,47.5,-83.401,39.383,100%,47.5
+AWS,Ohio Solar Project I,Marion County,Ohio,US,Solar farm,2024,100,-83.15,40.62,100%,100
+AWS,Amazon Solar Farm Foxhound - Virginia,Halifax,Virginia,US,Solar farm,2024,72.9,-78.748,36.866,100%,72.9
+AWS,Amazon Solar Farm Virginia - Bartonsville 2,Frederick County,Virginia,US,Solar farm,2024,50,-78.232,39.086,100%,50
+AWS,Amazon Solar Farm Virginia - Bartonsville,Frederick County,Virginia,US,Solar farm,2024,80,-78.15,39.15,100%,80
+AWS,Amazon Solar Farm Delaware - Cedar Creek,Kent County,Delaware,US,Solar farm,2024,74.7,-75.57,39.37,100%,74.7
+"72% AWS, 28% Amazon.com",Amazon Solar Farm Brazil - Novo Oriente,Sao Paulo,Brazil,Brazil,Solar farm,2024,122,-51.341,-20.652,72%,87.84
+AWS & AMZL,Amazon Wind Farm Brazil - Serido,Rio Grande do Norte,Brazil,Brazil,Wind farm,2024,49.5,-6.766,-36.658,100%,49.5
+AWS,Amazon Solar Farm Spain - Zaratan,Spain,Spain,Spain,Solar farm,2024,20.09,-4.84,41.64,100%,20.09
+AWS,Amazon Solar Farm Spain - Arroyadas,Spain,Spain,Spain,Solar farm,2024,20.09,-4.78,41.52,100%,20.09
+AWS,Amazon Solar Farm Spain - Brazatortas,Spain,Spain,Spain,Solar farm,2024,37.75,-4.223,38.712,100%,37.75
+"55% AWS, 45% Amazon.com",Amazon Wind Farm UK - Kennoxhead,"Kennoxhead, South Lanarkshire",Scotland,United Kingdom,Wind farm,2024,69,-3.88,55.505,55%,37.95
+AWS,Amazon Solar Farm Spain – Armada,Spain,Spain,Spain,Solar farm,2024,74,-3.2,40.39,100%,74
+"20% AWS, 50% Amazon.com, 30% Devices",Amazon Wind Farm UK - Moray West,United Kingdom,United Kingdom,United Kingdom,Wind farm,2024,473,-2.758,58.126,50%,236.5
+AWS,Amazon Solar Farm UK - Warley,United Kingdom,United Kingdom,United Kingdom,Solar farm,2024,47,0.34,51.535,100%,47
+"90% AWS, 10% v",Amazon Shell HKN Offshore Wind,Netherlands,Netherlands,Netherlands,Wind farm,2024,380,4.573,52.461,90%,342
+"50% AWS, 50% Amazon.com",Amazon Solar Farm Spain - Carmonita South,Spain,Spain,Spain,Solar farm,2024,80,6.45,38.97,50%,40
+AWS,Amazon Solar Farm Greece - Macrichoria,Greece,Greece,Greece,Solar farm,2024,24,21.21,38.87,100%,24
+AWS,Amazon Wind Farm Finland - Mustalamminmaki,Finland,Finland,Finland,Wind farm,2024,23.6,24.904,62.856,100%,23.6
+AWS,Amazon Wind Farm Finland - Koiramaki,Finland,Finland,Finland,Wind farm,2024,23.6,24.985,62.903,100%,23.6
+AWS,Amazon Wind Farm Finland - Illevaara,Finland,Finland,Finland,Wind farm,2024,30,28.554,64.587,100%,30
+AWS,Amazon Solar+Wind Farm India - Rajgarh,India,India,India,Solar farm,2024,150,75.13,22.7,100%,150
+"50% AWS, 50% Amazon.com",Amazon Solar+Wind Farm India - Gadag,India,India,India,Solar farm,2024,200,75.897,15.743,50%,100
+AWS,Amazon Solar+Wind Farm India - Gadag Koppal,India,India,India,Solar farm,2024,150,75.936,15.251,100%,150
+AWS,Indonesia Green Tariff,Indonesia,Indonesia,Indonesia,Solar farm,2024,210,111.258,-7.502,100%,210
+AWS,Amazon Solar Farm II,Japan,Japan,Japan,Solar farm,2024,15,139.071,36.13,100%,15
+AWS & Devices,Amazon Solar Farm Australia - Wandoan,Australia,Australia,Australia,Solar farm,2024,125,149.77,-26.27,100%,125
+AWS,Amazon Wind Farm Canada - Buffalo Plains,Canada,Canada,Canada,Wind farm,2025,415,-112.727,50.361,100%,415
+AWS,Amazon Solar Farm Texas - Nazareth,Swisher and Castro,Texas,US,Solar farm,2025,170,-101.98,34.49,100%,170
+AWS,Amazon Solar Farm Texas - Rio Lago,Bandera County,Texas,US,Solar farm,2025,120,-99.112,29.757,100%,120
+AWS,Amazon Solar Farm Oklahoma - Kiowa,Kiowa,Oklahoma,US,Solar farm,2025,100,-98.962,34.67,100%,100
+AWS,Amazon Solar Farm Texas - Texas One,Milam County,Texas,US,Solar farm,2025,50,-97.155,30.599,100%,50
+AWS,Amazon Solar Farm Texas - Stoneridge,Milam County,Texas,US,Solar farm,2025,200,-97.11,30.55,100%,200
+AWS,Amazon Solar Farm Texas - Jungmann,Milan County,Texas,US,Solar farm,2025,40,-97.058,30.904,100%,40
+AWS,Amazon Solar Farm Arkansas - Prairie Mist,Ashley County,Arkansas,US,Solar farm,2025,99.9,-91.667,33.238,100%,99.9
+AWS,Amazon Solar Farm Arkansas – Horseshoe Lake,Crittenden County,Arkansas,US,Solar farm,2025,200,-90.35,35.009,100%,200
+AWS,Amazon Solar Farm Indiana - Crossroads,Fountain,Indiana,US,Solar farm,2025,200,-87.298,40.128,100%,200
+AWS,Amazon Solar Farm Ohio - Sycamore,Crawford,Ohio,US,Solar farm,2025,117,-82.862,40.936,100%,117
+AWS,Amazon Solar Farm Maryland - Morgnec,Kent,Maryland,US,Solar farm,2025,45,-76.051,39.232,100%,45
+AWS,Amazon Wind Farm Spain - Salguero,Spain,Spain,Spain,Wind farm,2025,24.8,-4.644,42.136,100%,24.8
+AWS,Amazon Wind Farm Spain - Monte Becerril,Spain,Spain,Spain,Wind farm,2025,17.28,-4.591,42.149,100%,17.28
+AWS,Amazon Solar Farm Spain - FV Baluarte Solar,Spain,Spain,Spain,Solar farm,2025,24.717,-4.4,42.56,100%,24.717
+AWS,Amazon Solar Farm Spain - FV Retama,Spain,Spain,Spain,Solar farm,2025,31.96,-4.39,42.07,100%,31.96
+AWS,Amazon Solar Farm Spain - FV Bombarda Solar,Spain,Spain,Spain,Solar farm,2025,24.717,-4.37,42.55,100%,24.717
+AWS,Amazon Solar Farm Spain - FV Almendro,Spain,Spain,Spain,Solar farm,2025,31.96,-4.35,42.06,100%,31.96
+AWS,Amazon Solar Farm Spain - FV Sauce Solar,Spain,Spain,Spain,Solar farm,2025,27.286,-2.98,40.71,100%,27.286
+AWS,Amazon Solar Farm Spain - Canes 1,Spain,Spain,Spain,Solar farm,2025,31.68,-2.962,40.303,100%,31.68
+AWS,Amazon Solar Farm Spain - La Pared,Spain,Spain,Spain,Solar farm,2025,174,-2.29,37.12,100%,174
+AWS,Amazon Solar Farm Spain - Mambar,Spain,Spain,Spain,Solar farm,2025,26.88,-2.29,37.12,100%,26.88
+AWS,Amazon Solar Farm Spain - Energias Barranquilla,Spain,Spain,Spain,Solar farm,2025,32,-2.069999,39.63,100%,32
+AWS,Amazon Solar Farm Spain - Valle Del Sol Energias Renovables,Spain,Spain,Spain,Solar farm,2025,32,-2.069,39.62,100%,32
+AWS,Amazon Solar Farm Spain - Valdezorita,Spain,Spain,Spain,Solar farm,2025,38.24,-1.74,40.325,100%,38.24
+AWS,Amazon Solar Farm Spain - Eiden,Spain,Spain,Spain,Solar farm,2025,26.88,-1.19,39.05,100%,26.88
+AWS,Amazon Solar Farm Spain - El Aguila,Spain,Spain,Spain,Solar farm,2025,26.88,-1.18,39.06,100%,26.88
+AWS,Amazon Solar Farm Spain - Chambo,Spain,Spain,Spain,Solar farm,2025,26.88,-1.17,39.06,100%,26.88
+AWS,Amazon Solar Farm Spain - Escatron,Spain,Spain,Spain,Solar farm,2025,69.69,-0.428,41.254,100%,69.69
+AWS,Amazon Solar Farm France - Saint Frichoux,Saint Frichoux,France,France,Solar farm,2025,23.4,2.551,43.256,100%,23.4
+AWS,Amazon Wind Farm - Baltic Eagle,Germany,Germany,Germany,Wind farm,2025,189.64,13.899,54.82,100%,189.64
+AWS,Amazon Wind Farm Sweden - Lyckas,Sweden,Sweden,Sweden,Wind farm,2025,40.5,14.319,57.843,100%,40.5
+AWS,Amazon Wind Farm India - Osmanabad,India,India,India,Wind farm,2025,198,76.247,18.384,100%,198
+AWS,Amazon Solar Farm Ohio - Clearview Solar,Champain County,Ohio,US,Solar farm,2025,99,83.995,40.261,100%,99
+AWS,Amazon Solar Farm Texas - Outpost,Webb,Texas,US,Solar farm,2025,500,99.177,27.851,100%,500
+AWS & Devices,Amazon Wind Farm China - Bobai,China,China,China,Wind farm,2025,150,110.108,22.084,100%,150
+AWS,Taean Nammyeon I,South Korea,South Korea,South Korea,Solar farm,2025,60,126.311,36.694,100%,60
+AWS,Amazon Solar Farm Maryland - CPV Backbone,Garrett County,Maryland,US,Solar farm,2026,130.5,-79.202,39.443,100%,130.5
+AWS,Amazon Wind Farm Finland - Pahkakoski,Finland,Finland,Finland,Wind farm,2026,150.48,26.026,65.322998,100%,150.48
+AWS,Amazon Wind Farm Europe,Europe,Europe,Europe,Wind farm,2027,129.9,4.556,55.687,100%,129.9
+AWS,Amazon Wind Farm Germany,Germany,Germany,Germany,Wind farm,2027,130,14.029,54.89,100%,130

@@ -1,0 +1,28 @@
+name:  Action Item
+description: Task to be completed
+title: "[AI]"
+labels: ["action item"]
+projects: ["Real-Time Cloud"]
+assignees: 
+  - adrianco
+  - PindyBhullar
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Outline Action Item Details
+      description: Outline Action Item Details
+      placeholder: Tell us what you see
+      value: "Add details"
+    validations:
+      required: true
+  - type: dropdown
+    id: TF-Groups
+    attributes:
+      label: Issue dependency with other WGs Groups
+      multiple: true
+      options:
+        - No Dependency
+        - Community WG
+        - Opensource WG
+        - Policy WG

@@ -51,4 +51,3 @@ Any untracked attendees will be added by the GSF team below:
 
 ## Meeting Action Items / Standing Agenda / Future Agenda submissions
 - [ ] Add details here
-
