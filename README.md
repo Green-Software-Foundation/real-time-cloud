@@ -23,4 +23,5 @@ In June 2023 this proposal was [written up as a PRFAQ](https://github.com/Green-
 
 A summary of the state of AWS sustainability at the end of 2023 was [written up here](https://adrianco.medium.com/sustainability-talks-and-updates-from-aws-re-invent-2023-969100c46a6a). There were no substantive announcements but renewable energy purchases are continuing to grow. A comparison of the three main cloud providers disclosures for calendar year 2023 was published as a story in [The New Stack](https://thenewstack.io/sustainability-how-did-amazon-azure-google-perform-in-2023/).
 
-In December 2024, AWS provided PUE data for 2022 and 2023 for the first time.
+In December 2024, AWS provided PUE data for 2022 and 2023 for the first time. The PUE disclosures of AWS, Azure and GCP were analyzed and published as a story in [The New Stack](https://thenewstack.io/cloud-pue-comparing-aws-azure-and-gcp-global-regions/) in January 2025.
+
