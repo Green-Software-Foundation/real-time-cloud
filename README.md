@@ -10,7 +10,9 @@ The cloud providers disclose metadata about regions on an annual basis. This dat
 "All models are wrong, some models are useful". The goal of this project is to make the carbon emissions model for cloud based workloads less wrong, by defining a standard mechanism for cloud providers to share more information, and more useful, by having the same data schema for all cloud providers, and to support updates to that data in real time, which could be minute level granularity for energy usage, and hourly or daily granularity for carbon intensity.
 
 # Current Activity
-The initial work is focused on collecting and discussing existing information, and a context miro board has been created that is being used to crowdsource relevant information about power and carbon data sources and how they are created and used from end to end. The miro is [publicly readable here](https://miro.com/app/board/uXjVM1o59N4=/?share_link_id=388311040102) and screenshots are stored in this repo. It is proposed that slowly changing reference data will be shared via the [GSF Impact Framework](https://github.com/Green-Software-Foundation/if), and so far this includes Power Usage Efficiency (PUE), Carbon Free Energy, and Power Purchase Agreement location information. There are issues tracking the development of each of these.
+The initial work is focused on collecting and discussing existing information, and a context miro board has been created that is being used to crowdsource relevant information about power and carbon data sources and how they are created and used from end to end. The miro is [publicly readable here](https://miro.com/app/board/uXjVM1o59N4=/?share_link_id=388311040102) and screenshots are stored in this repo. It is proposed that slowly changing reference data will be shared via the [GSF Impact Framework](https://github.com/Green-Software-Foundation/if), and so far this includes Power Usage Efficiency (PUE), Water Usage Efficiency (WUE), Carbon Free Energy, a placeholder for EU Datacenter disclosure data, and Power Purchase Agreement location information. There are issues tracking the development of each of these.
+
+A python script has been produced to generate trended estimates for the current year based on previous years.
 
 ![Miro Summary](./sup_file/rtc-miro-2024-07-01.png)
 
@@ -19,4 +21,7 @@ This standard was initially proposed as part of a talk by Adrian Cockcroft at QC
 
 In June 2023 this proposal was [written up as a PRFAQ](https://github.com/Green-Software-Foundation/real-time-cloud/blob/main/PRFAQ%20for%20RealTimeCarbonMetrics.md) and discussed with the GSF Standards Working Group, who decided to recommend that it become a project, which was created by the GSF in July 2023.
 
-A summary of the state of AWS sustainability at the end of 2023 was [written up here](https://adrianco.medium.com/sustainability-talks-and-updates-from-aws-re-invent-2023-969100c46a6a). There were no substantive announcements but renewable energy purchases are continuing to grow.
+A summary of the state of AWS sustainability at the end of 2023 was [written up here](https://adrianco.medium.com/sustainability-talks-and-updates-from-aws-re-invent-2023-969100c46a6a). There were no substantive announcements but renewable energy purchases are continuing to grow. A comparison of the three main cloud providers disclosures for calendar year 2023 was published as a story in [The New Stack](https://thenewstack.io/sustainability-how-did-amazon-azure-google-perform-in-2023/).
+
+In December 2024, AWS provided PUE data for 2022 and 2023 for the first time. The PUE disclosures of AWS, Azure and GCP were analyzed and published as a story in [The New Stack](https://thenewstack.io/cloud-pue-comparing-aws-azure-and-gcp-global-regions/) in January 2025.
+
