@@ -85,7 +85,7 @@ def estimate_next_years(input_file, num_years=1):
                         elif col in ['provider-cfe-hourly', 'provider-cfe-annual']:
                             new_value = min(1.0, max(0, new_value))  # Clamp values between 0 and 1
                         elif col == 'power-usage-effectiveness':
-                            new_value = max(1.04, new_value)  # Ensure PUE is >= 
+                            new_value = max(1.04, new_value)  # Ensure PUE is >= 1.04
                         new_values.append(round(new_value, decimal_places[col]))
                     else:
                         # If no value for most recent year, check if we have any historical value
