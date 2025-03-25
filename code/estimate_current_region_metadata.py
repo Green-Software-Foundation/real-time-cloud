@@ -54,6 +54,14 @@ def estimate_next_years(input_file, num_years=1):
                 historical_data = df[['year', 'cloud-provider', 'cloud-region', col]].dropna()
                 latest_values = most_recent_data.set_index(['cloud-provider', 'cloud-region'])[col].to_dict()
                 
+                # Get all historical values for each provider-region pair
+                all_values = {}
+                for _, row in historical_data.iterrows():
+                    key = (row['cloud-provider'], row['cloud-region'])
+                    if key not in all_values:
+                        all_values[key] = []
+                    all_values[key].append((row['year'], row[col]))
+                
                 trends = {}
                 for (provider, region), group in historical_data.groupby(['cloud-provider', 'cloud-region']):
                     if len(group) > 1:
@@ -70,16 +78,26 @@ def estimate_next_years(input_file, num_years=1):
                     latest_value = latest_values.get(key, np.nan)
                     
                     if not np.isnan(latest_value):
+                        # If we have a value for the most recent year, use it with the trend
                         new_value = latest_value + trend
                         if col in carbon_intensity_columns:
                             new_value = max(0, new_value)  # Ensure carbon intensity does not go negative
                         elif col in ['provider-cfe-hourly', 'provider-cfe-annual']:
                             new_value = min(1.0, max(0, new_value))  # Clamp values between 0 and 1
                         elif col == 'power-usage-effectiveness':
-                            new_value = max(1.0, new_value)  # Ensure PUE is >= 1
+                            new_value = max(1.04, new_value)  # Ensure PUE is >= 1.04
                         new_values.append(round(new_value, decimal_places[col]))
                     else:
-                        new_values.append("")
+                        # If no value for most recent year, check if we have any historical value
+                        previous_values = all_values.get(key, [])
+                        if previous_values:
+                            # Use the most recent historical value available
+                            previous_values.sort(key=lambda x: x[0], reverse=True)
+                            previous_value = previous_values[0][1]
+                            new_values.append(previous_value)
+                        else:
+                            # No historical values at all
+                            new_values.append("")
                 
                 next_year_df[col] = new_values
         
@@ -88,6 +106,10 @@ def estimate_next_years(input_file, num_years=1):
     # Concatenate estimated years and sort in descending order
     final_df = pd.concat(estimated_data)
     final_df = final_df.sort_values(by=['year', 'cloud-provider', 'cloud-region'], ascending=[False, True, True])
+    
+    # Specific handling for water-usage-effectiveness for us-east1
+    final_df.loc[(final_df['cloud-region'] == 'us-east1') & 
+                (final_df['water-usage-effectiveness'].isna()), 'water-usage-effectiveness'] = 0.1
     
     # Ensure empty columns remain blank
     for col in df.columns:
