@@ -1,14 +1,14 @@
 ---
-version: 0.0.4
+version: 1.0.0
 ---
 
-## Cloud Region Metadata 
+## Cloud Region Metadata Specification
 
 ### Introduction
 
 Cloud providers are recognized as significant global procurers of renewable energy. This specification addresses the need for accurate and timely carbon information provision to customers utilizing cloud services, aiming to align with regulatory requirements across various jurisdictions.
 
-Historically, cloud providers have supplied carbon information to their customers every month, often with a delay of several months. Consequently, customers have been compelled to estimate the real-time carbon footprint of their cloud workloads using incomplete public information.
+Historically, cloud providers have supplied carbon information to their customers every month, with a delay of several months, and provided public information on an annual basis with six to eighteen months lag. Consequently, customers have been compelled to estimate the real-time carbon footprint of their cloud workloads using incomplete public information.
 
 Cloud providers will be required to supply carbon metrics to meet regulatory standards in the UK, Europe, California, and emerging elsewhere. So far, cloud providers have developed custom silicon and system designs to optimize low power consumption, mitigated the carbon footprint within supply chains, and invested in renewable energy production. They have published generic estimates of efficiency gains achieved with renewable energy purchases compared to data centre alternatives. Still, the data needed for a customer to make the same comparison for a specific workload, and to make comparisons across cloud regions, is lacking.
 
@@ -64,9 +64,9 @@ Cloud providers have their own private carbon-free generation capacity, and they
 
 Carbon-free energy includes nuclear and is distinct from the definition of renewable energy.
 
-Each cloud region has a power usage effectiveness (PUE) and a water usage effectiveness (WUE) that may be reported. Energy usage at the system level should be multiplied by the PUE ratio to account for losses due to cooling and energy distribution and storage within the cloud provider’s facilities. WUE is measured as litres per kilowatt-hour and is reported for each Azure region. AWS provides a global average WUE, and Google does not currently provide WUE data [Gap: we request AWS and Google match what Azure provides].  PUE data is published on different schedules; Google currently provides annual, quarterly and trailing 12-month data for data centre facilities that it owns, which is a subset of its cloud regions but doesn’t match the names of data centres to cloud region names. AWS doesn’t provide specific PUE data but claims it operates globally from 1.07-1.15. Azure provides PUE and WUE data that matches all its regions, but the last data it published was for 2022. [Gap: We request that AWS and Google match the data that Azure provides and that Azure updates for 2023.]
+Each cloud region has a power usage effectiveness (PUE) and a water usage effectiveness (WUE) that may be reported. Energy usage at the system level should be multiplied by the PUE ratio to account for losses due to cooling and energy distribution and storage within the cloud provider’s facilities. WUE is measured as litres per kilowatt-hour and was reported for each Azure region in 2022. AWS provides a global average WUE, and Google does not currently provide WUE data [Gap: we request AWS and Google match what Azure provides].  PUE data is published on different schedules; Google currently provides annual, quarterly and trailing 12-month data for data centre facilities that it owns, which is a subset of its cloud regions and we have matched the names of data centres to cloud region names. AWS also provides annual PUE data for a subset of regions. Azure provided 2022 PUE and WUE data that matched all its regions, but the 2023 data it published was less comprehensive. The 2022 data was removed from the Azure website but has been preserved by this project.
 
-Cloud providers have Net Zero goals, calculated using the market method. This method allows for energy-based offsets, including private Power Purchase Agreements (PPAs), tradable Renewable Energy Credits (RECs), and carbon offsets. They report the net carbon on a region-by-region basis. For many regions, this is already zero.
+Cloud providers have Net Zero goals, calculated using the market method. This method allows for energy-based offsets, including private Power Purchase Agreements (PPAs), tradable Renewable Energy Credits (RECs), and carbon offsets. Cloud providers report their net carbon on a region-by-region basis, using in-market energy based offsets, and a global figure that uses cross region RECs and offsets. For many regions, the market method carbon is already zero.
 
 Cloud providers have different definitions for the data they currently provide. Part of the goal of the GSF real-time cloud project is to clarify those differences and request that standard definitions and alignment occur in future updates. [Gap: Google provides location-based carbon data. Request AWS and Azure match what Google provides.]
 
