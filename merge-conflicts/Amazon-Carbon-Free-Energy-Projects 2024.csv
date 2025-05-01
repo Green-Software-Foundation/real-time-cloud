@@ -1,0 +1,527 @@
+﻿Site Name,Project Type,City/County,State,Country,Operational Date,System Size (MW)
+Amazon Onsite Solar Ohio - Akron 1,On-site Solar,Akron,Ohio,United States,2023,4.00
+Amazon Onsite Solar California - Bakersfield 1,Solar + Battery,Bakersfield,California,United States,2023,5.43
+Amazon Onsite Solar Ohio - West Jefferson 1,On-site Solar,Columbus,Ohio,United States,2023,5.40
+Amazon Onsite Solar New York - East Syracuse 1,On-site Solar,East Syracuse,New York,United States,2021,0.72
+Amazon Onsite Solar California - Milpitas 1,On-site Solar,Milpitas,California,United States,2022,0.43
+Amazon Onsite Solar California - Hawthorne 1,On-site Solar,Hawthorne,California,United States,2022,0.54
+Amazon Onsite Solar California - Poway 1,On-site Solar,Poway,California,United States,2023,0.90
+Amazon Onsite Solar Canada - Nisku 1,On-site Solar,Nisku,Outside US,Canada,2021,0.21
+Amazon Onsite Solar Arizona - Goodyear,On-site Solar,Goodyear,Arizona,United States,2023,2.84
+Amazon Onsite Solar New York - Staten Island 1,On-site Solar,Staten Island,New York,United States,2021,7.09
+Amazon Onsite Solar Kentucky - Hebron 1,On-site Solar,Hebron,Kentucky,United States,2023,2.41
+Amazon Onsite Solar California - San Bernardino 3,Solar + Battery,San Bernardino,California,United States,2022,5.83
+Amazon Onsite Solar Nevada - Henderson,On-site Solar,Henderson,Nevada,United States,2023,1.25
+Amazon Onsite Solar California - Perris 2,On-site Solar,Perris,California,United States,2022,1.08
+Amazon Onsite Solar Illinois - Monee 1,On-site Solar,Monee,Illinois,United States,2022,3.00
+Amazon Onsite Solar Ohio - Rossford 1,On-site Solar,Rossford,Ohio,United States,2023,4.00
+Amazon Onsite Solar California - Beaumont 1,On-site Solar,Beaumont,California,United States,2021,4.74
+Amazon Onsite Solar California - San Diego,Solar + Battery,San Diego,California,United States,2024,5.56
+Amazon Onsite Solar California - Rialto 3,On-site Solar,Bloomington,California,United States,2023,3.37
+Amazon Onsite Solar California - San Bernardino 4,On-site Solar,San Bernardino,California,United States,2023,3.12
+Amazon Onsite Solar California - Stockton 2,On-site Solar,Stockton,California,United States,2023,3.35
+Amazon Onsite Solar California - Manteca 1,On-site Solar,Manteca,California,United States,2022,1.09
+Amazon Onsite Solar California - Stockton 3,On-site Solar,Stockton,California,United States,2022,1.10
+Amazon Onsite Solar California - Vacaville 2,On-site Solar,Vacaville,California,United States,2023,0.80
+Amazon Onsite Solar Arizona - Tucson 1,On-site Solar,Tucson,Arizona,United States,2022,3.33
+Amazon Onsite Solar Italy - Padova 1,On-site Solar,Padova,Italy,Italy,2020,0.02
+Amazon Onsite Solar Spain - Rubi 1,On-site Solar,Rubi,Spain,Spain,2020,0.05
+Amazon Onsite Solar Spain - Sevilla 1,On-site Solar,Sevilla,Spain,Spain,2020,0.03
+Amazon Onsite Solar United Kingdom - Belvedere 1,On-site Solar,Belvedere,United Kingdom,United Kingdom,2020,0.13
+Amazon Onsite Solar United Kingdom - Ipswich 1,On-site Solar,Ipswich,United Kingdom,United Kingdom,2020,0.04
+Amazon Onsite Solar United Kingdom - Deeside 1,On-site Solar,Deeside,United Kingdom,United Kingdom,2020,0.13
+Amazon Onsite Solar Spain - Murcia 1,On-site Solar,Murcia,Spain,Spain,2020,0.02
+Amazon Onsite Solar Italy - Burago di Molgora 1,On-site Solar,Burago di Molgora,Italy,Italy,2019,0.02
+Amazon Onsite Solar Italy - Brandizzo 1,On-site Solar,Brandizzo,Italy,Italy,2020,0.01
+Amazon Onsite Solar Italy - Genova 1,On-site Solar,Genova,Italy,Italy,2021,0.11
+Amazon Onsite Solar Italy - Castelguglielmo 1,On-site Solar,Castelguglielmo,Italy,Italy,2021,1.04
+Amazon Onsite Solar Italy - Castegnato 1,On-site Solar,Castegnato,Italy,Italy,2021,0.15
+Amazon Onsite Solar United Kingdom - Newport 1,On-site Solar,Newport,United Kingdom,United Kingdom,2020,0.00
+Amazon Onsite Solar Italy - Rome 1,On-site Solar,Rome,Italy,Italy,2021,2.00
+Amazon Onsite Solar Spain - Alicante 1,On-site Solar,Alicante,Spain,Spain,2021,0.10
+Amazon Onsite Solar Japan - Amagasaki 1,On-site Solar,Amagasaki,Japan,Japan,2021,2.52
+Amazon Onsite Solar United Kingdom - Tilbury 1,On-site Solar,Tilbury,United Kingdom,United Kingdom,2020,3.47
+Amazon Onsite Solar United Kingdom - Dunstable 1,On-site Solar,Dunstable,United Kingdom,United Kingdom,2021,1.51
+Amazon Onsite Solar United Kingdom - Coventry 1,On-site Solar,Coventry,United Kingdom,United Kingdom,2020,1.70
+Amazon Onsite Solar United Kingdom - Coaville 1,On-site Solar,Coaville,United Kingdom,United Kingdom,2021,2.19
+Amazon Onsite Solar United Kingdom - Dartford 1,On-site Solar,Dartford,United Kingdom,United Kingdom,2021,3.50
+Amazon Onsite Solar Spain - Alcalá de Henares 1,On-site Solar,Alcalá de Henares,Spain,Spain,2021,0.10
+Amazon Onsite Solar Poland - Chociule 1,On-site Solar,Chociule,Poland,Poland,2021,1.75
+Amazon Onsite Solar India - Karnataka 2,On-site Solar,Karnataka,India,India,2021,0.60
+Amazon Onsite Solar India - Hyderabad 2,On-site Solar,Hyderabad,India,India,2021,0.50
+Amazon Onsite Solar India - Jaipur 1,On-site Solar,Jaipur,India,India,2021,0.70
+Amazon Onsite Solar India - Lucknow 1,On-site Solar,Lucknow,India,India,2021,1.50
+Amazon Onsite Solar India - Chennai 2,On-site Solar,Chennai,India,India,2022,0.50
+Amazon Onsite Solar Japan - Oume 1,On-site Solar,Tokyo Oume,Japan,Japan,2021,2.07
+Amazon Onsite Solar Japan - Sagamihara 1,On-site Solar,Sagamihara,Japan,Japan,2022,2.79
+Amazon Onsite Solar Japan - Ageo 1,On-site Solar,Ageo,Japan,Japan,2022,2.16
+Amazon Onsite Solar Japan - Sayama 1,On-site Solar,Sayama,Japan,Japan,2022,2.64
+Amazon Onsite Solar Australia - Melbourne 1,On-site Solar,Melbourne,Australia,Australia,2021,0.48
+Amazon Onsite Solar UAE - Dubai 1,On-site Solar,Dubai,United Arab Emirates,United Arab Emirates,2021,2.73
+Amazon Onsite Solar Saudi Arabia - Jeddah 1,On-site Solar,Jeddah,Saudi Arabia,Saudi Arabia,2023,1.75
+Amazon Onsite Solar Australia - Sydney 1,On-site Solar,Sydney,Australia,Australia,2018,0.10
+Amazon Onsite Solar India - Chennai 1,On-site Solar,Chennai,India,India,2021,0.70
+Amazon Onsite Solar India - Dehli 1,On-site Solar,Delhi,India,India,2017,1.35
+Amazon Onsite Solar India - Dehli 2,On-site Solar,Delhi,India,India,2018,1.75
+Amazon Onsite Solar Japan - Chiba Minato 1,On-site Solar,Chiba Minato,Japan,Japan,2022,3.60
+Amazon Onsite Solar Japan - Sagamihara 2,On-site Solar,Sagamihara,Japan,Japan,2023,3.00
+Amazon Onsite Solar Japan - Sayama Saitama 1,On-site Solar,Sayama Saitama,Japan,Japan,2023,1.90
+Amazon Onsite Solar India - Delhi 5,On-site Solar,Delhi,India,India,2021,0.02
+Amazon Onsite Solar India - Gurgram 1,On-site Solar,Gurgram,India,India,2022,0.03
+Amazon Onsite Solar India - Bengaluru 1,On-site Solar,Bengaluru,India,India,2022,0.09
+Amazon Onsite Solar India - Bengaluru 2,On-site Solar,Bengaluru,India,India,2022,0.14
+Amazon Onsite Solar India - Hyderabad 3,On-site Solar,Hyderabad,India,India,2022,0.03
+Amazon Onsite Solar India - Hyderabad 4,On-site Solar,Hyderabad,India,India,2022,0.02
+Amazon Onsite Solar Australia - Melbourne 2,On-site Solar,Melbourne,Australia,Australia,2022,1.40
+Amazon Onsite Solar India - Bangalore 3,On-site Solar,Bangalore,India,India,2022,0.04
+Amazon Onsite Solar India - Jaipur 2,On-site Solar,Jaipur,India,India,2022,0.03
+Amazon Onsite Solar India - Gandhinagar 1,On-site Solar,Gandhinagar,India,India,2022,0.04
+Amazon Onsite Solar India - Hyderabad 5,On-site Solar,Hyderabad,India,India,2022,0.02
+Amazon Onsite Solar India - Chennai 3,On-site Solar,Chennai,India,India,2022,0.02
+Amazon Onsite Solar India - Mumbai 1,On-site Solar,Mumbai,India,India,2022,0.03
+Amazon Onsite Solar India - Mumbai 2,On-site Solar,Mumbai,India,India,2022,0.06
+Amazon Onsite Solar India - Chennai 4,On-site Solar,Chennai,India,India,2022,0.02
+Amazon Onsite Solar India - Pune 1,On-site Solar,Pune,India,India,2022,0.04
+Amazon Onsite Solar India - Pune 2,On-site Solar,Pune,India,India,2022,0.04
+Amazon Onsite Solar India - Nashik 1,On-site Solar,Nashik,India,India,2022,0.03
+Amazon Onsite Solar India - Vadodara 1,On-site Solar,Vadodara,India,India,2022,0.04
+Amazon Onsite Solar United Kingdom - Redditch 1,On-site Solar,Redditch,United Kingdom,United Kingdom,2021,0.30
+Amazon Onsite Solar United Kingdom - Swindon 1,On-site Solar,Swindon,United Kingdom,United Kingdom,2021,0.46
+Amazon Onsite Solar France - Morlaas 1,On-site Solar,Morlaas,France,France,2021,0.22
+Amazon Onsite Solar France - Fontaine 1,On-site Solar,Fontaine,France,France,2021,0.49
+Amazon Onsite Solar United Kingdom - Birminghman 1,On-site Solar,Birminghman,United Kingdom,United Kingdom,2021,0.10
+Amazon Onsite Solar Spain - Tarragona 1,On-site Solar,Tarragona,Spain,Spain,2021,0.10
+Amazon Onsite Solar Spain - Mollet del Vallès 1,On-site Solar,Mollet del Vallès,Spain,Spain,2021,0.10
+Amazon Onsite Solar Italy - Parma 1,On-site Solar,Parma,Italy,Italy,2021,0.14
+Amazon Onsite Solar United Kingdom - Ossett 1,On-site Solar,Ossett,United Kingdom,United Kingdom,2021,0.14
+Amazon Onsite Solar Spain - Coslada 1,On-site Solar,Coslada,Spain,Spain,2021,0.10
+Amazon Onsite Solar France - Gauchy 1,On-site Solar,Gauchy,France,France,2021,0.31
+Amazon Onsite Solar Spain - El Puerto de Santamaría 1,On-site Solar,El Puerto de Santamaría,Spain,Spain,2021,0.10
+Amazon Onsite Solar Spain - Valladolid 1,On-site Solar,Valladolid,Spain,Spain,2019,0.08
+Amazon Onsite Solar Italy - Cagliari 1,On-site Solar,Cagliari,Italy,Italy,2021,0.11
+Amazon Onsite Solar Italy - Catania 1,On-site Solar,Catania,Italy,Italy,2021,0.10
+Amazon Onsite Solar Italy - Pisa 1,On-site Solar,Pisa,Italy,Italy,2021,0.18
+Amazon Onsite Solar Italy - Perugia 1,On-site Solar,Perugia,Italy,Italy,2022,0.13
+Amazon Onsite Solar Austria - Wien 1,On-site Solar,Wien,Austria,Austria,2021,0.03
+Amazon Onsite Solar United Kingdom - Liverpool 1,On-site Solar,Liverpool,United Kingdom,United Kingdom,2021,0.10
+Amazon Onsite Solar United Kingdom - Warrington 2,On-site Solar,Warrington,United Kingdom,United Kingdom,2021,0.10
+Amazon Onsite Solar Spain - Zaragoza 1,On-site Solar,Zaragoza,Spain,Spain,2021,0.09
+Amazon Onsite Solar Germany - Neu-Ulm 1,On-site Solar,Neu-Ulm,Germany,Germany,2021,0.08
+Amazon Onsite Solar Spain - Illescas 2,On-site Solar,Illescas,Spain,Spain,2022,5.03
+Amazon Onsite Solar Spain - El Far d'Empordà 1,On-site Solar,El Far d'Empordà,Spain,Spain,2022,3.50
+Amazon Onsite Solar Spain - Picassent 1,On-site Solar,Picassent,Spain,Spain,2022,0.10
+Amazon Onsite Solar United Kingdom - Manchester 1,On-site Solar,Manchester,United Kingdom,United Kingdom,2022,1.51
+Amazon Onsite Solar Spain - Dos Hermanas 1,On-site Solar,Dos Hermanas,Spain,Spain,2022,5.26
+Amazon Onsite Solar Spain - Madrid 2,On-site Solar,Madrid,Spain,Spain,2022,0.65
+Amazon Onsite Solar Germany - Nuremberg 1,On-site Solar,Nuremberg,Germany,Germany,2022,0.24
+Amazon Onsite Solar Germany - Hof 1,On-site Solar,Hof,Germany,Germany,2022,4.00
+Amazon Onsite Solar Italy - Rome 2,On-site Solar,Rome,Italy,Italy,2022,0.02
+Amazon Onsite Solar Germany - Kaiserslautern 1,On-site Solar,Kaiserslautern,Germany,Germany,2022,3.69
+Whole Foods - 3rd & Fairfax,On-site Solar,Los Angeles,California,United States,2018,0.15
+Whole Foods - Arbor Trails,On-site Solar,Austin,Texas,United States,2012,0.02
+Whole Foods - Arlington Center,On-site Solar,Arlington,Massachusetts,United States,2017,0.06
+Whole Foods - Bellingham,On-site Solar,Bellingham,Massachusetts,United States,2009,0.08
+Whole Foods - Bend,On-site Solar,Bend,Oregon,United States,2018,0.08
+Whole Foods - Berkeley,On-site Solar,Berkeley,California,United States,2017,0.05
+Whole Foods - Blossom Hill,On-site Solar,San Jose,California,United States,2018,0.36
+Whole Foods - Brea,On-site Solar,Brea,California,United States,2018,0.11
+Whole Foods - Brentwood,On-site Solar,Los Angeles,California,United States,2018,0.15
+Whole Foods - Bridgeport,On-site Solar,Tigard,Oregon,United States,2018,0.20
+Whole Foods - Brooklyn,On-site Solar,Brooklyn,New York,United States,2013,0.31
+Whole Foods - Cambridge,On-site Solar,Cambridge,Massachusetts,United States,2009,0.08
+Whole Foods - Cherry Hill,On-site Solar,Cherry Hill,New Jersey,United States,2018,0.15
+Whole Foods - Coddingtown,On-site Solar,Santa Rosa,California,United States,2018,0.31
+Whole Foods - Colleyville,On-site Solar,Colleyville,Texas,United States,2018,0.06
+Whole Foods - Danbury,On-site Solar,Danbury,Connecticut,United States,2018,0.08
+Whole Foods - Darien,On-site Solar,Darien,Connecticut,United States,2018,0.15
+Whole Foods - Dedham,On-site Solar,Dedham,Massachusetts,United States,2009,0.08
+Whole Foods - Domain,On-site Solar,Austin,Texas,United States,2014,0.19
+Whole Foods - Dublin,On-site Solar,Dublin,California,United States,2018,0.12
+Whole Foods - Fairview,On-site Solar,Fairview,Texas,United States,2018,0.03
+Whole Foods - Folsom,On-site Solar,Folsom,California,United States,2018,0.11
+Whole Foods - Forest,On-site Solar,Dallas,Texas,United States,2015,0.20
+Whole Foods - Framingham,On-site Solar,Framingham,Massachusetts,United States,2010,0.09
+Whole Foods - Fremont,On-site Solar,Fremont,California,United States,2018,0.22
+Whole Foods - Hingham,On-site Solar,Hingham,Massachusetts,United States,2017,0.12
+Whole Foods - Lakewood,On-site Solar,Dallas,Texas,United States,2018,0.08
+Whole Foods - Los Altos,On-site Solar,Los Altos,California,United States,2018,0.28
+Whole Foods - Milburn Union,On-site Solar,Vauxhall,New Jersey,United States,2019,0.17
+Whole Foods - Milford,On-site Solar,Milford,Connecticut,United States,2018,0.09
+Whole Foods - North Atlantic Distribution Center,On-site Solar,Cheshire,Connecticut,United States,2012,0.15
+Whole Foods - Pacific Coast Highway,On-site Solar,El Segundo,California,United States,2012,0.29
+Whole Foods - Palm Desert,On-site Solar,Palm Desert,California,United States,2018,0.07
+Whole Foods - Park Lane,On-site Solar,Dallas,Texas,United States,2015,0.26
+Whole Foods - Princeton,On-site Solar,Princeton,New Jersey,United States,2018,0.15
+Whole Foods - Reno,On-site Solar,Reno,Nevada,United States,2018,0.56
+Whole Foods - Richmond Distribution Center,On-site Solar,Richmond,California,United States,2018,0.88
+Whole Foods - Ridgewood,On-site Solar,Ridgewood,New Jersey,United States,2006,0.08
+Whole Foods - Roseville,On-site Solar,Roseville,California,United States,2018,0.46
+Whole Foods - San Luis Obispo,On-site Solar,San Luis Obispo,California,United States,2018,0.15
+Whole Foods - Santa Clara,On-site Solar,Santa Clara,California,United States,2018,0.14
+Whole Foods - Somerville,On-site Solar,Somerville,Massachusetts,United States,2018,0.04
+Whole Foods - South Beach,On-site Solar,Miami Beach,Florida,United States,2018,0.03
+Whole Foods - Stevens Creek,On-site Solar,Cupertino,California,United States,2018,0.50
+Whole Foods - Sudbury,On-site Solar,Sudbury,Massachusetts,United States,2018,0.26
+Whole Foods - Swampscott,On-site Solar,Swampscott,Massachusetts,United States,2017,0.05
+Whole Foods - University,On-site Solar,Providence,Rhode Island,United States,2004,0.03
+Whole Foods - Valencia,On-site Solar,Santa Clarita,California,United States,2018,0.11
+Whole Foods - Vernon Distribution Center,On-site Solar,Vernon,California,United States,2018,0.62
+Whole Foods - Wellesley,On-site Solar,Wellesley,Massachusetts,United States,2017,0.06
+Whole Foods - West Hartford,On-site Solar,West Hartford,Connecticut,United States,2009,0.08
+Whole Foods - Woodland Hills,On-site Solar,Woodland Hills,California,United States,2018,0.15
+Whole Foods - Ygnacio Valley Road,On-site Solar,Walnut Creek,California,United States,2018,0.13
+Amazon Onsite Solar Nevada - Las Vegas 1,On-site Solar,Las Vegas,Nevada,United States,2018,0.56
+Amazon Onsite Solar Colorado - Thorton 1,On-site Solar,Aurora,Colorado,United States,2019,6.05
+Amazon Onsite Solar Maryland - Sparrows Point 1,On-site Solar,Sparrows Point,Maryland,United States,2019,1.98
+Amazon Onsite Solar California - Fontana 1,On-site Solar,Fontana,California,United States,2020,4.98
+Amazon Onsite Solar Italy - Milano 1,On-site Solar,Milano,Italy,Italy,2020,0.04
+Amazon Onsite Solar United Kingdom - Leeds 1,On-site Solar,Leeds,United Kingdom,United Kingdom,2021,0.22
+Amazon Onsite Solar India - Coimbatore 1,On-site Solar,Coimbatore,India,India,2021,1.20
+Amazon Onsite Solar India - Bangalore 2,On-site Solar,Bangalore,India,India,2022,1.00
+Amazon Onsite Solar India - Chennai 5,On-site Solar,Chennai,India,India,2022,1.30
+Amazon Onsite Solar California - Rialto 1,On-site Solar,Rialto,California,United States,2019,5.75
+Amazon Onsite Solar California - Eastvale 1,On-site Solar,Eastvale,California,United States,2018,2.20
+Amazon Onsite Solar Colorado - Aurora 2,On-site Solar,Aurora,Colorado,United States,2019,1.50
+Amazon Onsite Solar Italy - Vercelli 1,On-site Solar,Vercelli,Italy,Italy,2017,1.66
+Amazon Onsite Solar United Kingdom - Rugby 1,On-site Solar,Rugby,United Kingdom,United Kingdom,2016,0.03
+Amazon Onsite Solar California - Vacaville 1,On-site Solar,Vacaville,California,United States,2018,0.55
+Amazon Onsite Solar California - San Bernardino 1,On-site Solar,San Bernardino,California,United States,2018,2.86
+Amazon Onsite Solar California - Sacramento 1,On-site Solar,Sacramento,California,United States,2018,3.46
+Amazon Onsite Solar California - San Bernardino 2,On-site Solar,San Bernardino,California,United States,2016,1.12
+Amazon Onsite Solar California - Patterson 1,On-site Solar,Patterson,California,United States,2017,3.36
+Amazon Onsite Solar Maryland - North East 1,On-site Solar,North East,Maryland,United States,2018,4.10
+Amazon Onsite Solar California - Rialto 2,On-site Solar,Rialto,California,United States,2018,3.23
+Amazon Onsite Solar California - Perris 1,On-site Solar,Riverside,California,United States,2018,3.13
+Amazon Onsite Solar California - Redlands 1,On-site Solar,Redlands,California,United States,2019,2.79
+Amazon Onsite Solar California - Eastvale 2,On-site Solar,Eastvale,California,United States,2018,3.53
+Amazon Onsite Solar New Jersey - Edison 1,On-site Solar,Edison,New Jersey,United States,2018,4.05
+Amazon Onsite Solar Nevada - Las Vegas 2,On-site Solar,North Las Vegas,Nevada,United States,2019,1.20
+Amazon Onsite Solar Nevada - Las Vegas 3,On-site Solar,North Las Vegas,Nevada,United States,2018,1.13
+Amazon Onsite Solar California - Fresno 1,On-site Solar,Fresno,California,United States,2019,5.84
+Amazon Onsite Solar New Jersey - Carteret 1,On-site Solar,Carteret,New Jersey,United States,2017,7.51
+Amazon Onsite Solar New Jersey - Avenel 1,On-site Solar,Avenel,New Jersey,United States,2016,2.59
+Amazon Onsite Solar New Jersey - Avenel 2,On-site Solar,Avenel,New Jersey,United States,2017,2.94
+Amazon Onsite Solar Maryland - Baltimore 1,On-site Solar,Baltimore,Maryland,United States,2016,1.61
+Amazon Onsite Solar Maryland - Baltimore 2,On-site Solar,Baltimore,Maryland,United States,2017,2.07
+Amazon Onsite Solar Massachusetts - Fall River 1,On-site Solar,Fall River,Massachusetts,United States,2018,3.04
+Amazon Onsite Solar Connecticut - Windsor 1,On-site Solar,Windsor,Connecticut,United States,2018,2.02
+Amazon Onsite Solar New Jersey - Logan Township 1,On-site Solar,Logan Township,New Jersey,United States,2016,0.86
+Amazon Onsite Solar New Jersey - West Depford 1,On-site Solar,Clarksboro,New Jersey,United States,2019,5.14
+Amazon Onsite Solar New Jersey - Florence 1,On-site Solar,Florence,New Jersey,United States,2017,3.33
+Amazon Onsite Solar New Jersey - Carteret 2,On-site Solar,Carteret,New Jersey,United States,2016,4.84
+Amazon Onsite Solar Nevada - Reno 1,On-site Solar,Reno,Nevada,United States,2017,1.36
+Amazon Onsite Solar Delaware - Middletown 1,On-site Solar,Middletown,Delaware,United States,2017,2.72
+Amazon Onsite Solar California - Redlands 2,On-site Solar,Redlands,California,United States,2017,0.99
+Amazon Onsite Solar California - Newark 1,On-site Solar,Newark,California,United States,2017,1.56
+Amazon Onsite Solar Connecticut - North Haven 1,On-site Solar,North Haven,Connecticut,United States,2019,1.51
+Amazon Onsite Solar California - Tracy 2,On-site Solar,Tracy,California,United States,2018,3.80
+Amazon Onsite Solar Spain - Castellbisbal 1,On-site Solar,Castellbisbal,Spain,Spain,2020,0.06
+Amazon Onsite Solar Spain - San Fernando de Henares 1,On-site Solar,San Fernando de Henares,Spain,Spain,2018,0.10
+Amazon Onsite Solar Spain - Illescas 1,On-site Solar,Illescas,Spain,Spain,2019,0.10
+Amazon Onsite Solar Italy - Fara in Sabina 1,On-site Solar,Fara in Sabina,Italy,Italy,2018,0.96
+Amazon Onsite Solar Italy - Casirate d'Adda 1,On-site Solar,Casirate d'Adda,Italy,Italy,2018,0.79
+Amazon Onsite Solar Italy - Turin 1,On-site Solar,Turin,Italy,Italy,2019,1.20
+Amazon Onsite Solar United Kingdom - Dunfermline 1,On-site Solar,Dunfermline,United Kingdom,United Kingdom,2020,1.60
+Amazon Onsite Solar United Kingdom - Rochester 1,On-site Solar,Rochester,United Kingdom,United Kingdom,2018,0.25
+Amazon Onsite Solar United Kingdom - Warrington 1,On-site Solar,Warrington,United Kingdom,United Kingdom,2020,1.48
+Amazon Onsite Solar United Kingdom - Park Royal 1,On-site Solar,Park royal,United Kingdom,United Kingdom,2017,0.02
+Amazon Onsite Solar India - Thane 1,On-site Solar,Thane,India,India,2019,1.25
+Amazon Onsite Solar India - Hyderabad 1,On-site Solar,Hyderabad,India,India,2018,1.80
+Amazon Onsite Solar India - Kolkata 1,On-site Solar,Kolkata,India,India,2020,1.20
+Amazon Onsite Solar India - Bangalore 1,On-site Solar,Bangalore,India,India,2018,1.20
+Amazon Onsite Solar India - Delhi 4,On-site Solar,Delhi,India,India,2018,0.50
+Amazon Onsite Solar India - Ahmedabad 1,On-site Solar,Ahmedabad,India,India,2020,1.00
+Amazon Onsite Solar India - Karnataka 1,On-site Solar,Karnataka,India,India,2019,0.25
+Amazon Onsite Solar India - Delhi 3,On-site Solar,Delhi,India,India,2018,0.90
+Amazon Onsite Solar California - Stockton 1,On-site Solar,Stockton,California,United States,2019,3.53
+Amazon Onsite Solar New Jersey - Sweedsboro 1,On-site Solar,Sweedsboro,New Jersey,United States,2018,2.16
+Amazon Onsite Solar New York - Towanda 1,On-site Solar,Towanda,New York,United States,2021,0.72
+Amazon Onsite Solar New Jersey - Somerset 1,On-site Solar,Somerset,New Jersey,United States,2021,2.88
+Amazon Onsite Solar New Jersey - Burlington 1,On-site Solar,Burlington,New Jersey,United States,2020,5.49
+Amazon Onsite Solar Pennsylvania - Easton 1,On-site Solar,Easton,Pennsylvania,United States,2020,3.81
+Amazon Onsite Solar Illinois - Romeoville 1,On-site Solar,Romeoville,Illinois,United States,2020,3.00
+Amazon Onsite Solar India - Thane 2,On-site Solar,Thane,India,India,2020,0.75
+Amazon Onsite Solar Italy - Bitonto 1,On-site Solar,Bitonto,Italy,Italy,2022,0.05
+Amazon Onsite Solar Belgium - Antwerp 1,On-site Solar,Antwerp,Belgium,Belgium,2022,0.79
+Amazon Onsite Solar United Kingdom - Wakefield 1,On-site Solar,Wakefield,United Kingdom,United Kingdom,2022,4.00
+Amazon Onsite Solar United Kingdom - Haydock 1,On-site Solar,Haydock,United Kingdom,United Kingdom,2022,2.01
+Amazon Onsite Solar Italy - Novara 1,On-site Solar,Novara,Italy,Italy,2022,1.04
+Amazon Onsite Solar France - Briec 1,On-site Solar,Briec,France,France,2022,0.68
+Amazon Onsite Solar Spain - Picassent 1,On-site Solar,Siero,Spain,Spain,2022,4.00
+Amazon Onsite Solar Spain - Zaragoza 2,On-site Solar,Zaragoza,Spain,Spain,2023,1.54
+Amazon Onsite Solar Italy - Spilamberto 1,On-site Solar,Spilamberto,Italy,Italy,2023,0.70
+Amazon Onsite Solar France - Gauchy 2,On-site Solar,Gauchy,France,France,2022,0.30
+Amazon Onsite Solar United Kingdom - Milton Keynes 1,On-site Solar,Milton Keynes,United Kingdom,United Kingdom,2022,1.67
+Amazon Onsite Solar United Kingdom - Havant 1,On-site Solar,Havant,United Kingdom,United Kingdom,2023,0.10
+Amazon Onsite Solar United Kingdom - Baillieston 1,On-site Solar,Baillieston,United Kingdom,United Kingdom,2023,0.56
+Amazon Onsite Solar Spain - Badajoz 1,On-site Solar,Badajoz,Spain,Spain,2022,2.00
+Amazon Onsite Solar Spain - Onda 1,On-site Solar,Onda,Spain,Spain,2023,2.01
+Amazon Onsite Solar Italy - Trento 1,On-site Solar,Trento,Italy,Italy,2023,0.07
+Amazon Onsite Solar India - Pune 3,On-site Solar,Pune,India,India,2023,0.50
+Amazon Onsite Solar India - Ahmedabad 2,On-site Solar,Ahmedabad,India,India,2023,0.50
+Amazon Onsite Solar India - Pune 4,On-site Solar,Pune,India,India,2023,1.00
+Amazon Onsite Solar India - Gurugram 1,On-site Solar,Gurugram,India,India,2023,0.30
+Amazon Onsite Solar Spain - Murcia 2,On-site Solar,Murcia,Spain,Spain,2023,4.21
+Amazon Onsite Solar Italy - Pioltello 1,On-site Solar,Pioltello,Italy,Italy,2023,0.48
+Amazon Onsite Solar United Kingdom - Sutton-in-Ashfield 1,On-site Solar,Sutton-in-Ashfield,United Kingdom,United Kingdom,2023,3.13
+Amazon Onsite Solar Japan - Nagareyama 1,On-site Solar,Nagareyama,Japan,Japan,2023,2.78
+Amazon Onsite Solar India - Surat,On-site Solar,Surat,India,India,2024,0.94
+Amazon Onsite Solar Japan - Misato 1,On-site Solar,Misato,Japan,Japan,2023,0.40
+Amazon Onsite Solar Japan - Maebashi 1,On-site Solar,Maebashi,Japan,Japan,2023,0.40
+Amazon Onsite Solar Japan - Yokohama 1,On-site Solar,Yokohama,Japan,Japan,2023,0.44
+Amazon Onsite Solar United Kingdom - Doncaster 1,On-site Solar,Doncaster,United Kingdom,United Kingdom,2023,2.18
+Amazon Onsite Solar Japan - Nagareyama 1,On-site Solar,Nagareyama,Japan,Japan,2024,0.20
+Amazon Onsite Solar Spain - Barcelona 1,On-site Solar,Barcelona,Spain,Spain,2023,0.75
+Amazon Onsite Solar United Kingdom - Daventry 1,On-site Solar,Daventry,United Kingdom,United Kingdom,2019,0.60
+Amazon Onsite Solar Spain - Barberà del Vallès 1,On-site Solar,Barberà del Vallès,Spain,Spain,2023,0.89
+Amazon Onsite Solar Japan - Sakado 1,On-site Solar,Sakado,Japan,Japan,2024,2.20
+Amazon Onsite Solar California - Tracy 1,On-site Solar,Tracy,California,United States,2022,5.94
+Amazon Onsite Solar Spain - Mostoles 1,On-site Solar,Mostoles,Spain,Spain,2023,0.65
+Whole Foods - Jamboree (Tustin),On-site Solar,Tustin,California,United States,2020,0.41
+Amazon Onsite Solar Spain - Montcada i Reixac 1,On-site Solar,Montcada i Reixac,Spain,Spain,2023,0.75
+Amazon Onsite Solar Spain - Madrid 1,On-site Solar,Madrid,Spain,Spain,2023,1.18
+Amazon Onsite Solar - Dubai 2,On-site Solar,Dubai,United Arab Emirates,United Arab Emirates,2024,0.57
+Whole Foods - Concord,On-site Solar,Concord,California,United States,2020,0.21
+Whole Foods - West Hollywood,On-site Solar,West Hollywood,California,United States,2020,0.17
+Whole Foods - Huntington Beach,On-site Solar,Huntington Beach,California,United States,2020,0.14
+Whole Foods - Irvine,On-site Solar,Irvine,California,United States,2020,0.25
+Whole Foods - Long Beach,On-site Solar,Long Beach,California,United States,2020,0.14
+Whole Foods - Laguna Niguel,On-site Solar,Laguna Niguel,California,United States,2020,0.25
+Whole Foods - Melrose,On-site Solar,Melrose,Massachusetts,United States,2018,0.15
+Whole Foods - Playa Vista,On-site Solar,Playa Vista,California,United States,2020,0.16
+Whole Foods - Porter Ranch,On-site Solar,Porter Ranch,California,United States,2020,0.18
+Whole Foods - Upland,On-site Solar,Upland,California,United States,2019,0.17
+Amazon Solar Farm Australia - Wandoan,Solar,Australia,Queensland (QLD),Australia,2021,125
+Amazon Solar Farm Australia - Suntop,Solar,Australia,New South Wales (NSW),Australia,2020,105
+Amazon Wind Farm Australia - Hawkesdale,Wind,Australia,Victoria (VIC),Australia,2020,96.6
+Amazon Solar Farm Australia – Gunnedah,Solar,NSW,New South Wales (NSW),Australia,2019,60
+Amazon Solar Farm Brazil - Novo Oriente,Solar,Sao Paulo,Brazil,Brazil,2022,40.6
+Amazon Wind Farm Brazil - Serido,Wind,Rio Grande do Norte,Brazil,Brazil,2022,18
+Amazon Wind Farm Canada - Buffalo Plains,Wind,Canada,Canada,Canada,2027,415
+Amazon Solar Farm Canada - Travers,Solar,Vulcan,Canada,Canada,2021,400
+Amazon Solar Farm Canada - Lathom,Solar,County of Newell,Canada,Canada,2021,60
+Amazon Wind Farm China – Bobai,Wind,China,China,China,2023,150
+Amazon Wind Farm China – Qian'an,Wind,Jilin Province,China,China,2021,100
+Amazon Solar Farm China – Shandong,Solar,Shandong Province,China,China,2020,100
+Amazon Wind Farm China – Daqing,Wind,China,China,China,2022,100
+Amazon Wind Farm Finland - Pahkakoski,Wind,Finland,Finland,Finland,2023,150.48
+Amazon Wind Farm Finland - Kalajoki,Wind,Finland,Finland,Finland,2021,63.84
+Amazon Wind Farm Finland - Puskakorpi,Wind,Finland,Finland,Finland,2021,52.8
+Amazon Wind Farm Finland - Kinnula,Wind,Finland,Finland,Finland,2021,36
+Amazon Wind Farm Finland - Kyyjärvi,Wind,Finland,Finland,Finland,2021,36
+Amazon Wind Farm Finland - Illevaara,Wind,Finland,Finland,Finland,2023,30
+Amazon Wind Farm Finland - Koiramäki,Wind,Finland,Finland,Finland,2022,23.6
+Amazon Wind Farm Finland - Mustalamminmäki,Wind,Finland,Finland,Finland,2022,23.6
+Amazon Wind Farm Finland - Saarijärvi,Wind,Finland,Finland,Finland,2021,22.8
+Amazon Solar Farm France - Saint Frichoux,Solar,France,France,France,2021,23.4
+Amazon Solar Farm France – Prechac,Solar,France,France,France,2020,15
+Amazon Wind Farm Germany - BR3,Offshore Wind,Germany,Germany,Germany,2020,350
+Amazon Wind Farm Germany - Baltic Eagle,Offshore Wind,Germany,Germany,Germany,2022,189.64
+Amazon Wind Farm Europe,Offshore Wind,Germany,Germany,Germany,2022,129.9
+Amazon Solar Farm Greece - Macrichoria,Solar,Greece,Greece,Greece,2023,24
+Amazon Solar Farm India - Rajasthan Jaisalmer,Solar,India,India,India,2022,210
+Amazon Solar+Wind Farm India - Gadag,Solar + Wind,India,India,India,2022,202.6
+Amazon Solar+Wind Farm India - Gadag Koppal,Solar + Wind,India,India,India,2022,150
+Amazon Solar+Wind Farm India - Rajgarh,Solar + Wind,India,India,India,2022,150
+Amazon Solar Farm India - Rajasthan Bikaner,Solar,India,India,India,2022,110
+Amazon Solar Farm India - Rajasthan Bhadla,Solar,India,India,India,2022,100
+Amazon Solar Farm Indonesia ,Solar,Indonesia,Indonesia,Indonesia,2022,210
+Amazon Wind Farm Ireland - Donegal,Wind,Donegal,Ireland,Ireland,2019,91.2
+Amazon Wind Farm Ireland - Arderro Phase 1,Wind,Ireland,Ireland,Ireland,2020,91
+Amazon Wind Farm Ireland - Cork,Wind,Cork,Ireland,Ireland,2019,23.2
+Amazon Solar Farm Italy – Mazara,Solar,Italy,Italy,Italy,2020,40
+Amazon Solar Farm Italy - Castelvetrano,Solar,Italy,Italy,Italy,2021,39.6
+Amazon Solar Farm Italy – Paterno,Solar,Italy,Italy,Italy,2020,26.4
+Amazon Solar Farm Honshu I,Solar,Japan,Japan,Japan,2022,16
+Project Mitsubishi,Solar,Japan,Japan,Japan,2021,22
+Amazon Solar Farm Japan II,Solar,Japan,Japan,Japan,2023,15
+Amazon Wind Farm Netherlands - HKN,Offshore Wind,Netherlands,Netherlands,Netherlands,2020,130
+Amazon WInd Farm New Zealand – Turitea South,Wind,New Zealand,New Zealand,New Zealand,2023,51
+Amazon Solar Farm Poland – Milkowice,Solar,Wroclaw - Legnica,Poland,Poland,2022,87
+Amazon Solar Farm Singapore - JTC,Solar,Singapore,Singapore,Singapore,2021,62
+Amazon Solar Farm Singapore II,Solar,Singapore,Singapore,Singapore,2022,14
+Amazon Solar Farm South Africa - Adams,Solar,South Africa,South Africa,South Africa,2020,10
+Amazon Solar Farm Spain - Carmonita - Aurea,Solar,Extremadura,Spain,Spain,2021,136.8
+Amazon Solar Farm- La Pared 3,Solar,Andalusia,Spain,Spain,2023,34.72125
+Amazon Solar Farm Spain - Escuderos 2,Solar,Castilla–La Mancha,Spain,Spain,2021,40
+Amazon Solar Farm Spain - Cabrera,Solar,Andalusia,Spain,Spain,2026,148.73
+Amazon Solar Farm Spain - Arco I,Solar,Andalusia,Spain,Spain,2021,32
+Amazon Solar Farm Spain I,Solar,Extremadura,Spain,Spain,2021,37.1
+Amazon Solar Farm Spain - Alamo I,Solar,Castilla–La Mancha,Spain,Spain,2021,33.45
+Amazon Solar Farm Spain - Carmonita North,Solar,Extremadura,Spain,Spain,2021,40
+Amazon Solar Farm Spain - Carmonita South - Aquila,Solar,Extremadura,Spain,Spain,2022,40
+Amazon Solar Farm Spain - Armada,Solar,Castilla–La Mancha,Spain,Spain,2021,74
+Amazon Solar Farm Spain - Escatron I,Solar,Aragon,Spain,Spain,2023,23.23
+Amazon Wind Farm Spain – I,Wind,Aragon,Spain,Spain,2021,33.75
+Amazon Solar Farm Spain – Alcores I,Solar,Andalusia,Spain,Spain,2021,34.6
+Amazon Solar Farm Spain - Hijar I,Solar,Aragon,Spain,Spain,2019,49.49
+Amazon Solar Farm Spain - Antilia,Solar,Castilla La Mancha,Spain,Spain,2022,40
+Amazon Solar Farm Spain - Villanueva,Solar,Castilla La Mancha,Spain,Spain,2021,40
+Amazon Wind Farm - San Bartolome,Wind,Aragon,Spain,Spain,2021,38.6
+Amazon Solar Farm Virginia - Sappony,Solar,Castilla–La Mancha,Spain,Spain,2023,38.24
+Amazon Solar Farm Spain - Brazatortas,Solar,Castilla–La Mancha,Spain,Spain,2023,37.75
+Amazon Wind Farm Spain - San Isidro I,Wind,Aragon,Spain,Spain,2022,36.96
+Amazon Solar Farm Spain - Energias Barranquilla,Solar,Castilla–La Mancha,Spain,Spain,2023,32
+Amazon Solar Farm Virginia - Scott,Solar,Castilla–La Mancha,Spain,Spain,2023,32
+Amazon Solar Farm Spain - FV Almendro,Solar,Castile and León,Spain,Spain,2022,31.96
+Amazon Solar Farm Spain - FV Retama,Solar,Castile and León,Spain,Spain,2022,31.96
+Amazon Solar Farm Spain - Canes 1,Solar,Castilla-La Mancha,Spain,Spain,2023,31.68
+Amazon Solar Farm Spain – I,Solar,Castilla–La Mancha,Spain,Spain,2022,28.6
+Amazon Solar Farm Spain - Chambo,Solar,Valencia,Spain,Spain,2023,26.88
+Amazon Solar Farm Spain - Eiden,Solar,Valencia,Spain,Spain,2023,26.88
+Amazon Solar Farm Spain - El Aguila,Solar,Valencia,Spain,Spain,2023,26.88
+Amazon Solar Farm Spain - Mambar,Solar,Valencia,Spain,Spain,2023,26.88
+Amazon Wind Farm Spain - Salguero,Wind,Castile and León,Spain,Spain,2023,24.8
+Amazon Solar Farm Spain - FV Baluarte Solar,Solar,Castile and León,Spain,Spain,2023,24.717
+Amazon Solar Farm Spain - FV Bombarda Solar,Solar,Castile and León,Spain,Spain,2023,24.717
+Amazon Solar Farm Spain - Arroyadas,Solar,Castile and León,Spain,Spain,2022,20.09
+Amazon Solar Farm Spain - Zaratan,Solar,"Valladolid, Castile and León",Spain,Spain,2022,20.09
+Amazon Wind Farm Spain - Monte Becerril,Wind,Castile and León,Spain,Spain,2023,17.3
+Amazon Wind Farm Sweden - Hastkullen,Wind,Sweden,Sweden,Sweden,2020,275
+Amazon Wind Farm Sweden - Kallamossen,Wind,Sweden,Sweden,Sweden,2020,258
+Amazon Wind Farm Sweden - Nysater,Wind,Sweden,Sweden,Sweden,2019,122
+Amazon Wind Farm Sweden - Bäckhammar,Wind,Sweden,Sweden,Sweden,2019,91
+Amazon Wind Farm Sweden - Lyckas,Wind,Sweden,Sweden,Sweden,2023,40.5
+Amazon Wind Farm UK - Moray West,Offshore Wind,United Kingdom,United Kingdom,United Kingdom,2021,350
+Amazon Wind Farm UK - Kennoxhead II,Wind,United Kingdom,United Kingdom,United Kingdom,2020,68.7
+Amazon Wind Farm UK - Kennoxhead I,Wind,United Kingdom,United Kingdom,United Kingdom,2020,60
+Amazon Wind Farm Scotland - Bein an Tuirc 3,Wind,United Kingdom,United Kingdom,United Kingdom,2019,50
+Amazon Solar Farm UK - Warley,Solar,United Kingdom,United Kingdom,United Kingdom,2023,47
+Amazon Wind Farm Northern Ireland - Ballykeel,Wind,United Kingdom,United Kingdom,United Kingdom,2021,16.1
+Amazon Texas Great Prairie Wind Farm,Wind,Hansford County,Texas,United States,2021,355.32
+Amazon Solar Farm Virginia - Foxglove,Solar,Madison County,Ohio,United States,2021,150
+Amazon Solar Farm Texas - Frye,Solar,Swisher,Texas,United States,2021,500
+Amazon Solar Farm Texas - Outpost,Solar,Webb,Texas,United States,2023,500
+Amazon Wind Farm Kansas - Irish Creek,Wind,Marshall,Kansas,United States,2020,300.6
+Amazon Solar Farm Arizona - Atlas,Solar + Storage,La Paz,Arizona,United States,2021,300
+Amazon Solar Farm Ohio - Birch,Solar,Allen and Auglaize Counties,Ohio,United States,2020,300
+Amazon Solar Farms Texas - Danish Fields,Solar,Wharton and Matagorda Counties,Texas,United States,2021,300
+Amazon Solar Farm Illinois - High Point,Solar,Highland County,Ohio,United States,2020,300
+Amazon Solar + Storage Farm Arizona - McFarland,Solar + Storage,Yuma,Arizona,United States,2021,300
+Amazon Solar Farm Virginia - Gretna,Wind,Caddo County,Oklahoma,United States,2021,201.45
+Amazon Solar Farm Ohio - Union,Solar,Union County,Ohio,United States,2020,292.5
+Amazon Solar Farm Ohio - Yellowbud,Solar,Ross County,Ohio,United States,2020,274
+Amazon Wind Farm Nebraska - Little Blue,Wind,Webster and Franklin,Nebraska,United States,2020,250
+Amazon Solar Farm Texas - Porter,Solar,"Denton and Wise, TX",Texas,United States,2022,245
+Amazon Wind Farm Kansas - Iron Star,Wind,Ford County,Kansas,United States,2020,239.14
+Amazon Wind Farm Texas,Wind,Scurry County,Texas,United States,2016,228
+Amazon Wind Farm North Carolina - Desert Wind,Wind,Perquimans and Pasquotank Counties,North Carolina,United States,2015,208
+Amazon Solar Farm Indiana - Crossroads,Solar,Fountain,Indiana,United States,2022,200
+Amazon Wind Farm Texas - Montgomery Ranch,Wind,Foard and Knox County,Texas,United States,2022,200
+Amazon Solar Farm Texas - Stoneridge,Solar,Milam,Texas,United States,2022,200
+Amazon Solar Farm Virginia - Axton,Solar,Pittsylvania County,Virginia,United States,2021,200
+Amazon Solar Farm Texas - Garcitas Creek,Solar,Jackson County,Texas,United States,2022,200
+Amazon Solar Farm Ohio - Hillcrest,Solar,Brown County,Ohio,United States,2019,200
+Amazon Solar Farm Louisiana - Oak Ridge,Solar,Morehouse,Louisiana,United States,2022,200
+Amazon Solar Farm Texas - Fort Bend,Solar,Fort Bend County,Texas,United States,2022,192
+Amazon Wind Farm Mississippi - Delta Wind,Wind,Tunica County,Mississippi,United States,2022,184
+Amazon Solar Farm Ohio - Madison Fields,Solar,Madison,Ohio,United States,2021,180
+Amazon Solar Farm Texas - Desert Willow,Solar,Swisher,Texas,United States,2023,175
+Amazon Solar Farm Arkansas - Crooked Lake,Solar,Mississippi,Arkansas,United States,2022,175
+Amazon Solar Farm Mississippi – Potlatch,Solar,Scott,Mississippi,United States,2020,175
+Amazon Solar Farm Texas - Nazareth,Solar,Swisher and Castro,Texas,United States,2022,170
+Amazon Solar Farm Kentucky - Fleming,Solar,Fleming,Kentucky,United States,2020,169
+Amazon Solar Farm Illinois - Chariot,Solar,Saline,Illinois,United States,2021,160
+Amazon Solar Farm Virginia - Fort Powhatan,Solar,Prince George,Virginia,United States,2019,150
+Amazon Wind Farm Indiana - Fowler Ridge,Wind,Benton County,Indiana,United States,2014,150
+Amazon Solar + Storage Farm California - Baldy Mesa,Solar + Storage,San Bernardino,California,United States,2021,150
+Amazon Solar Farm Indiana - Randolph II,Solar,Randolph County,Indiana,United States,2022,150
+Amazon Solar Farm Ohio - Willowbrook,Solar,Highland and Brown,Ohio,United States,2021,150
+Amazon Solar Fam Missouri - Blue Bird,Solar,Warren County,Missouri,United States,2022,139
+Amazon Solar Farm Arkansas - Quartz,Solar,Cross County,Arkansas,United States,2020,135
+Amazon Solar Farm Maryland - CPV Backbone,Solar,Garrett County,Maryland,United States,2023,130.5
+Amazon Solar Virginia - Carvers Creek,Solar,Gloucster,Virginia,United States,2020,130
+Amazon Solar Farm Texas - Rio Lago,Solar,"Bandera County, TX",Texas,United States,2023,123
+Amazon Solar Farm Arkansas - Big Cypress,Solar,Crittenden,Arkansas,United States,2021,120
+Amazon Wind Farm Oklahoma - Glass Sands,Wind,Murray,Oklahoma,United States,2020,118.3
+Amazon Solar Farm Ohio - Sycamore,Solar,Crawford,Ohio,United States,2022,117
+Amazon Solar Farm Ohio - Union Ridge,Solar,Licking County,Ohio,United States,2021,107.7
+Amazon Solar Farm Indiana – Randolph,Solar,Randolph,Indiana,United States,2020,100.39
+Amazon Solar Farm Oklahoma - Kiowa,Solar,Kiowa,Oklahoma,United States,2022,100
+Amazon Solar Farm Ohio - Dodson Creek,Solar,Highland County,Ohio,United States,2020,117
+Amazon Solar Farm Arkansas - Huttig,Solar,Union,Arkansas,United States,2021,100
+Amazon Wind Farm Illinois - Midland,Wind,Henry County,Illinois,United States,2020,100
+Amazon Wind Farm Oklahoma – Ponderosa II,Wind,Beaver,Oklahoma,United States,2022,100
+Amazon Solar Farm Mississippi - Ragsdale,Solar,Madison County,Mississippi,United States,2022,100
+Amazon Solar Farm Ohio - Ross County,Solar,Ross County,Ohio,United States,2020,120
+Amazon Solar Farm Virginia - Southampton,Solar,Southampton,Virginia,United States,2016,100
+Amazon Wind Farm Ohio - Timber Road,Wind,Paulding County,Ohio,United States,2015,100
+Amazon Solar Farm California - Vega,Solar + Storage,Imperial Valley,California,United States,2020,100
+Amazon Solar Farm Arkansas - Prairie Mist,Solar,Ashley County,Arkansas,United States,2023,99.9
+Amazon Solar Farm Ohio - Clearview Solar,Solar,Champain County,Ohio,United States,2023,99
+Amazon Solar Farm Mississippi - Covington,Solar,Covington,Mississippi,United States,2021,96
+Amazon Solar Farm Ohio - Highland,Solar,Stephenson,Illinois,United States,2020,90
+Amazon Solar Farm Kentucky - Madison,Solar,Madison,Kentucky,United States,2021,90
+Amazon Solar Farm Ohio - Mark Center,Solar,Defiance,Ohio,United States,2021,90
+Amazon Solar Farm Pennsylvania - Ridgeway,Solar,McKean,Pennsylvania,United States,2020,90
+Amazon Solar Farm Michigan - Murch,Solar,Van Buren,Michigan,United States,2022,85
+Amazon Solar Farm Virginia - Maplewood,Solar,Pittsylvania County,Virginia,United States,2020,82
+Amazon Solar Farm Georgia - Alligator Creek,Solar,Wheeler,Georgia,United States,2022,80
+Amazon Solar Farm Virginia - Bartonsville,Solar,Frederick County,Virginia,United States,2022,80
+Amazon Solar Farm Georgia - Blackwater,Solar,Ware County,Georgia,United States,2021,80
+Amazon Solar Farm Georgia - Bulldog,Solar,Warren County,Georgia,United States,2026,80
+Amazon Solar Farm Georgia 2,Solar,Macon County,Georgia,United States,2022,80
+Amazon Solar Farm Virginia - Eastern Shore,Solar,Accomack County,Virginia,United States,2015,80
+Amazon Solar Farm Ohio - Nestlewood,Solar,Brown and Clermont County,Ohio,United States,2020,80
+Amazon Solar Farm Mississippi - Cane Creek,Solar,Clarke,Mississippi,United States,2025,78.5
+Amazon Solar Farm Mississippi - Moonshot,Solar,Hancock,Mississippi,United States,2021,78.5
+Amazon Solar Farm Virginia - Alton Post,Solar,Halifax,Virginia,United States,2021,75
+Amazon Solar Farm Delaware - Cedar Creek,Solar,Kent,Delaware,United States,2021,74.3
+Amazon Solar Farm Ohio - Fox Squirrel Solar 3,Solar,Halifax,Virginia,United States,2023,72.9
+Amazon Solar Farm Georgia 1,Solar,Burke County,Georgia,United States,2021,70
+Amazon Solar Farm Virginia - Powells Creek,Solar,"Halifax County, VA",Virginia,United States,2020,70
+Amazon Solar Farm Illinois - Staley,Solar,Kankakee County,Illinois,United States,2020,70
+Amazon Solar Farm Virginia - Crystal Hill,Solar,Halifax,Virginia,United States,2021,64.7
+Amazon Solar Farm North Carolina - Hawtree Creek,Solar,Warren County,North Carolina,United States,2019,65
+Amazon Solar Farm Ohio - Fox Squirrel Solar 2,Solar,Frederick County,Virginia,United States,2021,72
+Amazon Wind Farm Illinois - Crescent Ridge,Wind,Bureau,Illinois,United States,2021,54.5
+Amazon Solar Farm Virginia - Sunnybrook,Solar,Halifax County,Virginia,United States,2020,51
+Amazon Solar Farm Texas - Texas One,Solar,"Milam County, TX",Texas,United States,2023,50
+Amazon Solar Farm Virginia - Bartonsville 2,Solar,Frederick County,Virginia,United States,2022,50
+Amazon Solar Farm Kentucky - Garrard,Solar,Garrard,Kentucky,United States,2020,50
+Amazon Solar Farm Delaware - Solidago,Solar,Newcastle County,Delaware,United States,2020,50
+Amazon Solar + Storage Farm California - Silver Peak,Solar + Storage,San Bernadino,California,United States,2022,50
+Amazon Solar Farm Ohio - Blue Harvest,Solar,Putnam,Ohio,United States,2020,49.9
+Amazon Solar Farm Ohio - Timber Road,Solar,Paulding,Ohio,United States,2020,49.9
+Amazon Solar Farm Ohio - Fayette,Solar,Fayette,Ohio,United States,2022,47.5
+Amazon Wind Farm Germany- Windanker,Wind,Kern,California,United States,2018,46.5
+Amazon Solar Farm Ohio - Great Bear,Solar,Clermont County,Ohio,United States,2020,46
+Amazon Solar Farm Maryland - Morgnec,Solar,Kent,Maryland,United States,2023,45
+Amazon Wind Farm Oklahoma - White Rock,Solar,Pittsylvania,Virginia,United States,2019,45
+Amazon Solar Farm Georgia - Bird Dog,Solar,Burke County,Georgia,United States,2022,40
+Amazon Solar Farm Texas - Jungmann,Solar,"Milam County, TX",Texas,United States,2023,40
+Amazon Solar Farm Georgia - Sonny,Solar,Elbert,Georgia,United States,2021,40
+Amazon Solar Farm Georgia - Wolfskin,Solar,Oglethorpe County,Georgia,United States,2022,38
+Amazon Solar Farm Indiana - Maple,Solar,Huntington,Indiana,United States,2021,35
+Amazon Solar Farm Pennsylvania - Potter,Solar,Potter,Pennsylvania,United States,2020,30
+Amazon Solar Farm Spain - Valdezorita,Solar,"New Kent, Buckingham, Sussex, Powhatan",Virginia,United States,2016,20
+Amazon Solar Farm Virginia - New Kent,Solar,"New Kent, Buckingham, Sussex, Powhatan",Virginia,United States,2016,20
+Amazon Solar Farm Virginia - Buckingham,Solar,"New Kent, Buckingham, Sussex, Powhatan",Virginia,United States,2016,20
+Amazon Solar Farm Spain - Valle Del Sol Energias Renovables,Solar,"New Kent, Buckingham, Sussex, Powhatan",Virginia,United States,2016,19.8
+Amazon Solar Farm Texas - BT Signal Ranch,Solar,Hunt County,Texas,United States,2026,51.84
+Amazon Solar Farm South Africa - Springbok,Solar,Westmoreland,Pennsylvania,United States,2023,13.8
+Amazon Wind Farm - Leaning Juniper 2A,Wind,Gilliam,Oregon,United States,2024,90.3
+Amazon Wind Farm - Osagrove Flats,Wind,LaSalle,Illinois,United States,2024,150
+Amazon Solar + Storage- Bellefield,Solar + Storage,Kern County (Please do no put on interactive map),California,United States,2021,500
+Amazon Solar + Storage - Bellefield 2,Solar + Storage,Kern,California,United States,2024,500
+Amazon Solar Farm Japan III,Solar,"Greater Tokyo, Kansai, Chubu, Chugoku, and Tohoku",Japan,Japan,2023,16.335
+Amazon Solar Farm Spain - Tordesillas,Solar,Castile and León,Spain,Spain,2024,201.6
+Amazon Solar Farm Spain - Guadajoz,Solar,Andalucia,Spain,Spain,2023,32
+Amazon Solar Farm Pennsylvania – Spring Lane,Solar,South Africa,South Africa,South Africa,2023,18
+Amazon Solar Plant Spain - Don Rodrigo,Solar,Andalucia,Spain,Spain,2023,34.11
+Amazon Solar Farm Spain – Navarredonda,Solar,Madrid,Spain,Spain,2024,38.27
+Amazon Solar Farm Italy - Terzo D'Aquileia,Solar,Italy,Italy,Italy,2023,24.8
+Amazon Solar Farm Italy - La Manganizza,Solar,Italy,Italy,Italy,2023,6.4
+Amazon Solar Farm Spain – Cierzo IV,Solar,Navarre,Spain,Spain,2024,37.1
+Amazon Solar Farm Spain – Cierzo II,Solar,Navarre,Spain,Spain,2024,36.9
+Amazon Solar Farm Spain – Morata de Tajuna,Solar,Madrid,Spain,Spain,2023,36.4
+Amazon Solar Farm Spain - Las Coronadas,Solar,Andalucia,Spain,Spain,2023,32
+Amazon Wind Farm UK- East Anglia 3,Offshore Wind,United Kingdom,United Kingdom,United Kingdom,2024,159
+Amazon Wind Farm Spain - Rueda Sur Wind 1,Wind,Aragon,Spain,Spain,2023,36
+Amazon Wind Farm Poland – Jastrowie,Wind,Poland,Poland,Poland,2023,30.3
+Amazon Wind Farm Poland – Okonek,Wind,Poland,Poland,Poland,2023,22.8
+Amazon Wind Farm Spain - Rueda Sur Wind 2,Wind,Aragon,Spain,Spain,2023,36
+Amazon Wind Farm Spain - Rueda Sur Wind 3,Wind,Aragon,Spain,Spain,2023,36
+Amazon Solar Farm Spain – Ubierna,Wind,Castile and León,Spain,Spain,2024,36.45
+Amazon Wind Farm Ireland - Derrinlough,Wind,Ireland,Ireland,Ireland,2024,105
+Amazon Solar Farm Japan - Kadamatsu,Solar,Japan,Japan,Japan,2024,9.5
