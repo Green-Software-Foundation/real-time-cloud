@@ -1,30 +1,20 @@
 # Cloud Region Metadata Specification
 
-## Foreword
-
-ISO (the International Organization for Standardization) is a worldwide federation of national standards bodies (ISO member bodies). The work of preparing International Standards is normally carried out through ISO technical committees. Each member body interested in a subject for which a technical committee has been established has the right to be represented on that committee. International organizations, governmental and non-governmental, in liaison with ISO, also take part in the work.
-
-Draft International Standards adopted by the technical committees are circulated to the member bodies for voting. Publication as an International Standard requires approval by at least 75% of the member bodies casting a vote.
-
-Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. ISO shall not be held responsible for identifying any or all such patent rights.
-
-ISO/IEC XXXXX was prepared by Technical Committee ISO/IEC JTC 1, Information technology, Subcommittee SC XX, Cloud computing.
-
 ## Introduction
 
-Cloud providers are recognized as significant global procurers of renewable energy. This International Standard addresses the need for accurate and timely carbon information provision to customers utilizing cloud services, aiming to align with regulatory requirements across various jurisdictions.
+Cloud providers are recognized as significant global procurers of renewable energy. This Standard addresses the need for accurate and timely carbon information provision to customers utilizing cloud services, aiming to align with regulatory requirements across various jurisdictions.
 
 Historically, cloud providers have supplied carbon information to their customers every month, with a delay of several months, and provided public information on an annual basis with six to eighteen months lag. Consequently, customers have been compelled to estimate the real-time carbon footprint of their cloud workloads using incomplete public information.
 
 Cloud providers will be required to supply carbon metrics to meet regulatory standards in the UK, Europe, California, and emerging elsewhere. So far, cloud providers have developed custom silicon and system designs to optimize low power consumption, mitigated the carbon footprint within supply chains, and invested in renewable energy production. They have published generic estimates of efficiency gains achieved with renewable energy purchases compared to data centre alternatives. Still, the data needed for a customer to make the same comparison for a specific workload, and to make comparisons across cloud regions, is lacking.
 
-This International Standard outlines the necessity for real-time carbon reporting to address these concerns and proposes a standardized approach to achieve accurate and timely carbon footprint estimates for cloud workloads. Additionally, it highlights the significance of metadata disclosure by cloud providers for the regions they operate in and the ongoing efforts to consolidate and distribute this information as a singular data source.
+This Standard outlines the necessity for real-time carbon reporting to address these concerns and proposes a standardized approach to achieve accurate and timely carbon footprint estimates for cloud workloads. Additionally, it highlights the significance of metadata disclosure by cloud providers for the regions they operate in and the ongoing efforts to consolidate and distribute this information as a singular data source.
 
 ## 1 Scope
 
-This International Standard aims to enhance the accuracy of the carbon emissions model for cloud-based workloads. It establishes a standard mechanism for cloud providers to share detailed and useful information using the same data schema. The scope includes enabling real-time updates to provide minute-level granularity for energy usage and hourly or daily granularity for carbon intensity.
+This Standard aims to enhance the accuracy of the carbon emissions model for cloud-based workloads. It establishes a standard mechanism for cloud providers to share detailed and useful information using the same data schema. The scope includes enabling real-time updates to provide minute-level granularity for energy usage and hourly or daily granularity for carbon intensity.
 
-This International Standard covers:
+This Standard covers:
 
 a) Cloud Region Metadata:
    - Definition of standard parameters for cloud region metadata, including cloud provider and region specifications.
@@ -214,7 +204,7 @@ c) Document any changes to the metadata format or calculation methodologies in s
 
 ## 6 Conformance
 
-A cloud provider conforms to this International Standard when they:
+A cloud provider conforms to this Standard when they:
 
 a) Publish cloud region metadata containing all mandatory fields defined in section 4.3.
 
