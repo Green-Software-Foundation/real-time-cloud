@@ -50,55 +50,7 @@ There are no normative references in this document.
 
 ## 3 Terms and definitions
 
-For the purposes of this document, the following terms and definitions apply.
-
-ISO and IEC maintain terminological databases for use in standardization at the following addresses:
-- ISO Online browsing platform: available at https://www.iso.org/obp
-- IEC Electropedia: available at http://www.electropedia.org/
-
-### 3.1
-**carbon-free energy**  
-energy generated from sources that do not emit carbon dioxide during operation, including renewable energy sources and nuclear energy
-
-### 3.2
-**cloud provider**  
-entity that makes cloud services available to cloud service customers
-
-### 3.3
-**cloud region**  
-geographical area where a cloud provider's data centers are located and provide cloud services
-
-### 3.4
-**location-based method**  
-method for quantifying GHG emissions based on average energy generation emission factors for defined geographic locations, including local, subnational, or national boundaries
-
-### 3.5
-**market-based method**  
-method for quantifying GHG emissions based on GHG emissions emitted by the generators from which the reporting entity contractually purchases electricity bundled with instruments, or unbundled instruments on their own
-
-### 3.6
-**marginal carbon intensity**  
-measurement of the carbon emissions associated with changes in electricity demand, representing the emissions from the specific power source that responds to fluctuations in demand
-
-### 3.7
-**power purchase agreement**  
-PPA  
-long-term contract between an electricity producer and a buyer where the buyer agrees to purchase energy at a predetermined price for a specified time period
-
-### 3.8
-**power usage effectiveness**  
-PUE  
-ratio of the total amount of energy used by a data center facility to the energy delivered to computing equipment
-
-### 3.9
-**renewable energy credit**  
-REC  
-market-based instrument that represents the property rights to the environmental, social, and other non-power attributes of renewable electricity generation
-
-### 3.10
-**water usage effectiveness**  
-WUE  
-metric that assesses the water efficiency of a data center, measured as liters of water used per kilowatt-hour of energy consumed
+[See Glossary](https://github.com/Green-Software-Foundation/real-time-cloud/blob/glossary/glossary.md)
 
 ## 4 Cloud Region Metadata Description
 
