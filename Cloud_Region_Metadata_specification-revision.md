@@ -10,7 +10,7 @@ Cloud providers will be required to supply carbon metrics to meet regulatory sta
 
 This Standard outlines the necessity for real-time carbon reporting to address these concerns and proposes a standardized approach to achieve accurate and timely carbon footprint estimates for cloud workloads. Additionally, it highlights the significance of metadata disclosure by cloud providers for the regions they operate in and the ongoing efforts to consolidate and distribute this information as a singular data source.
 
-## 1 Scope
+## Scope
 
 This Standard aims to enhance the accuracy of the carbon emissions model for cloud-based workloads. It establishes a standard mechanism for cloud providers to share detailed and useful information using the same data schema. The scope includes enabling real-time updates to provide minute-level granularity for energy usage and hourly or daily granularity for carbon intensity.
 
@@ -44,12 +44,12 @@ f) Net Zero Reporting and Goals:
 g) Standard Definitions and Alignment:
    - Establishment of guidelines for standard definitions and alignment of cloud region metadata, carbon models, and data reporting methodologies among cloud providers.
 
-## 2 References
+## References
 
-### 2.1 Normative References
+### Normative References
 There are no normative references in this document.
 
-### 2.2 Informative References
+### Informative References
 - [Amazon Renewable Energy Methodology](https://sustainability.aboutamazon.com/renewable-energy-methodology.pdf)
 
 - [Amazon Carbon Methodology](https://sustainability.aboutamazon.com/carbon-methodology.pdf)
@@ -60,13 +60,13 @@ There are no normative references in this document.
 
 - [Google Sustainability Report for 2023](https://www.gstatic.com/gumdrop/sustainability/google-2023-environmental-report.pdf#page=90):
 
-## 3 Terms and definitions
+## Terms and definitions
 
 - [See Glossary](https://github.com/Green-Software-Foundation/real-time-cloud/blob/glossary/glossary.md)
 
-## 4 Cloud Region Metadata Description
+## Cloud Region Metadata Description
 
-### 4.1 General
+### General
 
 A user of the cloud region metadata can specify which cloud provider and region they use to run a workload and get all the relevant metadata about that region. Cloud region metadata is published annually and lags by 6-18 months, so the year must be specified, or the latest data should be used. The annual average location-based marginal grid-carbon-intensity value required for SCI-o is provided when available. Because of differences between cloud providers, data providers and reporting methodologies, there are several possible carbon models, and data may not be available (NA). Attempting to consume a not-available or blank metric shall cause any calculations to fail.
 
@@ -82,7 +82,7 @@ Cloud providers have Net Zero goals, calculated using the market method. This me
 
 The European Union Energy Efficiency Directive (EED) for data centres (DCs) comes into force in 2024 for all DCs over 500 kW, which will include all cloud provider DCs sited in the EU. It mandates full disclosure to a confidential central EU registry of very detailed information on the specifications of DCs and how they are operated, and public disclosure of data subject to trade secrets and confidentiality. Since the data must be produced, key elements of the data have been added to the cloud region carbon metadata table to encourage standardized disclosure.
 
-### 4.2 Metric Naming Scheme
+### Metric Naming Scheme
 
 The following naming conventions shall be used for metrics in this standard:
 
@@ -98,7 +98,7 @@ e) **Average vs. Marginal** - The average carbon intensity gives the total emiss
 
 f) **Not Available** - Accessing blank or unavailable data shall cause an exception and interrupt an Impact Framework calculation.
 
-### 4.3 Cloud Region Metadata Table
+### Cloud Region Metadata Table
 
 The following table defines the standard metadata fields for cloud regions:
 
@@ -128,9 +128,9 @@ The following table defines the standard metadata fields for cloud regions:
 | renewable-energy-consumption-ppa | kWh | 75000000 | EED total renewable energy from power purchase agreements |
 | renewable-energy-consumption-onsite | kWh | 5000000 | EED total renewable energy from on-site generation |
 
-## 5 Requirements
+## Requirements
 
-### 5.1 Data Publication Requirements
+### Data Publication Requirements
 
 Cloud providers shall:
 
@@ -144,7 +144,7 @@ d) Ensure completeness of the provided data, marking unavailable data points exp
 
 e) Provide all required fields for carbon intensity calculations according to both location-based and market-based methodologies.
 
-### 5.2 Data Calculation Requirements
+### Data Calculation Requirements
 
 When calculating cloud region metadata, cloud providers shall:
 
@@ -156,7 +156,7 @@ c) Follow the Greenhouse Gas Protocol for location-based and market-based carbon
 
 d) Clearly document the methodology used for calculating carbon-free energy proportions, specifying whether 24x7 hourly matching or annual total matching is used.
 
-### 5.3 Data Access Requirements
+### Data Access Requirements
 
 Cloud providers shall:
 
@@ -166,7 +166,7 @@ b) Provide appropriate identifiers (em-zone-id and wt-region-id) to enable custo
 
 c) Document any changes to the metadata format or calculation methodologies in subsequent releases.
 
-## 6 Conformance
+## Conformance
 
 A cloud provider conforms to this Standard when they:
 
