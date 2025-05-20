@@ -44,13 +44,25 @@ f) Net Zero Reporting and Goals:
 g) Standard Definitions and Alignment:
    - Establishment of guidelines for standard definitions and alignment of cloud region metadata, carbon models, and data reporting methodologies among cloud providers.
 
-## 2 Normative references
+## 2 References
 
+### 2.1 Normative References
 There are no normative references in this document.
+
+### 2.2 Informative References
+- [Amazon Renewable Energy Methodology](https://sustainability.aboutamazon.com/renewable-energy-methodology.pdf)
+
+- [Amazon Carbon Methodology](https://sustainability.aboutamazon.com/carbon-methodology.pdf)
+
+- [Azure Datacenter Fact Sheets for 2022](https://web.archive.org/web/20240308233631/https://datacenters.microsoft.com/globe/fact-sheets/)
+
+- [Google Carbon-Free Energy by Region](https://cloud.google.com/sustainability/region-carbon)
+
+- [Google Sustainability Report for 2023](https://www.gstatic.com/gumdrop/sustainability/google-2023-environmental-report.pdf#page=90):
 
 ## 3 Terms and definitions
 
-[See Glossary](https://github.com/Green-Software-Foundation/real-time-cloud/blob/glossary/glossary.md)
+- [See Glossary](https://github.com/Green-Software-Foundation/real-time-cloud/blob/glossary/glossary.md)
 
 ## 4 Cloud Region Metadata Description
 
@@ -66,7 +78,7 @@ Carbon-free energy includes nuclear and is distinct from the definition of renew
 
 Each cloud region has a power usage effectiveness (PUE) and a water usage effectiveness (WUE) that may be reported. Energy usage at the system level should be multiplied by the PUE ratio to account for losses due to cooling and energy distribution and storage within the cloud provider's facilities. WUE is measured as litres per kilowatt-hour.
 
-Cloud providers have Net Zero goals, calculated using the market method. This method allows for energy-based offsets, including private Power Purchase Agreements (PPAs), tradable Renewable Energy Credits (RECs), and carbon offsets. Cloud providers report their net carbon on a region-by-region basis, using in-market energy based offsets, and a global figure that uses cross region RECs and offsets. For many regions, the market method carbon is already zero.
+Cloud providers have Net Zero goals, calculated using the market method. This method allows for energy-based offsets, including private Power Purchase Agreements (PPAs), tradable Renewable Energy Credits (RECs), and carbon offsets. Cloud providers report their net carbon on a region-by-region basis, using in-market energy-based offsets, and a global figure that uses cross-region RECs and offsets. For many regions, the market method carbon is already zero.
 
 The European Union Energy Efficiency Directive (EED) for data centres (DCs) comes into force in 2024 for all DCs over 500 kW, which will include all cloud provider DCs sited in the EU. It mandates full disclosure to a confidential central EU registry of very detailed information on the specifications of DCs and how they are operated, and public disclosure of data subject to trade secrets and confidentiality. Since the data must be produced, key elements of the data have been added to the cloud region carbon metadata table to encourage standardized disclosure.
 
@@ -166,21 +178,9 @@ c) Follow the calculation requirements defined in section 5.2.
 
 d) Make the metadata accessible as required by section 5.3.
 
-## Annex A (informative) References
+## Appendix A (informative) Example Implementation
 
-- Amazon Renewable Energy Methodology: https://sustainability.aboutamazon.com/renewable-energy-methodology.pdf
-
-- Amazon Carbon Methodology: https://sustainability.aboutamazon.com/carbon-methodology.pdf
-
-- Azure Datacenter Fact Sheets for 2022: https://web.archive.org/web/20240308233631/https://datacenters.microsoft.com/globe/fact-sheets/
-
-- Google Carbon-Free Energy by Region: https://cloud.google.com/sustainability/region-carbon
-
-- Google Sustainability Report for 2023: https://www.gstatic.com/gumdrop/sustainability/google-2023-environmental-report.pdf#page=90
-
-## Annex B (informative) Example Implementation
-
-This annex provides an example implementation of cloud region metadata in JSON format:
+This appendix provides an example implementation of cloud region metadata in JSON format:
 
 ```json
 {
