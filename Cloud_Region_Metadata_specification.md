@@ -1,3 +1,7 @@
+---
+version: 1.0.1
+---
+
 # Cloud Region Metadata Specification
 
 ## Introduction
