@@ -232,7 +232,7 @@ Cloud service providers shall report the annual average PUE for each cloud regio
 PUE = Total Facility Energy / IT Equipment Energy
 
 Where:
-— Total Facility Energy includes all energy consumed by the data centre facility;
+— Total Facility Energy includes all energy consumed by the data centre facility.
 — IT Equipment Energy includes energy consumed by servers, storage, and networking equipment.
 
 PUE values shall be reported to two decimal places and updated annually.
