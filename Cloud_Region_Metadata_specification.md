@@ -67,7 +67,7 @@ ISO and IEC maintain terminological databases for use in standardization at the 
 
 — IEC Electropedia: available at https://www.electropedia.org/
 
-# Terms and definitions for cloud region metadata
+# Terms and definitions
 
 | Term | Definition | Notes to Entry |
 |------|------------|----------------|
