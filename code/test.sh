@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Check if Python virtual environment is activated
+if [ -z "$VIRTUAL_ENV" ]; then
+    echo "Python virtual environment not detected."
+    echo "Please set up and activate the virtual environment:"
+    echo "python3 -m venv venv"
+    echo "source venv/bin/activate (macOS/Linux) or venv\\Scripts\\activate (Windows)"
+    echo "pip install -r requirements.txt"
+    exit 1
+fi
+
 # Clean up any existing output file
 rm -f test_input_estimate.csv
 
