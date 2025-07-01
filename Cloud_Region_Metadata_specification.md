@@ -61,26 +61,37 @@ No normative references
 
 For the purposes of this document, the following terms and definitions apply.
 
-ISO and IEC maintain terminological databases for use in standardization at the following addresses:
+| **Term** | **Definition** | **Source** |
+|----------|----------------|------------|
+| **24x7 Carbon-Free Energy (24x7 CFE)** | Energy procurement strategy where carbon-free energy sources are matched to consumption on an hourly basis, ensuring that every hour of energy consumption is matched with carbon-free energy generation in the same grid region | Google Cloud |
+| **Annual Average** | Carbon intensity or energy metrics calculated based on a full calendar year of data, providing a stable reference value for planning and compliance reporting | GSF |
+| **Balancing Authority (BA)** | Entity responsible for maintaining the balance between electricity supply and demand within a specific geographic area, used by WattTime for carbon intensity data provision | WattTime |
+| **Carbon-Free Energy (CFE)** | Energy generation that produces no direct carbon dioxide emissions during operation, including renewable sources (solar, wind, hydro, geothermal) and nuclear power | GSF |
+| **Carbon Intensity** | Measure of carbon dioxide equivalent emissions per unit of energy consumed, typically expressed in grams of CO2 equivalent per kilowatt-hour (gCO2eq/kWh) | GHG Protocol |
+| **Cloud Region** | Geographically isolated area where a cloud provider operates multiple availability zones or data centers, providing low-latency connectivity within the region | Cloud Providers |
+| **Data Lag** | Time period between the end of a reporting year and the publication of verified sustainability data, typically ranging from 6-18 months for cloud providers | GSF |
+| **Electricity Maps Zone** | Standardized geographic identifier used by Electricity Maps to provide real-time grid carbon intensity data for specific electrical grid regions | Electricity Maps |
+| **Grid Carbon Intensity** | Average carbon intensity of the electrical grid in a specific geographic region, reflecting the mix of generation sources feeding that grid | Various |
+| **Hourly Weighted Average** | Carbon intensity calculation method where each hour's carbon intensity is weighted by the actual energy consumption during that hour | Cloud Providers |
+| **Location-Based Method** | Carbon accounting approach that uses the average emission factor of the electricity grid where consumption occurs, regardless of contractual arrangements | GHG Protocol Scope 2 |
+| **Marginal Carbon Intensity** | Carbon intensity of the next unit of electricity that would be generated or reduced in response to a change in demand, typically higher than average grid intensity | Research Literature |
+| **Market-Based Method** | Carbon accounting approach that uses emission factors from contractual arrangements such as renewable energy certificates, power purchase agreements, or green electricity products | GHG Protocol Scope 2 |
+| **Not Available (NA)** | Standardized indicator for missing or unavailable data that causes calculations to fail rather than provide incorrect results | GSF |
+| **Power Purchase Agreement (PPA)** | Long-term contract between an electricity generator and a purchaser for the sale of renewable energy, often used by cloud providers to support carbon-free energy claims | Industry Standard |
+| **Power Usage Effectiveness (PUE)** | Ratio of total data center energy consumption to the energy consumed by IT equipment alone, with 1.0 representing perfect efficiency | The Green Grid |
+| **Real-Time Data** | Carbon intensity and energy information updated at frequencies from minutes to hours, enabling dynamic optimization of workload placement based on current grid conditions | GSF |
+| **Renewable Energy Certificate (REC)** | Market-based instrument that represents the environmental attributes of one megawatt-hour of renewable electricity generation | Various Markets |
+| **Renewable Energy** | Energy derived from natural processes that are replenished constantly, including solar, wind, hydroelectric, geothermal, and biomass, but excluding nuclear power | IEA Definition |
+| **Scope 2 Emissions** | Indirect greenhouse gas emissions from the consumption of purchased electricity, steam, heating, and cooling | GHG Protocol |
+| **Software Carbon Intensity (SCI)** | Metric that calculates the carbon intensity of a software application, expressed as carbon emissions per functional unit | ISO/IEC 21031:2024 |
+| **Water Usage Effectiveness (WUE)** | Ratio of total data center water consumption to the energy consumed by IT equipment, expressed in liters per kilowatt-hour (L/kWh) | The Green Grid |
+| **WattTime Balancing Authority** | Geographic region identifier used by WattTime to provide predictive carbon intensity data based on electricity market operations | WattTime |
 
-— ISO Online browsing platform: available at https://www.iso.org/obp
-
-— IEC Electropedia: available at https://www.electropedia.org/
-
-# Terms and definitions
-
-| Term | Definition | Notes to Entry |
-|------|------------|----------------|
-| **carbon-free energy** | electrical energy generated from sources that do not produce carbon dioxide emissions during the generation process, including renewable sources and nuclear energy | — |
-| **cloud region** | geographical area within which a cloud service provider operates one or more data centres that provide cloud computing resources | — |
-| **cloud region metadata** | structured information describing the environmental, operational, and technical characteristics of a cloud region | — |
-| **grid carbon intensity** | mass of carbon dioxide equivalent emissions per unit of electrical energy consumed from the electrical grid, expressed in grams of CO₂ equivalent per kilowatt-hour (gCO₂eq/kWh) | Grid carbon intensity varies by location and time based on the energy mix of the electrical grid |
-| **location-based carbon intensity** | carbon intensity calculated based on the average emissions factor of grids on which energy consumption occurs | — |
-| **marginal grid carbon intensity** | carbon intensity of the next unit of energy generated or consumed on the electrical grid | — |
-| **power purchase agreement** (PPA) | contractual agreement between an energy generator and a purchaser for the sale and purchase of renewable energy | — |
-| **power usage effectiveness** (PUE) | ratio of total amount of energy used by a data centre facility to the energy delivered to computing equipment | PUE is calculated as total facility energy divided by IT equipment energy |
-| **renewable energy certificate** (REC) | tradeable certificate that represents proof that one megawatt-hour of electricity was generated from renewable sources | — |
-| **water usage effectiveness** (WUE) | ratio of total amount of water used by a data centre facility to the energy delivered to computing equipment | WUE is expressed in litres per kilowatt-hour (L/kWh) |
+**Notes:**
+1. Terms marked "GSF" are defined specifically for this specification
+2. External source definitions are adapted for cloud computing context
+3. All carbon intensity values are expressed in gCO2eq/kWh unless otherwise specified
+4. Geographic boundaries may overlap between different data providers
 
 ---
 
