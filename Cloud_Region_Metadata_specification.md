@@ -12,21 +12,33 @@ This specification enables organizations to compare environmental performance ac
 
 ## Scope
 
-This specification aims to enhance the accuracy of carbon emissions models for cloud-based workloads by establishing a standardized mechanism for cloud providers to share detailed information using a unified data schema. The project addresses the fundamental challenge that "all models are wrong, some models are useful" by making cloud carbon emissions models significantly less wrong through standardization, and more useful through consistent metadata schemas across all cloud providers.
+This specification enhances the accuracy and utility of carbon emissions models for cloud-based workloads by establishing a unified data schema that enables cloud providers to share comprehensive, standardized carbon and energy metadata. Addressing the principle that "all models are wrong, some models are useful," this project makes cloud carbon emissions models significantly less wrong through methodological standardization, and more useful through consistent metadata disclosure across all major cloud providers.
 
-Cloud Region Metadata: The specification defines standard parameters for cloud region metadata including cloud provider and region specifications, establishes guidelines for annual updates and data lag management (6-18 months) with emphasis on year specification and latest available data usage, and clarifies annual average location-based marginal grid-carbon-intensity values for SCI operational emissions (SCI-o) calculations with standardized handling of not-available (NA) data.
+The specification encompasses both static annual metadata for regulatory compliance and long-term planning, and dynamic real-time integration capabilities that provide minute-level granularity for energy usage tracking and hourly-to-daily granularity for carbon intensity measurements. This dual approach supports immediate ESG reporting requirements while enabling advanced carbon-aware computing applications that can optimize workload placement based on real-time grid conditions.
 
-**Carbon Models and Data Reporting Standardization:** The scope addresses the identification and clarification of multiple carbon models used by different cloud providers, variability in carbon data availability, and standardized handling of blank or not-available metrics to ensure calculation integrity across providers.
+Core technical scope includes standardized disclosure of location-based and market-based carbon intensity methodologies, infrastructure efficiency metrics (PUE/WUE), carbon-free energy attribution with clear nuclear energy inclusion, geographic mapping between cloud regions and electrical grid boundaries, and integration protocols for real-time carbon data APIs including Electricity Maps and WattTime. The specification establishes consistent data quality standards, handles missing data scenarios to prevent calculation errors, and provides backward-compatible versioning to ensure stable implementation paths across the cloud industry.
 
-**Real-time Data Integration:** The specification defines processes for real-time lookup of cloud region data via APIs from providers such as Electricity Maps and WattTime, enabling minute-level granularity for energy usage tracking and hourly or daily granularity for carbon intensity measurements. This includes establishing protocols for annual average carbon intensity reporting for each grid region under each cloud provider's methodology.
-
-**Energy Definitions and Terminology:** The scope establishes clear definitions for carbon-free energy including nuclear energy (distinct from renewable energy definitions), addresses the absence of carbon-free energy data for regions not yet operational, and standardizes terminology across providers to eliminate definitional confusion.
-Infrastructure Efficiency Metrics: The specification standardizes reporting of Power Usage Effectiveness (PUE) and Water Usage 
-Effectiveness (WUE) for each cloud region, aligns WUE reporting methodologies among providers, and addresses variations in PUE data publication schedules to ensure consistent availability and comparability.
-
-**Net Zero Reporting Framework:** The scope defines market-based methods for calculating Net Zero goals including energy-based offsets such as Power Purchase Agreements (PPAs), Renewable Energy Certificates (RECs), and carbon offsets, with region-by-region net carbon data reporting and identification of regions achieving zero net carbon emissions.
-
-**Standards Alignment and Governance:** The specification establishes guidelines for standard definitions and alignment of cloud region metadata, carbon models, and data reporting methodologies among cloud providers, working toward convergence on location-based carbon data methodologies while maintaining support for market-based approaches where required for regulatory compliance.---
+- **Cloud Region Metadata:**
+   - Define standard parameters for cloud region metadata, including cloud provider and region specifications.
+   - Establish guidelines for annual updates and data lag management (6-18 months), with emphasis on specifying the year or using the latest available data.
+   - Clarify the annual average location-based marginal grid-carbon-intensity value for SCI-o and its availability and handling of not-available (NA) data.
+- **Standardizing Carbon Models and Data Reporting:**
+   - Identify and clarify the multiple carbon models used by different cloud providers.
+   - Address the variability of carbon data availability and handling of blank or not-available metrics.
+- **Real-time Data Lookup and Provider Keys:**
+   - Define the process for real-time lookup of cloud region data via APIs provided by data providers such as Electricity Maps and WattTime.
+   - Establish protocols for annual average carbon intensity reporting for each grid region under each cloud provider's model.
+- **Carbon-Free Energy and Renewable Energy Definitions:**
+   - Define carbon-free energy and its inclusion of nuclear energy, which is distinct from the definition of renewable energy.
+   - Address the absence of carbon-free energy data for regions that are not yet operational.
+- **Power and Water Usage Effectiveness (PUE and WUE):**
+   - Standardize reporting of power usage effectiveness (PUE) and water usage effectiveness (WUE) for each cloud region.
+   - Align WUE reporting among cloud providers and address the variation in PUE data publication schedules.
+- **Net Zero Reporting and Goals:**
+   - Define the market method for calculating Net Zero goals, including energy-based offsets such as PPAs, RECs, and carbon offsets.
+   - Report and align net carbon data on a region-by-region basis and identify regions that achieve zero net carbon emissions.
+- **Standard Definitions and Alignment:**
+   - Establish guidelines for standard definitions and alignment of cloud region metadata, carbon models, and data reporting methodologies among cloud providers (e.g., AWS and Azure aligning with Google's location-based carbon data).
 
 ---
 
