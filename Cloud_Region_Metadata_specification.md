@@ -99,6 +99,23 @@ For the purposes of this document, the following terms and definitions apply.
 
 ---
 
+## Description
+A user of the cloud region metadata can specify which cloud provider and region they use to run a workload and get all the relevant metadata about that region. Cloud region metadata is published annually and lags by 6-18 months, so the year must be specified, or the latest data should be used. The annual average location-based marginal grid-carbon-intensity value required for SCI-o is provided when available. Because of differences between cloud providers, data providers and reporting methodologies, there are several possible carbon models, and data may not be available (NA). Attempting to consume a not-available or blank metric should cause any calculations to fail.
+
+The data provider keys for Electricity Maps and WattTime are returned to allow real-time lookup via their APIs, and the annual average carbon intensity is reported for each grid region.
+
+Cloud providers have their own private carbon-free generation capacity, and they report a proportion of their energy consumption offset by carbon-free energy flowing within a “Carbon-Free Energy grid region”. This can reduce their effective grid carbon intensity, which is taken into account by the market method used for Net Zero reporting but not included in the location-based method that the SCI requires. The carbon-free energy calculation can be performed on a 24x7 hourly basis and accumulated over the year or on an annual total basis. Carbon free energy data is missing for regions that are not yet operational.
+
+Carbon-free energy includes nuclear and is distinct from the definition of renewable energy.
+
+Each cloud region has a power usage effectiveness (PUE) and a water usage effectiveness (WUE) that may be reported. Energy usage at the system level should be multiplied by the PUE ratio to account for losses due to cooling and energy distribution and storage within the cloud provider’s facilities. WUE is measured as litres per kilowatt-hour and was reported for each Azure region in 2022. AWS provides a global average WUE, and Google does not currently provide WUE data [Gap: we request AWS and Google match what Azure provides]. PUE data is published on different schedules; Google currently provides annual, quarterly and trailing 12-month data for data centre facilities that it owns, which is a subset of its cloud regions and we have matched the names of data centres to cloud region names. AWS also provides annual PUE data for a subset of regions. Azure provided 2022 PUE and WUE data that matched all its regions, but the 2023 data it published was less comprehensive. The 2022 data was removed from the Azure website but has been preserved by this project.
+
+Cloud providers have Net Zero goals, calculated using the market method. This method allows for energy-based offsets, including private Power Purchase Agreements (PPAs), tradable Renewable Energy Credits (RECs), and carbon offsets. Cloud providers report their net carbon on a region-by-region basis, using in-market energy based offsets, and a global figure that uses cross region RECs and offsets. For many regions, the market method carbon is already zero.
+
+Cloud providers have different definitions for the data they currently provide. Part of the goal of the GSF real-time cloud project is to clarify those differences and request that standard definitions and alignment occur in future updates. [Gap: Google provides location-based carbon data. Request AWS and Azure match what Google provides.]
+
+The European Union Energy Efficiency Directive (EED) for data centres (DCs) comes into force in 2024 for all DCs over 500 kW, which will include all cloud provider DCs sited in the EU. It mandates full disclosure to a confidential central EU registry of very detailed information on the specifications of DCs and how they are operated, and public disclosure of data subject to trade secrests and confidentiality. Since the data must be produced, key elements of the data have been added to the cloud region carbon metadata table to encourage standardized disclosure.
+
 ## Metric naming scheme
 
 The following naming conventions shall be used for metrics in this document:
