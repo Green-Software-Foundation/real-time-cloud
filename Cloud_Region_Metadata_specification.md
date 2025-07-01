@@ -6,7 +6,7 @@ The increasing adoption of cloud computing services has created an urgent need f
 
 Current industry practices for reporting cloud region metadata lack consistency, making it difficult for organizations to make informed decisions about sustainable cloud deployments. This document addresses these challenges by establishing a comprehensive framework for standardized cloud region metadata reporting.
 
-This specification enables organizations to compare environmental performance across different cloud providers and regions, supports carbon accounting for cloud workloads, and facilitates compliance with emerging environmental regulations such as the European Union Energy Efficiency Directive for data centres.
+This specification enables organizations to compare environmental performance across different cloud providers and regions, supports carbon accounting for cloud workloads, and facilitates compliance with emerging environmental regulations.
 
 ---
 
