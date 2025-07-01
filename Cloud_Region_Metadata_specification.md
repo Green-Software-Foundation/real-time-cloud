@@ -401,21 +401,3 @@ The following example shows cloud region metadata in JSON format:
 ```
 
 ---
-
-## Bibliography
-
-[1] Amazon Web Services. **Renewable Energy Methodology**. Available at: https://sustainability.aboutamazon.com/renewable-energy-methodology.pdf
-
-[2] Amazon Web Services. **Carbon Methodology**. Available at: https://sustainability.aboutamazon.com/carbon-methodology.pdf
-
-[3] Microsoft Corporation. **Azure Datacenter Fact Sheets for 2022**. Available at: https://web.archive.org/web/20240308233631/https://datacenters.microsoft.com/globe/fact-sheets/
-
-[4] Google LLC. **Carbon-Free Energy by Region**. Available at: https://cloud.google.com/sustainability/region-carbon
-
-[5] Google LLC. **Sustainability Report for 2023**. Available at: https://www.gstatic.com/gumdrop/sustainability/google-2023-environmental-report.pdf
-
-[6] Greenhouse Gas Protocol. **Scope 2 Guidance: An amendment to the GHG Protocol Corporate Standard**. World Resources Institute, 2015
-
-[7] European Commission. **Directive (EU) 2023/1791 on energy efficiency (recast)**. Official Journal of the European Union, 2023
-
-[8] Green Software Foundation. **Software Carbon Intensity (SCI) Specification**. Version 1.0, 2022
