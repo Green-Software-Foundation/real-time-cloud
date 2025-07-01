@@ -12,47 +12,36 @@ This specification enables organizations to compare environmental performance ac
 
 ## Scope
 
-This document specifies requirements for cloud region metadata reporting to enable accurate carbon footprint assessment and energy efficiency evaluation of cloud computing services.
+This specification aims to enhance the accuracy of carbon emissions models for cloud-based workloads by establishing a standardized mechanism for cloud providers to share detailed information using a unified data schema. The project addresses the fundamental challenge that "all models are wrong, some models are useful" by making cloud carbon emissions models significantly less wrong through standardization, and more useful through consistent metadata schemas across all cloud providers.
 
-This document covers:
+Cloud Region Metadata: The specification defines standard parameters for cloud region metadata including cloud provider and region specifications, establishes guidelines for annual updates and data lag management (6-18 months) with emphasis on year specification and latest available data usage, and clarifies annual average location-based marginal grid-carbon-intensity values for SCI operational emissions (SCI-o) calculations with standardized handling of not-available (NA) data.
 
-— standardized parameters for cloud region metadata including energy efficiency, carbon intensity, and renewable energy metrics;
+**Carbon Models and Data Reporting Standardization:** The scope addresses the identification and clarification of multiple carbon models used by different cloud providers, variability in carbon data availability, and standardized handling of blank or not-available metrics to ensure calculation integrity across providers.
 
-— data collection and reporting methodologies for cloud service providers;
+**Real-time Data Integration:** The specification defines processes for real-time lookup of cloud region data via APIs from providers such as Electricity Maps and WattTime, enabling minute-level granularity for energy usage tracking and hourly or daily granularity for carbon intensity measurements. This includes establishing protocols for annual average carbon intensity reporting for each grid region under each cloud provider's methodology.
 
-— API specifications for real-time and historical metadata access;
+**Energy Definitions and Terminology:** The scope establishes clear definitions for carbon-free energy including nuclear energy (distinct from renewable energy definitions), addresses the absence of carbon-free energy data for regions not yet operational, and standardizes terminology across providers to eliminate definitional confusion.
+Infrastructure Efficiency Metrics: The specification standardizes reporting of Power Usage Effectiveness (PUE) and Water Usage 
+Effectiveness (WUE) for each cloud region, aligns WUE reporting methodologies among providers, and addresses variations in PUE data publication schedules to ensure consistent availability and comparability.
 
-— validation and quality assurance requirements for metadata accuracy;
+**Net Zero Reporting Framework:** The scope defines market-based methods for calculating Net Zero goals including energy-based offsets such as Power Purchase Agreements (PPAs), Renewable Energy Certificates (RECs), and carbon offsets, with region-by-region net carbon data reporting and identification of regions achieving zero net carbon emissions.
 
-— conformance criteria for cloud service provider implementations.
-
-This document applies to public cloud service providers, hybrid cloud environments, and private cloud infrastructure operators who provide computational resources across multiple geographical regions.
-
-This document does not cover:
-
-— specific carbon accounting methodologies for end-user applications;
-
-— detailed technical specifications for data centre equipment;
-
-— financial or contractual aspects of cloud services.
+**Standards Alignment and Governance:** The specification establishes guidelines for standard definitions and alignment of cloud region metadata, carbon models, and data reporting methodologies among cloud providers, working toward convergence on location-based carbon data methodologies while maintaining support for market-based approaches where required for regulatory compliance.---
 
 ---
 
+## Problem Statement
+
+Cloud providers currently publish efficiency metrics and renewable energy data independently, creating significant challenges:
+
+- Inconsistent reporting methodologies prevent meaningful comparisons between providers
+- Data publication delays of 6-18 months limit real-time decision-making
+- Missing standardization forces customers to interpret disparate data formats
+- Limited transparency restricts accurate carbon footprint calculations for specific workloads
+
 ## Normative references
 
-The following documents are referred to in the text in such a way that some or all of their content constitutes requirements of this document. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies.
-
-### Normative references for cloud region metadata specification
-
-| Standard Number | Document Type | Title | Application in Cloud Metadata |
-|-----------------|---------------|-------|-------------------------------|
-| **ISO 14040** | International Standard | Environmental management — Life cycle assessment — Principles and framework | Establishes environmental assessment principles for cloud infrastructure impact evaluation |
-| **ISO 14044** | International Standard | Environmental management — Life cycle assessment — Requirements and guidelines | Provides methodology requirements for carbon footprint calculations and environmental impact assessments |
-| **ISO 50001** | International Standard | Energy management systems — Requirements with guidance for use | Defines energy management framework applicable to cloud data centre operations and efficiency reporting |
-| **ISO/IEC 23053** | International Standard | Framework for AI systems using machine learning (ML) | Addresses AI and machine learning workload considerations in cloud sustainability metrics and carbon accounting |
-| **ISO/IEC 30134 series** | International Standard Series | Information technology — Data centres — Key performance indicators | Provides standardized KPIs for data centre efficiency measurements including PUE, WUE, and carbon usage effectiveness |
-| **ISO/IEC TR 23188** | Technical Report | Information technology — Cloud computing — Edge computing landscape | Defines cloud computing architecture context and regional deployment considerations for metadata frameworks |
-| **IEC 61850 series** | International Standard Series | Communication protocols for intelligent electronic devices | Specifies communication standards for energy monitoring, smart grid integration, and real-time data exchange |
+No normative references
 
 ---
 
@@ -127,7 +116,7 @@ f) **Not available**: Accessing blank or unavailable data shall cause an excepti
 
 ### Cloud region metadata table
 
-Table 1 defines the standard metadata fields for cloud regions.
+Each cloud region entry must include the following standardized parameters:
 
 **Cloud region metadata parameters**
 
