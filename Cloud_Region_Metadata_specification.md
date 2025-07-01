@@ -40,6 +40,10 @@ Core technical scope includes standardized disclosure of location-based and mark
 - **Standard Definitions and Alignment:**
    - Establish guidelines for standard definitions and alignment of cloud region metadata, carbon models, and data reporting methodologies among cloud providers (e.g., AWS and Azure aligning with Google's location-based carbon data).
 
+### European Union Energy Efficiency Directive compliance
+
+The European Union Energy Efficiency Directive (EED) for data centres (DCs) comes into force in 2024 for all DCs over 500 kW, including all cloud provider DCs sited in the EU. It mandates full disclosure to a confidential central EU registry of very detailed information on the specifications of DCs and how they are operated, and public disclosure of data subject to trade secrets and confidentiality. Since the data shall be produced, key elements of the data have been added to the cloud region carbon metadata table to encourage standardized disclosure.
+
 ---
 
 ## Problem Statement
@@ -95,29 +99,7 @@ For the purposes of this document, the following terms and definitions apply.
 
 ---
 
-## Cloud region metadata description
-
-### General
-
-A user of the cloud region metadata can specify which cloud provider and region they use to run a workload and get all the relevant metadata about that region. Cloud region metadata is published annually and lags by 6 months to 18 months, so the year shall be specified, or the latest data should be used. 
-
-The annual average location-based marginal grid-carbon-intensity value required for SCI-o is provided when available. Because of differences between cloud providers, data providers and reporting methodologies, there are several possible carbon models, and data may not be available. Attempting to consume a not-available or blank metric shall cause any calculations to fail.
-
-The data provider keys for Electricity Maps and WattTime are returned to allow real-time lookup via their APIs, and the annual average carbon intensity is reported for each grid region.
-
-Cloud providers have their own private carbon-free generation capacity, and they report a proportion of their energy consumption offset by carbon-free energy flowing within a carbon-free energy grid region. This can reduce their effective grid carbon intensity, which is taken into account by the market method used for Net Zero reporting but not included in the location-based method that the SCI requires. The carbon-free energy calculation can be performed on a 24×7 hourly basis and accumulated over the year or on an annual total basis. Carbon-free energy data is missing for regions that are not yet operational.
-
-Carbon-free energy includes nuclear and is distinct from the definition of renewable energy.
-
-Each cloud region has a power usage effectiveness (PUE) and a water usage effectiveness (WUE) that may be reported. Energy usage at the system level should be multiplied by the PUE ratio to account for losses due to cooling and energy distribution and storage within the cloud provider's facilities. WUE is measured as litres per kilowatt-hour.
-
-Cloud providers have Net Zero goals, calculated using the market method. This method allows for energy-based offsets, including private power purchase agreements (PPAs), tradeable renewable energy certificates (RECs), and carbon offsets. Cloud providers report their net carbon on a region-by-region basis, using in-market energy-based offsets, and a global figure that uses cross-region RECs and offsets. For many regions, the market method carbon is already zero.
-
-### European Union Energy Efficiency Directive compliance
-
-The European Union Energy Efficiency Directive (EED) for data centres (DCs) comes into force in 2024 for all DCs over 500 kW, including all cloud provider DCs sited in the EU. It mandates full disclosure to a confidential central EU registry of very detailed information on the specifications of DCs and how they are operated, and public disclosure of data subject to trade secrets and confidentiality. Since the data shall be produced, key elements of the data have been added to the cloud region carbon metadata table to encourage standardized disclosure.
-
-### Metric naming scheme
+## Metric naming scheme
 
 The following naming conventions shall be used for metrics in this document:
 
