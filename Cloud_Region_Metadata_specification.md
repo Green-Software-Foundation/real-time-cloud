@@ -141,8 +141,6 @@ f) **Not available**: Accessing blank or unavailable data shall cause an excepti
 
 Each cloud region entry must include the following standardized parameters:
 
-**Cloud region metadata parameters**
-
 | Name | Units | Example | Description |
 |------|-------|---------|-------------|
 | year | numeric | 2022 | Calendar year over which the data is averaged |
