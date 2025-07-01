@@ -40,10 +40,6 @@ Core technical scope includes standardized disclosure of location-based and mark
 - **Standard Definitions and Alignment:**
    - Establish guidelines for standard definitions and alignment of cloud region metadata, carbon models, and data reporting methodologies among cloud providers (e.g., AWS and Azure aligning with Google's location-based carbon data).
 
-### European Union Energy Efficiency Directive compliance
-
-The European Union Energy Efficiency Directive (EED) for data centres (DCs) comes into force in 2024 for all DCs over 500 kW, including all cloud provider DCs sited in the EU. It mandates full disclosure to a confidential central EU registry of very detailed information on the specifications of DCs and how they are operated, and public disclosure of data subject to trade secrets and confidentiality. Since the data shall be produced, key elements of the data have been added to the cloud region carbon metadata table to encourage standardized disclosure.
-
 ---
 
 ## Problem Statement
