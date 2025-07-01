@@ -14,14 +14,14 @@ This specification enables organizations to compare environmental performance ac
 
 This specification enhances the accuracy and utility of carbon emissions models for cloud-based workloads by establishing a unified data schema that enables cloud providers to share comprehensive, standardized carbon and energy metadata. Addressing the principle that "all models are wrong, some models are useful," this project makes cloud carbon emissions models significantly less wrong through methodological standardization, and more useful through consistent metadata disclosure across all major cloud providers.
 
-The specification encompasses both static annual metadata for regulatory compliance and long-term planning, and dynamic real-time integration capabilities that provide minute-level granularity for energy usage tracking and hourly-to-daily granularity for carbon intensity measurements. This dual approach supports immediate ESG reporting requirements while enabling advanced carbon-aware computing applications that can optimize workload placement based on real-time grid conditions.
+The specification encompasses static annual metadata for regulatory compliance and long-term planning, and dynamic real-time integration capabilities that provide minute-level granularity for energy usage tracking and hourly-to-daily granularity for carbon intensity measurements. This dual approach supports immediate ESG reporting requirements while enabling advanced carbon-aware computing applications that optimize workload placement based on real-time grid conditions.
 
-Core technical scope includes standardized disclosure of location-based and market-based carbon intensity methodologies, infrastructure efficiency metrics (PUE/WUE), carbon-free energy attribution with clear nuclear energy inclusion, geographic mapping between cloud regions and electrical grid boundaries, and integration protocols for real-time carbon data APIs including Electricity Maps and WattTime. The specification establishes consistent data quality standards, handles missing data scenarios to prevent calculation errors, and provides backward-compatible versioning to ensure stable implementation paths across the cloud industry.
+Core technical scope includes standardized disclosure of location-based and market-based carbon intensity methodologies, infrastructure efficiency metrics (PUE/WUE), carbon-free energy attribution with clear nuclear energy inclusion, geographic mapping between cloud regions and electrical grid boundaries, and integration protocols for real-time carbon data APIs including Electricity Maps and WattTime. The specification establishes consistent data quality standards, handles missing data scenarios to prevent calculation errors, and provides backwards-compatible versioning to ensure stable implementation paths across the cloud industry.
 
 - **Cloud Region Metadata:**
    - Define standard parameters for cloud region metadata, including cloud provider and region specifications.
    - Establish guidelines for annual updates and data lag management (6-18 months), with emphasis on specifying the year or using the latest available data.
-   - Clarify the annual average location-based marginal grid-carbon-intensity value for SCI-o and its availability and handling of not-available (NA) data.
+   - Clarify the annual average location-based marginal grid-carbon intensity value for SCI-o and its availability and handling of not-available (NA) data.
 - **Standardizing Carbon Models and Data Reporting:**
    - Identify and clarify the multiple carbon models used by different cloud providers.
    - Address the variability of carbon data availability and handling of blank or not-available metrics.
@@ -29,14 +29,14 @@ Core technical scope includes standardized disclosure of location-based and mark
    - Define the process for real-time lookup of cloud region data via APIs provided by data providers such as Electricity Maps and WattTime.
    - Establish protocols for annual average carbon intensity reporting for each grid region under each cloud provider's model.
 - **Carbon-Free Energy and Renewable Energy Definitions:**
-   - Define carbon-free energy and its inclusion of nuclear energy, which is distinct from the definition of renewable energy.
+   - Define carbon-free energy and its inclusion of nuclear energy, distinct from the definition of renewable energy.
    - Address the absence of carbon-free energy data for regions that are not yet operational.
 - **Power and Water Usage Effectiveness (PUE and WUE):**
    - Standardize reporting of power usage effectiveness (PUE) and water usage effectiveness (WUE) for each cloud region.
    - Align WUE reporting among cloud providers and address the variation in PUE data publication schedules.
 - **Net Zero Reporting and Goals:**
    - Define the market method for calculating Net Zero goals, including energy-based offsets such as PPAs, RECs, and carbon offsets.
-   - Report and align net carbon data on a region-by-region basis and identify regions that achieve zero net carbon emissions.
+   - Report and align net carbon data region-by-region basis and identify regions that achieve zero net carbon emissions.
 - **Standard Definitions and Alignment:**
    - Establish guidelines for standard definitions and alignment of cloud region metadata, carbon models, and data reporting methodologies among cloud providers (e.g., AWS and Azure aligning with Google's location-based carbon data).
 
@@ -59,7 +59,7 @@ No normative references
 
 ## Terms and definitions
 
-For the purposes of this document, the following terms and definitions apply.
+For this document, the following terms and definitions apply.
 
 | **Term** | **Definition** | **Source** |
 |----------|----------------|------------|
@@ -95,23 +95,6 @@ For the purposes of this document, the following terms and definitions apply.
 
 ---
 
-## Description
-A user of the cloud region metadata can specify which cloud provider and region they use to run a workload and get all the relevant metadata about that region. Cloud region metadata is published annually and lags by 6-18 months, so the year must be specified, or the latest data should be used. The annual average location-based marginal grid-carbon-intensity value required for SCI-o is provided when available. Because of differences between cloud providers, data providers and reporting methodologies, there are several possible carbon models, and data may not be available (NA). Attempting to consume a not-available or blank metric should cause any calculations to fail.
-
-The data provider keys for Electricity Maps and WattTime are returned to allow real-time lookup via their APIs, and the annual average carbon intensity is reported for each grid region.
-
-Cloud providers have their own private carbon-free generation capacity, and they report a proportion of their energy consumption offset by carbon-free energy flowing within a “Carbon-Free Energy grid region”. This can reduce their effective grid carbon intensity, which is taken into account by the market method used for Net Zero reporting but not included in the location-based method that the SCI requires. The carbon-free energy calculation can be performed on a 24x7 hourly basis and accumulated over the year or on an annual total basis. Carbon free energy data is missing for regions that are not yet operational.
-
-Carbon-free energy includes nuclear and is distinct from the definition of renewable energy.
-
-Each cloud region has a power usage effectiveness (PUE) and a water usage effectiveness (WUE) that may be reported. Energy usage at the system level should be multiplied by the PUE ratio to account for losses due to cooling and energy distribution and storage within the cloud provider’s facilities. WUE is measured as litres per kilowatt-hour and was reported for each Azure region in 2022. AWS provides a global average WUE, and Google does not currently provide WUE data [Gap: we request AWS and Google match what Azure provides]. PUE data is published on different schedules; Google currently provides annual, quarterly and trailing 12-month data for data centre facilities that it owns, which is a subset of its cloud regions and we have matched the names of data centres to cloud region names. AWS also provides annual PUE data for a subset of regions. Azure provided 2022 PUE and WUE data that matched all its regions, but the 2023 data it published was less comprehensive. The 2022 data was removed from the Azure website but has been preserved by this project.
-
-Cloud providers have Net Zero goals, calculated using the market method. This method allows for energy-based offsets, including private Power Purchase Agreements (PPAs), tradable Renewable Energy Credits (RECs), and carbon offsets. Cloud providers report their net carbon on a region-by-region basis, using in-market energy based offsets, and a global figure that uses cross region RECs and offsets. For many regions, the market method carbon is already zero.
-
-Cloud providers have different definitions for the data they currently provide. Part of the goal of the GSF real-time cloud project is to clarify those differences and request that standard definitions and alignment occur in future updates. [Gap: Google provides location-based carbon data. Request AWS and Azure match what Google provides.]
-
-The European Union Energy Efficiency Directive (EED) for data centres (DCs) comes into force in 2024 for all DCs over 500 kW, which will include all cloud provider DCs sited in the EU. It mandates full disclosure to a confidential central EU registry of very detailed information on the specifications of DCs and how they are operated, and public disclosure of data subject to trade secrests and confidentiality. Since the data must be produced, key elements of the data have been added to the cloud region carbon metadata table to encourage standardized disclosure.
-
 ## Metric naming scheme
 
 The following naming conventions shall be used for metrics in this document:
@@ -120,11 +103,11 @@ a) **Provider versus grid**: Some data is cloud provider specific, and some is g
 
 b) **24×7 versus hourly versus annual**: Some provider metrics use a 24×7 hourly energy matching scheme and report data based on an hourly weighted average, labelled hourly (rather than 24×7). Other metrics are generated based on annual averages and labelled annual.
 
-c) **Location versus market**: The Greenhouse Gas Protocol specifies location and market methodologies for carbon reporting. Market methodology allows energy to be matched across grids, but AWS states that it matches energy exclusively within grids for 22 of its regions for 2023 and reports market data on a per-grid basis.
+c) **Location versus market**: The Greenhouse Gas Protocol specifies location and market methodologies for carbon reporting. Market methodology allows energy to be matched across grids, but AWS states that it matches energy exclusively within grids for 22 regions for 2023 and reports market data on a per-grid basis.
 
-d) **Consumption versus production**: Within a grid, the energy sources add up to a production-based metric; however, energy flows between grids across interconnects, and the actual energy mix consumption in a region takes this into account.
+d) **Consumption versus production**: Within a grid, the energy sources add up to a production-based metric; however, energy flows between grids across interconnects, and the actual energy mix consumption in a region considers this.
 
-e) **Average versus marginal**: The average carbon intensity gives the total emissions mixture over a time period. The marginal emissions account for changes in demand and depend on what kind of energy source is used to supply variable demand, with other energy sources providing base load capacity.
+e) **Average versus marginal**: The average carbon intensity gives the total emissions mixture over a time period. The marginal emissions account for changes in demand and depend on what energy source is used to supply variable demand, with other energy sources providing base load capacity.
 
 f) **Not available**: Accessing blank or unavailable data shall cause an exception and interrupt an Impact Framework calculation.
 
@@ -163,6 +146,41 @@ Each cloud region entry must include the following standardized parameters:
 | renewable-energy-consumption-onsite | kWh | 5 000 000 | Total renewable energy from on-site generation (EED requirement) |
 
 ---
+
+## Cloud Region Meta Services
+
+### Overview
+The cloud region metadata service enables users to specify a cloud provider and region for their workloads and retrieve comprehensive environmental and efficiency metadata for that region. Cloud region metadata is published annually with a 6-18 month lag period, requiring either explicit year specification or defaulting to the latest available data. The service provides annual average location-based marginal grid carbon intensity values required for SCI-o calculations when available.
+
+### Data Availability and Quality
+Due to variations in cloud providers, data providers, and reporting methodologies, multiple carbon models exist and data availability varies significantly. When metrics are unavailable (marked as "NA") or contain blank values, dependent calculations must fail to ensure data integrity. The service returns data provider keys for Electricity Maps and WattTime to enable real-time lookups via their respective APIs. It also reports annual average carbon intensity for each grid region.
+
+### Carbon-Free Energy Reporting
+Cloud providers maintain private carbon-free generation capacity and report the proportion of energy consumption offset by carbon-free energy within designated grid regions. This carbon-free energy proportion reduces effective grid carbon intensity under the market method used for Net Zero reporting, though it remains excluded from the location-based method required by SCI standards. Carbon-free energy calculations may be performed on either a 24x7 hourly basis accumulated annually or an annual total basis. Data remains unavailable for regions not yet operational.
+
+Carbon-free energy encompasses nuclear generation and differs from the narrower definition of renewable energy.
+
+### Efficiency Metrics
+
+#### Power Usage Effectiveness (PUE)
+Each cloud region reports Power Usage Effectiveness (PUE) values when available. System-level energy usage must be multiplied by the PUE ratio to account for losses from cooling, energy distribution, and storage within cloud provider facilities.
+
+PUE data publication schedules vary by provider:
+- **Google**: Provides annual, quarterly, and trailing 12-month data for owned data center facilities, representing a subset of cloud regions
+- **AWS**: Provides annual PUE data for select regions
+- **Azure**: Previously provided comprehensive regional PUE data in 2022, though subsequent releases have been less complete
+
+#### Water Usage Effectiveness (WUE)
+Water Usage Effectiveness (WUE) is measured in liters per kilowatt-hour. Azure reported WUE data for all regions in 2022, while AWS provides only a global average WUE. Google does not currently offer WUE data.
+
+### Net Zero Methodology
+Cloud providers pursue Net Zero goals calculated using the market method, incorporating energy-based offsets including private Power Purchase Agreements (PPAs), tradable Renewable Energy Credits (RECs), and carbon offsets. Providers report net carbon emissions on a regional basis using in-market energy-based offsets and globally using cross-region RECs and offsets. Many regions already achieve zero net carbon under the market method.
+
+### Standardization Challenges
+Cloud providers currently employ different definitions for reported data. Standardization efforts aim to clarify these differences and establish aligned definitions in future updates. Notable gaps include inconsistent provision of location-based carbon data and varying levels of water usage effectiveness reporting.
+
+### Regulatory Compliance
+The European Union Energy Efficiency Directive (EED) for data centers became effective in 2024, applying to all facilities over 500 kW, including cloud provider data centers in the EU. The directive mandates comprehensive disclosure to a confidential central EU registry of detailed data center specifications and operational data, with public disclosure subject to trade secret and confidentiality protections. Key EED data elements have been incorporated into cloud region metadata tables to promote standardized disclosure practices.
 
 ## Requirements
 
@@ -322,13 +340,13 @@ c) document any changes to the metadata format or calculation methodologies in s
 
 ### General
 
-Conformance to this document requires implementation of all normative requirements specified in Clauses 4 through 7 and Annex A.
+Conformance to this document requires implementing all normative requirements specified in Clauses 4 through 7 and Annex A.
 
 ### Conformance levels
 
 This document defines two levels of conformance:
 
-a) **Level 1 (Basic conformance)**: Implementation of mandatory metadata parameters as specified in Annex A and basic reporting capabilities.
+a) **Level 1 (Basic conformance)**: Implementing mandatory metadata parameters specified in Annex A and basic reporting capabilities.
 
 b) **Level 2 (Advanced conformance)**: Implementation of all Level 1 requirements plus real-time API access and advanced data quality validation.
 
