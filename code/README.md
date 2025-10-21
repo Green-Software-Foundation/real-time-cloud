@@ -110,6 +110,9 @@ The script creates a new CSV file (default: `Cloud_Region_Metadata_updated.csv`)
 
 - Fetches data directly from GCP's official region-carbon-info GitHub repository
 - **Auto-detects year** from existing metadata (or specify with --year)
+- **Smart year fallback**: If requested year not available, tries previous years automatically
+  - E.g., if 2025 requested but only 2024 available, uses 2024
+  - Won't fallback if you explicitly specify --year
 - **Only creates output file when changes are detected** (use --force to override)
 - **Incremental updates**: If output file exists, merges changes into it instead of overwriting
   - Allows running multiple scripts sequentially (e.g., AWS then GCP)

@@ -31,39 +31,57 @@ from geopy.exc import GeocoderTimedOut, GeocoderServiceError
 # GCP region carbon info repository - default source for data
 GCP_CARBON_INFO_BASE_URL = 'https://raw.githubusercontent.com/GoogleCloudPlatform/region-carbon-info/main/data/yearly'
 
-def fetch_gcp_csv_data(year):
+def fetch_gcp_csv_data(year, try_previous_years=True):
     """
     Fetch the CSV data from GCP's region-carbon-info repository.
     
     Args:
         year (int): Year for which to fetch data
+        try_previous_years (bool): If True, try previous years if requested year not found
         
     Returns:
-        pd.DataFrame: DataFrame containing the GCP data
+        tuple: (DataFrame, actual_year) containing the GCP data and the year it's from
     """
-    url = f"{GCP_CARBON_INFO_BASE_URL}/{year}.csv"
-    print(f"Fetching GCP data from {url}...")
+    original_year = year
+    attempts = []
     
-    try:
-        # Fetch the CSV directly
-        response = requests.get(url, timeout=30)
-        response.raise_for_status()
+    # Try the requested year and up to 2 previous years
+    years_to_try = [year] if not try_previous_years else [year, year - 1, year - 2]
+    
+    for year_attempt in years_to_try:
+        url = f"{GCP_CARBON_INFO_BASE_URL}/{year_attempt}.csv"
+        attempts.append(year_attempt)
         
-        df = pd.read_csv(StringIO(response.text))
-        print(f"Successfully loaded CSV with {len(df)} rows")
-        return df
-        
-    except requests.exceptions.HTTPError as e:
-        if e.response.status_code == 404:
-            print(f"No data found for year {year} at {url}")
-            raise ValueError(f"GCP carbon data not available for year {year}")
-        raise
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching data: {e}")
-        raise
-    except Exception as e:
-        print(f"Error processing data: {e}")
-        raise
+        try:
+            print(f"Trying to fetch GCP data for {year_attempt}... ", end='')
+            response = requests.get(url, timeout=30)
+            response.raise_for_status()
+            
+            df = pd.read_csv(StringIO(response.text))
+            print(f"✓ Found! ({len(df)} rows)")
+            
+            if year_attempt != original_year:
+                print(f"Note: Requested {original_year} but using {year_attempt} (most recent available)")
+            
+            return df, year_attempt
+            
+        except requests.exceptions.HTTPError as e:
+            if e.response.status_code == 404:
+                print(f"✗ Not found")
+                continue
+            else:
+                print(f"✗ HTTP error: {e}")
+                raise
+        except requests.exceptions.RequestException as e:
+            print(f"✗ Network error: {e}")
+            raise
+        except Exception as e:
+            print(f"✗ Error: {e}")
+            raise
+    
+    # If we get here, none of the years worked
+    print(f"\n✗ Error: GCP carbon data not available for {', '.join(map(str, attempts))}")
+    raise ValueError(f"GCP carbon data not available for requested years: {attempts}")
 
 def geocode_location(location_name, max_retries=3):
     """
@@ -466,8 +484,13 @@ def main():
             year = detect_year_from_data(metadata_df)
         
         # Fetch GCP data
-        print(f"\nFetching GCP carbon data for {year}...")
-        gcp_data = fetch_gcp_csv_data(year)
+        print(f"\nFetching GCP carbon data...")
+        gcp_data, actual_year = fetch_gcp_csv_data(year, try_previous_years=not args.year)
+        
+        # Use the actual year from the data
+        if actual_year != year:
+            print(f"Using year {actual_year} from fetched data")
+            year = actual_year
         
         # Normalize the data
         normalized_data = normalize_gcp_data(gcp_data, year=year)
