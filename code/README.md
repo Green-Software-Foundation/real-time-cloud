@@ -74,7 +74,51 @@ The script creates a new CSV file (default: `Cloud_Region_Metadata_updated.csv`)
 - Preserves all other metadata columns
 - Sorts output consistently with existing format
 
-## 2. Estimate Current Year Metadata (`estimate_current_region_metadata.py`)
+## 2. GCP Data Update Script (`gcp-data-update.py`)
+
+This script fetches the latest Carbon Free Energy (CFE) and Grid Carbon Intensity 
+data from Google Cloud Platform's [region-carbon-info repository](https://github.com/GoogleCloudPlatform/region-carbon-info) and updates the Cloud_Region_Metadata.csv file.
+
+### Usage
+
+Basic usage (auto-detects year from existing data):
+```bash
+python code/gcp-data-update.py
+```
+
+Specify a specific year:
+```bash
+python code/gcp-data-update.py --year 2024
+```
+
+Specify a custom output file:
+```bash
+python code/gcp-data-update.py --output Cloud_Region_Metadata_gcp_updated.csv
+```
+
+### Output
+
+The script creates a new CSV file (default: `Cloud_Region_Metadata_updated.csv`) that you should:
+1. Review for accuracy
+2. Compare with the original file to verify changes
+3. Rename to `Cloud_Region_Metadata.csv` when ready to use
+
+### Features
+
+- Fetches data directly from GCP's official region-carbon-info GitHub repository
+- **Auto-detects year** from existing metadata (or specify with --year)
+- **Only creates output file when changes are detected** (use --force to override)
+- **Leverages GCP's comprehensive data**:
+  - Annual Carbon Free Energy (CFE) percentage
+  - Grid carbon intensity (gCO2eq / kWh)
+  - Location names for each region
+- **Automatically fills geolocation for new regions**:
+  - Geocodes location to get latitude/longitude (rounded to 4 decimal places)
+- Never overwrites existing data with NaN values
+- Preserves all other metadata columns
+- Sorts output consistently with existing format
+
+## 3. Estimate Current Year Metadata (`estimate_current_region_metadata.py`)
 
 This script generates trended estimates for current years based on historical data (for two years since 2023 data is all we have until mid-2025).
 
@@ -90,7 +134,7 @@ Generating estimate for year: 2025
 Estimates saved to Cloud_Region_Metadata_estimate.csv
 ```
 
-## 3. Test Script and Simplified Input Data
+## 4. Test Script and Simplified Input Data
 ```
 % cd code
 % sh test.sh
