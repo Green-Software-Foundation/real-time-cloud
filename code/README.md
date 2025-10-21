@@ -145,7 +145,70 @@ diff Cloud_Region_Metadata.csv Cloud_Region_Metadata_updated.csv
 mv Cloud_Region_Metadata_updated.csv Cloud_Region_Metadata.csv
 ```
 
-## 3. Estimate Current Year Metadata (`estimate_current_region_metadata.py`)
+## 3. Google PDF Extractor (`google-pdf-extract.py`)
+
+This script downloads Google's annual Environmental Report PDF and extracts data tables 
+containing PUE, WUE, and other sustainability metrics. This complements the GCP data from 
+the region-carbon-info repository.
+
+### Usage
+
+Extract from most recent year (auto-downloads):
+```bash
+python code/google-pdf-extract.py
+```
+
+Extract from a specific year:
+```bash
+python code/google-pdf-extract.py --year 2024
+```
+
+Extract from a local PDF file:
+```bash
+python code/google-pdf-extract.py --pdf path/to/google-report.pdf
+```
+
+Extract from a custom URL:
+```bash
+python code/google-pdf-extract.py --url https://example.com/report.pdf
+```
+
+Specify custom output directory:
+```bash
+python code/google-pdf-extract.py --year 2024 --output-dir my_tables
+```
+
+### Output
+
+The script creates CSV files in the output directory (default: `google_extracted_tables/`):
+- Separate files for each table found (e.g., `google_2024_pue_page42_table0.csv`)
+- Metadata files describing each table (`.txt` files)
+- Categorized by type: PUE, WUE, combined, or other
+
+### Features
+
+- **Auto-downloads** Google Environmental Reports from known URLs
+- **Smart table detection**: Searches for keywords (PUE, WUE, data center, etc.)
+- **Categorizes tables** by type (PUE, WUE, combined, other)
+- **Extracts context**: Saves surrounding text for each table
+- **Multiple sources**: Can work with URLs, local files, or known report years
+- **Custom keywords**: Add your own search terms with `--keywords`
+
+### Known Report Years
+
+The script has URLs for:
+- 2024, 2023, 2022, 2021
+
+You can use `--url` for other years or custom reports.
+
+### Workflow
+
+After extraction, you'll need to:
+1. Review the CSV files to identify relevant data
+2. Manually clean and format data as needed
+3. Integrate into `Cloud_Region_Metadata.csv` or use with update scripts
+
+## 4. Estimate Current Year Metadata (`estimate_current_region_metadata.py`)
 
 This script generates trended estimates for current years based on historical data (for two years since 2023 data is all we have until mid-2025).
 
@@ -161,7 +224,7 @@ Generating estimate for year: 2025
 Estimates saved to Cloud_Region_Metadata_estimate.csv
 ```
 
-## 4. Test Script and Simplified Input Data
+## 5. Test Script and Simplified Input Data
 ```
 % cd code
 % sh test.sh
