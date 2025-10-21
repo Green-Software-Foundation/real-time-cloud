@@ -66,6 +66,9 @@ The script creates a new CSV file (default: `Cloud_Region_Metadata_updated.csv`)
 - Updates existing regions or adds new ones based on historical data
 - **Auto-detects year** from data, URL, or existing metadata (no need to specify)
 - **Only creates output file when changes are detected** (use --force to override)
+- **Incremental updates**: If output file exists, merges changes into it instead of overwriting
+  - Allows running multiple scripts sequentially (e.g., AWS then GCP)
+  - Each script adds its updates to the same output file
 - **Automatically fills location and geolocation for new regions**:
   - Looks up region name/city from aws-services.info
   - Geocodes city to get latitude/longitude (rounded to 4 decimal places)
@@ -108,6 +111,9 @@ The script creates a new CSV file (default: `Cloud_Region_Metadata_updated.csv`)
 - Fetches data directly from GCP's official region-carbon-info GitHub repository
 - **Auto-detects year** from existing metadata (or specify with --year)
 - **Only creates output file when changes are detected** (use --force to override)
+- **Incremental updates**: If output file exists, merges changes into it instead of overwriting
+  - Allows running multiple scripts sequentially (e.g., AWS then GCP)
+  - Each script adds its updates to the same output file
 - **Leverages GCP's comprehensive data**:
   - Annual Carbon Free Energy (CFE) percentage
   - Grid carbon intensity (gCO2eq / kWh)
@@ -117,6 +123,24 @@ The script creates a new CSV file (default: `Cloud_Region_Metadata_updated.csv`)
 - Never overwrites existing data with NaN values
 - Preserves all other metadata columns
 - Sorts output consistently with existing format
+
+### Running Multiple Updates
+
+You can run both AWS and GCP update scripts sequentially to accumulate changes:
+
+```bash
+# First run AWS updates
+python code/aws-data-update.py
+
+# Then run GCP updates - will merge into the same file
+python code/gcp-data-update.py
+
+# Review combined changes
+diff Cloud_Region_Metadata.csv Cloud_Region_Metadata_updated.csv
+
+# Apply if satisfied
+mv Cloud_Region_Metadata_updated.csv Cloud_Region_Metadata.csv
+```
 
 ## 3. Estimate Current Year Metadata (`estimate_current_region_metadata.py`)
 

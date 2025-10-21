@@ -441,13 +441,22 @@ def main():
         import os
         script_dir = os.path.dirname(os.path.abspath(__file__))
         metadata_file = os.path.join(os.path.dirname(script_dir), 'Cloud_Region_Metadata.csv')
+        output_path = os.path.join(os.path.dirname(script_dir), args.output)
         
         if not os.path.exists(metadata_file):
             print(f"✗ Error: Could not find {metadata_file}", file=sys.stderr)
             sys.exit(1)
         
+        # Check if output file already exists - if so, use it as the base
+        if os.path.exists(output_path):
+            print(f"📝 Found existing output file: {args.output}")
+            print(f"   Will merge changes into existing file instead of overwriting")
+            base_file = output_path
+        else:
+            base_file = metadata_file
+        
         # Load metadata first to help detect year
-        metadata_df = pd.read_csv(metadata_file)
+        metadata_df = pd.read_csv(base_file)
         
         # Determine year to fetch
         if args.year:
@@ -470,15 +479,17 @@ def main():
         print(f"\nFound data for {len(normalized_data)} GCP regions")
         
         # Update metadata and check for changes
-        updated_metadata, has_changes, stats = update_metadata_csv(normalized_data, metadata_file)
+        updated_metadata, has_changes, stats = update_metadata_csv(normalized_data, base_file)
         
         # Save output file if changes detected or forced
         if has_changes or args.force:
-            output_path = os.path.join(os.path.dirname(script_dir), args.output)
             updated_metadata.to_csv(output_path, index=False)
             
             if has_changes:
-                print(f"\n✓ Success! Updated metadata saved to: {output_path}")
+                if os.path.exists(output_path) and base_file == output_path:
+                    print(f"\n✓ Success! Merged GCP updates into: {output_path}")
+                else:
+                    print(f"\n✓ Success! Updated metadata saved to: {output_path}")
                 print(f"\nNext steps:")
                 print(f"  1. Review the changes:")
                 print(f"     diff Cloud_Region_Metadata.csv {args.output}")
