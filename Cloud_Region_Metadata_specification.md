@@ -21,7 +21,7 @@ Core technical scope includes standardized disclosure of location-based and mark
 - **Cloud Region Metadata:**
    - Define standard parameters for cloud region metadata, including cloud provider and region specifications.
    - Establish guidelines for annual updates and data lag management (6-18 months), with emphasis on specifying the year or using the latest available data.
-   - Clarify the annual average location-based marginal grid-carbon intensity value for SCI-o and its availability and handling of not-available (NA) data.
+   - Clarify the region specific carbon intensity value for SCI-o and its availability and handling of not-available (NA) data.
 - **Standardizing Carbon Models and Data Reporting:**
    - Identify and clarify the multiple carbon models used by different cloud providers.
    - Address the variability of carbon data availability and handling of blank or not-available metrics.
