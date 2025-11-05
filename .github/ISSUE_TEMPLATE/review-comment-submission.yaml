@@ -1,0 +1,18 @@
+name:  Review Feedback
+description: Task to be completed
+title: "[Review Feedback]"
+labels: ["Review Feedback"]
+projects: ["Real-Time Cloud"]
+assignees: 
+  - adrianco
+  - PindyBhullar
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Review Feedback
+      description: Review Feedback
+      placeholder: Review Feedback
+      value: "Could you outline your issue and specify the section of the specifications you are referring to?. Please outline any suggested recommendations to resolve the issue submitted."
+    validations:
+      required: true
