@@ -13,8 +13,8 @@ The script automatically:
 - Leverages GCP's comprehensive CFE and carbon intensity data
 
 Usage:
-    python gcp-data-update.py
-    python gcp-data-update.py --year 2024
+    python gcp_data_update.py
+    python gcp_data_update.py --year 2024
 """
 
 import pandas as pd
@@ -30,6 +30,15 @@ from geopy.exc import GeocoderTimedOut, GeocoderServiceError
 
 # GCP region carbon info repository - default source for data
 GCP_CARBON_INFO_BASE_URL = 'https://raw.githubusercontent.com/GoogleCloudPlatform/region-carbon-info/main/data/yearly'
+
+# Google Cloud states they have maintained 100% annual renewable energy
+# matching across their global fleet since 2017. This is a fleet-wide
+# claim and is not broken down on a per-region basis. Individual regions
+# may still have grid carbon emissions (Scope 2). We use this value for
+# provider-cfe-annual as a statement of Google's corporate-level annual
+# matching commitment, not as a per-region technical measurement.
+# See: https://sustainability.google/progress/energy/
+GOOGLE_ANNUAL_MATCHING_CLAIM = 1.0
 
 def fetch_gcp_csv_data(year, try_previous_years=True):
     """
@@ -201,10 +210,14 @@ def normalize_gcp_data(df, year):
             continue
         
         # Create entry
+        # Google CFE column represents hourly CFE values.
+        # For provider-cfe-annual we use Google's fleet-wide annual
+        # renewable energy matching claim (see GOOGLE_ANNUAL_MATCHING_CLAIM).
         entry = {
             'cloud-region': region,
             'location': location,
-            'provider-cfe-annual': cfe,
+            'provider-cfe-hourly': cfe,
+            'provider-cfe-annual': GOOGLE_ANNUAL_MATCHING_CLAIM,
             'grid-carbon-intensity-average-consumption-annual': carbon_intensity,
             'year': int(year)
         }
@@ -257,58 +270,69 @@ def update_metadata_csv(normalized_gcp_data, metadata_file):
     
     for _, gcp_row in normalized_gcp_data.iterrows():
         region = gcp_row['cloud-region']
-        new_cfe = gcp_row['provider-cfe-annual']
+        new_cfe_hourly = gcp_row['provider-cfe-hourly']
+        new_cfe_annual = gcp_row['provider-cfe-annual']
         new_carbon = gcp_row['grid-carbon-intensity-average-consumption-annual']
         new_location = gcp_row['location']
         row_year = gcp_row['year']
-        
+
         # Find matching region in existing metadata
         matches = metadata_df[
-            (metadata_df['cloud-provider'] == 'Google Cloud') & 
+            (metadata_df['cloud-provider'] == 'Google Cloud') &
             (metadata_df['cloud-region'] == region) &
             (metadata_df['year'] == row_year)
         ]
-        
+
         if len(matches) > 0:
             # Check if data actually changed
             row_idx = matches.index[0]
             existing_row = metadata_df.loc[row_idx]
-            existing_cfe = existing_row['provider-cfe-annual']
+            existing_cfe_hourly = existing_row['provider-cfe-hourly']
+            existing_cfe_annual = existing_row['provider-cfe-annual']
             existing_carbon = existing_row['grid-carbon-intensity-average-consumption-annual']
             existing_location = existing_row['location']
-            
+
             has_change = False
-            
-            # Compare CFE
-            if pd.notna(new_cfe) and (pd.isna(existing_cfe) or abs(float(new_cfe) - float(existing_cfe)) > 0.001):
+
+            # Compare hourly CFE
+            if pd.notna(new_cfe_hourly) and (pd.isna(existing_cfe_hourly) or abs(float(new_cfe_hourly) - float(existing_cfe_hourly)) > 0.001):
                 has_change = True
                 stats['cfe_changes'] += 1
-            
+
+            # Compare annual CFE (should be 1.0)
+            if pd.notna(new_cfe_annual) and (pd.isna(existing_cfe_annual) or abs(float(new_cfe_annual) - float(existing_cfe_annual)) > 0.001):
+                has_change = True
+                stats['cfe_changes'] += 1
+
             # Compare Carbon Intensity
             if pd.notna(new_carbon) and (pd.isna(existing_carbon) or abs(float(new_carbon) - float(existing_carbon)) > 0.01):
                 has_change = True
                 stats['carbon_changes'] += 1
-            
+
             # Check if location needs update
             if pd.notna(new_location) and (pd.isna(existing_location) or existing_location != new_location):
                 has_change = True
                 stats['location_updates'] += 1
-            
+
             if has_change:
                 updated_row = existing_row.copy()
                 # Only update values that have actual new data (not NaN)
-                if pd.notna(new_cfe):
-                    updated_row['provider-cfe-annual'] = new_cfe
+                if pd.notna(new_cfe_hourly):
+                    updated_row['provider-cfe-hourly'] = new_cfe_hourly
+                if pd.notna(new_cfe_annual):
+                    updated_row['provider-cfe-annual'] = new_cfe_annual
                 if pd.notna(new_carbon):
                     updated_row['grid-carbon-intensity-average-consumption-annual'] = new_carbon
                 if pd.notna(new_location):
                     updated_row['location'] = new_location
                 updated_rows.append((row_idx, updated_row))
-                
+
                 # Show what's being updated (only show changes)
                 changes = []
-                if pd.notna(new_cfe) and (pd.isna(existing_cfe) or abs(float(new_cfe) - float(existing_cfe)) > 0.001):
-                    changes.append(f"CFE {existing_cfe} -> {new_cfe}")
+                if pd.notna(new_cfe_hourly) and (pd.isna(existing_cfe_hourly) or abs(float(new_cfe_hourly) - float(existing_cfe_hourly)) > 0.001):
+                    changes.append(f"CFE hourly {existing_cfe_hourly} -> {new_cfe_hourly}")
+                if pd.notna(new_cfe_annual) and (pd.isna(existing_cfe_annual) or abs(float(new_cfe_annual) - float(existing_cfe_annual)) > 0.001):
+                    changes.append(f"CFE annual {existing_cfe_annual} -> {new_cfe_annual}")
                 if pd.notna(new_carbon) and (pd.isna(existing_carbon) or abs(float(new_carbon) - float(existing_carbon)) > 0.01):
                     changes.append(f"Carbon {existing_carbon} -> {new_carbon}")
                 if pd.notna(new_location) and (pd.isna(existing_location) or existing_location != new_location):
@@ -320,28 +344,30 @@ def update_metadata_csv(normalized_gcp_data, metadata_file):
         else:
             # Check if this region exists in previous years
             prev_year_match = metadata_df[
-                (metadata_df['cloud-provider'] == 'Google Cloud') & 
+                (metadata_df['cloud-provider'] == 'Google Cloud') &
                 (metadata_df['cloud-region'] == region)
             ].sort_values('year', ascending=False)
-            
+
             if len(prev_year_match) > 0:
                 # Copy data from most recent year and update with new values
                 new_row = prev_year_match.iloc[0].copy()
                 new_row['year'] = row_year
                 # Only update values that have actual new data (not NaN)
-                if pd.notna(new_cfe):
-                    new_row['provider-cfe-annual'] = new_cfe
+                if pd.notna(new_cfe_hourly):
+                    new_row['provider-cfe-hourly'] = new_cfe_hourly
+                if pd.notna(new_cfe_annual):
+                    new_row['provider-cfe-annual'] = new_cfe_annual
                 if pd.notna(new_carbon):
                     new_row['grid-carbon-intensity-average-consumption-annual'] = new_carbon
                 if pd.notna(new_location):
                     new_row['location'] = new_location
                 new_regions.append(new_row)
                 stats['new_rows'] += 1
-                
+
                 # Show what data we're adding
                 data_parts = []
-                if pd.notna(new_cfe):
-                    data_parts.append(f"CFE {new_cfe}")
+                if pd.notna(new_cfe_hourly):
+                    data_parts.append(f"CFE hourly {new_cfe_hourly}")
                 if pd.notna(new_carbon):
                     data_parts.append(f"Carbon {new_carbon}")
                 print(f"  Adding new year entry for {region} (year {row_year}): {', '.join(data_parts)}")
@@ -349,25 +375,27 @@ def update_metadata_csv(normalized_gcp_data, metadata_file):
                 # Completely new region - create a minimal entry with required fields
                 # Use a template from any existing GCP region to get the column structure
                 template_gcp = metadata_df[metadata_df['cloud-provider'] == 'Google Cloud'].iloc[0].copy()
-                
+
                 # Reset all values to empty/NaN except cloud-provider
                 new_row = pd.Series(index=template_gcp.index, dtype=object)
                 new_row['cloud-provider'] = 'Google Cloud'
                 new_row['cloud-region'] = region
                 new_row['year'] = row_year
-                
+
                 # Set the new CFE and carbon intensity values
-                if pd.notna(new_cfe):
-                    new_row['provider-cfe-annual'] = new_cfe
+                if pd.notna(new_cfe_hourly):
+                    new_row['provider-cfe-hourly'] = new_cfe_hourly
+                if pd.notna(new_cfe_annual):
+                    new_row['provider-cfe-annual'] = new_cfe_annual
                 if pd.notna(new_carbon):
                     new_row['grid-carbon-intensity-average-consumption-annual'] = new_carbon
-                
+
                 # Set location and try to geocode
                 if pd.notna(new_location):
                     new_row['location'] = new_location
                     print(f"  ⚠️  Adding NEW GCP region '{region}' (year {row_year})")
                     print(f"      Location: {new_location}")
-                    
+
                     # Try to geocode the location
                     geolocation = geocode_location(new_location)
                     if geolocation:
@@ -378,23 +406,24 @@ def update_metadata_csv(normalized_gcp_data, metadata_file):
                 else:
                     print(f"  ⚠️  Adding NEW GCP region '{region}' (year {row_year})")
                     print(f"      Location: Not provided in data (needs manual entry)")
-                
+
                 # Show CFE/Carbon data
                 data_parts = []
-                if pd.notna(new_cfe):
-                    data_parts.append(f"CFE {new_cfe}")
+                if pd.notna(new_cfe_hourly):
+                    data_parts.append(f"CFE hourly {new_cfe_hourly}")
                 if pd.notna(new_carbon):
                     data_parts.append(f"Carbon {new_carbon}")
                 print(f"      Data: {', '.join(data_parts)}")
-                
+
                 # Leave other fields empty (they can be filled in manually later)
                 # Set empty strings for text fields to maintain CSV consistency
                 for col in new_row.index:
-                    if col not in ['cloud-provider', 'cloud-region', 'year', 'provider-cfe-annual',
+                    if col not in ['cloud-provider', 'cloud-region', 'year', 'provider-cfe-hourly',
+                                   'provider-cfe-annual',
                                    'grid-carbon-intensity-average-consumption-annual', 'location', 'geolocation']:
                         if pd.isna(new_row[col]):
                             new_row[col] = ''
-                
+
                 new_regions.append(new_row)
                 stats['new_rows'] += 1
     

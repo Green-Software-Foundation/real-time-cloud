@@ -77,26 +77,26 @@ The script creates a new CSV file (default: `Cloud_Region_Metadata_updated.csv`)
 - Preserves all other metadata columns
 - Sorts output consistently with existing format
 
-## 2. GCP Data Update Script (`gcp-data-update.py`)
+## 2. GCP Data Update Script (`gcp_data_update.py`)
 
-This script fetches the latest Carbon Free Energy (CFE) and Grid Carbon Intensity 
+This script fetches the latest Carbon Free Energy (CFE) and Grid Carbon Intensity
 data from Google Cloud Platform's [region-carbon-info repository](https://github.com/GoogleCloudPlatform/region-carbon-info) and updates the Cloud_Region_Metadata.csv file.
 
 ### Usage
 
 Basic usage (auto-detects year from existing data):
 ```bash
-python code/gcp-data-update.py
+python code/gcp_data_update.py
 ```
 
 Specify a specific year:
 ```bash
-python code/gcp-data-update.py --year 2024
+python code/gcp_data_update.py --year 2024
 ```
 
 Specify a custom output file:
 ```bash
-python code/gcp-data-update.py --output Cloud_Region_Metadata_gcp_updated.csv
+python code/gcp_data_update.py --output Cloud_Region_Metadata_gcp_updated.csv
 ```
 
 ### Output
@@ -136,7 +136,7 @@ You can run both AWS and GCP update scripts sequentially to accumulate changes:
 python code/aws-data-update.py
 
 # Then run GCP updates - will merge into the same file
-python code/gcp-data-update.py
+python code/gcp_data_update.py
 
 # Review combined changes
 diff Cloud_Region_Metadata.csv Cloud_Region_Metadata_updated.csv
@@ -225,7 +225,14 @@ Estimates saved to Cloud_Region_Metadata_estimate.csv
 ```
 
 ## 5. Test Script and Simplified Input Data
-```
+
+The project includes two different approaches for testing.
+
+### 5a. Legacy Shell Test (`test.sh`)
+
+This approach runs the estimation script with simplified test data:
+
+```bash
 % cd code
 % sh test.sh
 Running estimation on test_input.csv...
@@ -236,4 +243,29 @@ Generating estimate for year: 2025
 Estimates saved to test_input_estimate.csv
 Comparing test_input_estimate.csv with expected_output.csv...
 TEST PASSED! Output matches expected file.
+```
+
+### 5b. pytest Tests
+
+The GCP data update script has pytest-based tests in `test_gcp_data_update.py`.
+
+Install dependencies (includes pytest):
+```bash
+cd code
+pip install -r requirements.txt
+```
+
+Run the tests:
+```bash
+cd code
+python -m pytest test_gcp_data_update.py -v
+```
+
+Example output:
+```
+============================== test session starts ===============================
+platform darwin -- Python 3.14.0, pytest-9.0.3, pluggy-1.6.0
+code/test_gcp_data_update.py::TestNormalizeGcpData::test_maps_google_cfe_to_provider_cfe_hourly PASSED
+...
+============================== 9 passed ===============================
 ```
