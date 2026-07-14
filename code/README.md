@@ -252,6 +252,27 @@ table is a deliberately separate companion.
 Complete estimate for 2026: 106 rows -> Cloud_Region_Metadata_estimate.csv
 ```
 
+Because the estimate table is meant to be *the* central best-guess anyone can use today, the metric
+values are kept conservative: PUE, WUE and carbon-free-energy % are projected one capped step from the
+latest reported value, while noisy annual measurements (grid/consumption-hourly carbon, market carbon,
+water) are carried forward — extrapolating a linear trend on those produces nonsense (e.g. a low-carbon
+grid trending to 0).
+
+### Sanity check (`sanity_check_estimate.py`)
+
+Always run this after regenerating the estimate. It compares each estimate value against the reported
+data and flags anything implausible — out-of-range absolutes (PUE < 1.04 / > 2, CFE outside 0–1,
+negative carbon), large jumps from a region's latest reported value, regionally-filled cells that fall
+outside their fill group, and coverage gaps. Review any flags (some large moves are legitimate, e.g. a
+new grid or a restated value); a clean run prints `TOTAL flags: 0`.
+
+```
+% python code/sanity_check_estimate.py Cloud_Region_Metadata.csv Cloud_Region_Metadata_estimate.csv
+Estimate rows: 106 | reported pairs: 106
+...
+TOTAL flags: 0  (clean)
+```
+
 ## 6. Test Script and Simplified Input Data
 ```
 % cd code
