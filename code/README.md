@@ -224,7 +224,32 @@ Generating estimate for year: 2025
 Estimates saved to Cloud_Region_Metadata_estimate.csv
 ```
 
-## 5. Test Script and Simplified Input Data
+## 5. Complete Current-Year Estimate (`complete_estimate.py`)
+
+`estimate_current_region_metadata.py` (above) trends only the regions present in the latest reported
+year and leaves gaps blank. `complete_estimate.py` produces the **fully populated best-guess** table
+that is published as `Cloud_Region_Metadata_estimate.csv`: every region that has ever been reported gets
+a current-year row, and every metric we track is filled — with the region's own trended value where it
+has history, otherwise a **regional best guess**:
+
+- grid-tied metrics (grid carbon intensity, consumption-hourly carbon, and carbon-free-energy %) are
+  filled from the mean of other regions sharing the same Electricity Maps zone (`em-zone-id`) — i.e. the
+  same physical grid — then continent, then provider, then global;
+- provider-specific metrics (PUE, WUE, market carbon, water) are filled from the provider's continental
+  mean, then provider, then global.
+
+The only columns left blank are the EU-EED disclosure fields no provider reports at all
+(`total-ICT-energy-consumption-annual`, `renewable-energy-consumption[-goe/-ppa/-onsite]`).
+
+**The reported table (`Cloud_Region_Metadata.csv`) is never touched and stays clean** — this best-guess
+table is a deliberately separate companion.
+
+```
+% python code/complete_estimate.py Cloud_Region_Metadata.csv 2026
+Complete estimate for 2026: 106 rows -> Cloud_Region_Metadata_estimate.csv
+```
+
+## 6. Test Script and Simplified Input Data
 ```
 % cd code
 % sh test.sh
