@@ -232,14 +232,17 @@ that is published as `Cloud_Region_Metadata_estimate.csv`: every region that has
 a current-year row, and every metric we track is filled — with the region's own trended value where it
 has history, otherwise a **regional best guess**:
 
-- grid-tied metrics (grid carbon intensity, consumption-hourly carbon, and carbon-free-energy %) are
-  filled from the mean of other regions sharing the same Electricity Maps zone (`em-zone-id`) — i.e. the
-  same physical grid — then continent, then provider, then global;
-- provider-specific metrics (PUE, WUE, market carbon, water) are filled from the provider's continental
-  mean, then provider, then global.
+- **grid carbon intensity** is a physical property of the grid, the same for every provider on it, so
+  it is filled from other regions sharing the same Electricity Maps zone (`em-zone-id`), then continent;
+- **provider-specific metrics** (PUE, WUE, carbon-free-energy %, market carbon, water, consumption-hourly
+  carbon) are filled **only from the same provider's** regional data (provider + continent, then
+  provider). They are **never estimated across providers** — if a provider doesn't report a metric
+  anywhere (e.g. AWS/Azure carbon-free-energy %, Google/Azure water, Google WUE), the cell is left blank
+  rather than borrowed from another provider.
 
-The only columns left blank are the EU-EED disclosure fields no provider reports at all
-(`total-ICT-energy-consumption-annual`, `renewable-energy-consumption[-goe/-ppa/-onsite]`).
+Columns left blank are therefore: the EU-EED disclosure fields no provider reports at all
+(`total-ICT-energy-consumption-annual`, `renewable-energy-consumption[-goe/-ppa/-onsite]`), plus any
+provider-specific metric a given provider never reports.
 
 **The reported table (`Cloud_Region_Metadata.csv`) is never touched and stays clean** — this best-guess
 table is a deliberately separate companion.

@@ -25,16 +25,20 @@ import pandas as pd, numpy as np, sys, os
 REPORTED = sys.argv[1] if len(sys.argv) > 1 else "Cloud_Region_Metadata.csv"
 
 TEXT = ["cfe-region", "em-zone-id", "wt-region-id", "location", "geolocation"]
-# grid-tied numeric columns -> fill from same em-zone (grid), a physical property
-# shared by all providers on that grid; carbon-free-energy % is grid-related too.
-GRID = ["provider-carbon-intensity-average-consumption-hourly",
-        "grid-carbon-intensity-average-consumption-annual",
+# Grid carbon intensity is a physical property of the grid (em-zone) and is the same
+# regardless of which provider operates there, so it may be filled from regional
+# (em-zone, then geographic continent) data.
+GRID = ["grid-carbon-intensity-average-consumption-annual",
         "grid-carbon-intensity-marginal-consumption-annual",
         "grid-carbon-intensity-average-production-annual",
-        "grid-carbon-intensity",
-        "provider-cfe-hourly", "provider-cfe-annual"]
-# provider-specific numeric columns -> fill from provider + continent
-PROV = ["power-usage-effectiveness", "water-usage-effectiveness",
+        "grid-carbon-intensity"]
+# Provider-specific metrics are filled ONLY from the same provider's regional data
+# (provider + continent, then provider). They are NEVER estimated across providers:
+# if a provider doesn't report a metric anywhere (e.g. AWS/Azure carbon-free-energy %,
+# Google/Azure water), it is left blank rather than borrowed from another provider.
+PROV = ["provider-carbon-intensity-average-consumption-hourly",
+        "provider-cfe-hourly", "provider-cfe-annual",
+        "power-usage-effectiveness", "water-usage-effectiveness",
         "provider-carbon-intensity-market-annual", "total-water-input"]
 # never reported anywhere -> leave blank
 EED = ["total-ICT-energy-consumption-annual", "renewable-energy-consumption",
@@ -110,31 +114,28 @@ def main():
         # mean of a column within groups defined by keys, over rows that have a value
         return {col: est[est[col].notna()].groupby(keys)[col].mean().to_dict() for col in mask_cols}
 
-    # grid-tied: by em-zone-id, then continent, then provider, then global
-    for col in GRID:
-        vals = est[col]
-        for keys in (["em-zone-id"], ["cloud-provider", "_cont"], ["cloud-provider"]):
+    def fill_from(col, keysets):
+        for keys in keysets:
             if not est[col].isna().any():
                 break
             gm = est[est[col].notna()].groupby(keys)[col].mean()
             for i in est.index[est[col].isna()]:
-                key = tuple(est.loc[i, k] for k in keys)
-                key = key[0] if len(keys) == 1 else key
+                if any(pd.isna(est.loc[i, k]) or est.loc[i, k] == "" for k in keys):
+                    continue                     # can't group without a valid key
+                key = est.loc[i, keys[0]] if len(keys) == 1 else tuple(est.loc[i, k] for k in keys)
                 if key in gm.index:
                     est.at[i, col] = gm.loc[key]
-        est[col] = est[col].fillna(est[col].mean())      # last-resort global mean
 
-    # provider metrics: by provider+continent, then provider, then global
+    # Grid carbon intensity: regional (grid) data only — em-zone, then geographic continent.
+    # No provider key: the grid's carbon intensity is a shared regional fact. Anything still
+    # missing (no regional data at all) is left blank rather than globally fabricated.
+    for col in GRID:
+        fill_from(col, (["em-zone-id"], ["_cont"]))
+
+    # Provider metrics: SAME provider only — provider+continent, then provider. Never across
+    # providers, so a metric a provider doesn't report anywhere stays blank.
     for col in PROV:
-        for keys in (["cloud-provider", "_cont"], ["cloud-provider"]):
-            if not est[col].isna().any():
-                break
-            gm = est[est[col].notna()].groupby(keys)[col].mean()
-            for i in est.index[est[col].isna()]:
-                key = tuple(est.loc[i, k] for k in keys)
-                if key in gm.index:
-                    est.at[i, col] = gm.loc[key]
-        est[col] = est[col].fillna(est[col].mean())
+        fill_from(col, (["cloud-provider", "_cont"], ["cloud-provider"]))
 
     # clamps + rounding
     for col in NUM:
