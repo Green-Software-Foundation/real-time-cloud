@@ -46,7 +46,14 @@ EED = ["total-ICT-energy-consumption-annual", "renewable-energy-consumption",
        "renewable-energy-consumption-onsite"]
 NUM = GRID + PROV
 CLAMP01 = {"provider-cfe-hourly", "provider-cfe-annual"}
-NONNEG = set(GRID) | {"provider-carbon-intensity-market-annual", "total-water-input"}
+NONNEG = set(GRID) | {"provider-carbon-intensity-market-annual",
+                      "total-water-input", "provider-carbon-intensity-average-consumption-hourly"}
+# Only these metrics have a genuine directional trend worth projecting, and only one year
+# forward with a capped per-year change. Everything else (grid/consumption-hourly carbon, market
+# carbon, water) is a noisy annual measurement and is carried forward from the latest reported value —
+# extrapolating a linear trend on those produces nonsense (e.g. a low-carbon grid trending to 0).
+TREND_CAP = {"power-usage-effectiveness": 0.05, "water-usage-effectiveness": 0.3,
+             "provider-cfe-hourly": 0.1, "provider-cfe-annual": 0.1}
 
 def continent(region, cfe, loc):
     r = (region or "").lower()
@@ -92,11 +99,13 @@ def main():
             if not hist:
                 row[col] = np.nan            # regional fill later
                 continue
-            if len(hist) >= 2:
-                diffs = np.diff([v for _, v in hist])
-                val = hist[-1][1] + float(np.mean(diffs)) * (target - hist[-1][0])
+            last_val = hist[-1][1]
+            if col in TREND_CAP and len(hist) >= 2:
+                step = float(np.mean(np.diff([v for _, v in hist])))
+                cap = TREND_CAP[col]
+                val = last_val + max(-cap, min(cap, step))   # one capped step forward
             else:
-                val = hist[-1][1]
+                val = last_val                                # carry the latest reported value
             if col == "power-usage-effectiveness":
                 val = max(1.04, val)
             if col in CLAMP01:
