@@ -3,7 +3,7 @@
 GCP Data Update Script
 
 This script downloads Carbon Free Energy (CFE) and Grid Carbon Intensity data
-from Google Cloud Platform's region-carbon-info repository and updates the 
+from Google Cloud Platform's region-carbon-info repository and updates the
 Cloud_Region_Metadata.csv file.
 
 The script automatically:
@@ -38,42 +38,42 @@ GCP_CARBON_INFO_BASE_URL = 'https://raw.githubusercontent.com/GoogleCloudPlatfor
 # provider-cfe-annual as a statement of Google's corporate-level annual
 # matching commitment, not as a per-region technical measurement.
 # See: https://sustainability.google/progress/energy/
-GOOGLE_ANNUAL_MATCHING_CLAIM = 1.0
+GOOGLE_ANNUAL_MATCHING_CLAIM = 0.0
 
 def fetch_gcp_csv_data(year, try_previous_years=True):
     """
     Fetch the CSV data from GCP's region-carbon-info repository.
-    
+
     Args:
         year (int): Year for which to fetch data
         try_previous_years (bool): If True, try previous years if requested year not found
-        
+
     Returns:
         tuple: (DataFrame, actual_year) containing the GCP data and the year it's from
     """
     original_year = year
     attempts = []
-    
+
     # Try the requested year and up to 2 previous years
     years_to_try = [year] if not try_previous_years else [year, year - 1, year - 2]
-    
+
     for year_attempt in years_to_try:
         url = f"{GCP_CARBON_INFO_BASE_URL}/{year_attempt}.csv"
         attempts.append(year_attempt)
-        
+
         try:
             print(f"Trying to fetch GCP data for {year_attempt}... ", end='')
             response = requests.get(url, timeout=30)
             response.raise_for_status()
-            
+
             df = pd.read_csv(StringIO(response.text))
             print(f"✓ Found! ({len(df)} rows)")
-            
+
             if year_attempt != original_year:
                 print(f"Note: Requested {original_year} but using {year_attempt} (most recent available)")
-            
+
             return df, year_attempt
-            
+
         except requests.exceptions.HTTPError as e:
             if e.response.status_code == 404:
                 print(f"✗ Not found")
@@ -87,7 +87,7 @@ def fetch_gcp_csv_data(year, try_previous_years=True):
         except Exception as e:
             print(f"✗ Error: {e}")
             raise
-    
+
     # If we get here, none of the years worked
     print(f"\n✗ Error: GCP carbon data not available for {', '.join(map(str, attempts))}")
     raise ValueError(f"GCP carbon data not available for requested years: {attempts}")
@@ -95,22 +95,22 @@ def fetch_gcp_csv_data(year, try_previous_years=True):
 def geocode_location(location_name, max_retries=3):
     """
     Get latitude and longitude for a location name.
-    
+
     Args:
         location_name (str): City or location name
         max_retries (int): Maximum number of retry attempts
-        
+
     Returns:
         str: Formatted geolocation string "lat,lon" rounded to 4 decimal places, or None
     """
     # Initialize geocoder
     geolocator = Nominatim(user_agent="gcp-region-metadata-updater/1.0")
-    
+
     for attempt in range(max_retries):
         try:
             print(f"    Geocoding '{location_name}'...", end=' ')
             location = geolocator.geocode(location_name, timeout=10)
-            
+
             if location:
                 lat = round(location.latitude, 4)
                 lon = round(location.longitude, 4)
@@ -120,7 +120,7 @@ def geocode_location(location_name, max_retries=3):
             else:
                 print(f"✗ Not found")
                 return None
-                
+
         except (GeocoderTimedOut, GeocoderServiceError) as e:
             if attempt < max_retries - 1:
                 print(f"⟳ Retry {attempt + 1}/{max_retries - 1}")
@@ -131,26 +131,26 @@ def geocode_location(location_name, max_retries=3):
         except Exception as e:
             print(f"✗ Error: {e}")
             return None
-    
+
     return None
 
 def detect_year_from_data(metadata_df):
     """
     Automatically detect the year to fetch based on existing metadata.
-    
+
     Args:
         metadata_df (pd.DataFrame): Existing metadata
-        
+
     Returns:
         int: Year to fetch
     """
     # Get the most recent year from GCP data
     gcp_data = metadata_df[metadata_df['cloud-provider'] == 'Google Cloud']
-    
+
     if len(gcp_data) > 0:
         max_year = gcp_data['year'].max()
         current_year = datetime.now().year
-        
+
         # Try to fetch data for the next year or current year
         if current_year > max_year:
             year = current_year
@@ -159,7 +159,7 @@ def detect_year_from_data(metadata_df):
             year = int(max_year)
             print(f"Fetching data for most recent year {year}")
         return year
-    
+
     # Fallback to current year
     year = datetime.now().year
     print(f"No existing GCP data found, defaulting to {year}")
@@ -168,47 +168,47 @@ def detect_year_from_data(metadata_df):
 def normalize_gcp_data(df, year):
     """
     Normalize the GCP data to match the Cloud_Region_Metadata.csv format.
-    
+
     Args:
         df (pd.DataFrame): Raw GCP data
         year (int): Year for the data
-        
+
     Returns:
         pd.DataFrame: Normalized DataFrame
     """
     print(f"\nNormalizing GCP data for year {year}...")
-    
+
     # Print columns for debugging
     print(f"Available columns: {list(df.columns)}")
     print(f"First few rows:\n{df.head()}")
-    
+
     # GCP CSV has specific column names
     region_col = 'Google Cloud Region'
     location_col = 'Location'
     cfe_col = 'Google CFE'
     carbon_col = 'Grid carbon intensity (gCO2eq / kWh)'
-    
+
     # Verify columns exist
     if region_col not in df.columns:
         raise ValueError(f"Expected column '{region_col}' not found. Available: {list(df.columns)}")
-    
+
     print(f"Identified columns - Region: {region_col}, Location: {location_col}, CFE: {cfe_col}, Carbon: {carbon_col}")
-    
+
     # Create normalized dataframe
     normalized_data = []
-    
+
     for _, row in df.iterrows():
         region = row[region_col]
         location = row[location_col] if location_col in df.columns else None
-        
+
         # Extract CFE and carbon intensity values
         cfe = row[cfe_col] if cfe_col in df.columns and pd.notna(row[cfe_col]) else None
         carbon_intensity = row[carbon_col] if carbon_col in df.columns and pd.notna(row[carbon_col]) else None
-        
+
         # Skip if no data
         if cfe is None and carbon_intensity is None:
             continue
-        
+
         # Create entry
         # Google CFE column represents hourly CFE values.
         # For provider-cfe-annual we use Google's fleet-wide annual
@@ -221,41 +221,41 @@ def normalize_gcp_data(df, year):
             'grid-carbon-intensity-average-consumption-annual': carbon_intensity,
             'year': int(year)
         }
-        
+
         normalized_data.append(entry)
-    
+
     return pd.DataFrame(normalized_data)
 
 def update_metadata_csv(normalized_gcp_data, metadata_file):
     """
     Update the Cloud_Region_Metadata.csv with new GCP data.
     Only updates rows where data has actually changed.
-    
+
     Args:
         normalized_gcp_data (pd.DataFrame): Normalized GCP data
         metadata_file (str): Path to the existing metadata CSV
-        
+
     Returns:
         tuple: (updated_df, has_changes, stats_dict)
     """
     print(f"\nLoading existing metadata from {metadata_file}...")
-    
+
     # Load existing metadata
     metadata_df = pd.read_csv(metadata_file)
-    
+
     print(f"Existing metadata has {len(metadata_df)} rows")
-    
+
     # Get the year from the normalized data
     year = normalized_gcp_data['year'].iloc[0]
-    
+
     # Filter existing metadata for GCP regions in the same year
     existing_gcp = metadata_df[
-        (metadata_df['cloud-provider'] == 'Google Cloud') & 
+        (metadata_df['cloud-provider'] == 'Google Cloud') &
         (metadata_df['year'] == year)
     ]
-    
+
     print(f"Found {len(existing_gcp)} existing GCP entries for year {year}")
-    
+
     # Track changes
     updated_rows = []
     new_regions = []
@@ -267,7 +267,7 @@ def update_metadata_csv(normalized_gcp_data, metadata_file):
         'new_rows': 0,
         'unchanged': 0
     }
-    
+
     for _, gcp_row in normalized_gcp_data.iterrows():
         region = gcp_row['cloud-region']
         new_cfe_hourly = gcp_row['provider-cfe-hourly']
@@ -426,29 +426,29 @@ def update_metadata_csv(normalized_gcp_data, metadata_file):
 
                 new_regions.append(new_row)
                 stats['new_rows'] += 1
-    
+
     # Determine if there are any changes
     has_changes = len(updated_rows) > 0 or len(new_regions) > 0
-    
+
     if not has_changes:
         print(f"\n✓ No changes detected. All {len(unchanged_regions)} GCP regions already have current data.")
         return metadata_df, False, stats
-    
+
     # Apply updates
     result_df = metadata_df.copy()
-    
+
     for row_idx, updated_row in updated_rows:
         result_df.loc[row_idx] = updated_row
-    
+
     if new_regions:
         result_df = pd.concat([result_df, pd.DataFrame(new_regions)], ignore_index=True)
-    
+
     # Sort by year (descending), then provider, then region
     result_df = result_df.sort_values(
-        by=['year', 'cloud-provider', 'cloud-region'], 
+        by=['year', 'cloud-provider', 'cloud-region'],
         ascending=[False, True, True]
     )
-    
+
     print(f"\n✓ Changes detected:")
     print(f"  - Updated {len(updated_rows)} existing rows")
     print(f"  - Added {len(new_regions)} new rows")
@@ -456,7 +456,7 @@ def update_metadata_csv(normalized_gcp_data, metadata_file):
     print(f"  - {stats['cfe_changes']} CFE value changes")
     print(f"  - {stats['carbon_changes']} Carbon intensity changes")
     print(f"  - {stats['location_updates']} Location updates")
-    
+
     return result_df, has_changes, stats
 
 def main():
@@ -480,20 +480,20 @@ def main():
         action='store_true',
         help='Force output file creation even if no changes detected'
     )
-    
+
     args = parser.parse_args()
-    
+
     try:
         # Determine the metadata file path (go up one directory from code/)
         import os
         script_dir = os.path.dirname(os.path.abspath(__file__))
         metadata_file = os.path.join(os.path.dirname(script_dir), 'Cloud_Region_Metadata.csv')
         output_path = os.path.join(os.path.dirname(script_dir), args.output)
-        
+
         if not os.path.exists(metadata_file):
             print(f"✗ Error: Could not find {metadata_file}", file=sys.stderr)
             sys.exit(1)
-        
+
         # Check if output file already exists - if so, use it as the base
         if os.path.exists(output_path):
             print(f"📝 Found existing output file: {args.output}")
@@ -501,42 +501,42 @@ def main():
             base_file = output_path
         else:
             base_file = metadata_file
-        
+
         # Load metadata first to help detect year
         metadata_df = pd.read_csv(base_file)
-        
+
         # Determine year to fetch
         if args.year:
             year = args.year
             print(f"Using specified year: {year}")
         else:
             year = detect_year_from_data(metadata_df)
-        
+
         # Fetch GCP data
         print(f"\nFetching GCP carbon data...")
         gcp_data, actual_year = fetch_gcp_csv_data(year, try_previous_years=not args.year)
-        
+
         # Use the actual year from the data
         if actual_year != year:
             print(f"Using year {actual_year} from fetched data")
             year = actual_year
-        
+
         # Normalize the data
         normalized_data = normalize_gcp_data(gcp_data, year=year)
-        
+
         if len(normalized_data) == 0:
             print("\n✗ Error: No valid GCP region data found in the fetched data", file=sys.stderr)
             sys.exit(1)
-        
+
         print(f"\nFound data for {len(normalized_data)} GCP regions")
-        
+
         # Update metadata and check for changes
         updated_metadata, has_changes, stats = update_metadata_csv(normalized_data, base_file)
-        
+
         # Save output file if changes detected or forced
         if has_changes or args.force:
             updated_metadata.to_csv(output_path, index=False)
-            
+
             if has_changes:
                 if os.path.exists(output_path) and base_file == output_path:
                     print(f"\n✓ Success! Merged GCP updates into: {output_path}")
@@ -554,7 +554,7 @@ def main():
         else:
             print(f"\n✓ No output file created - data is already up to date!")
             print(f"   Use --force to create output file anyway.")
-        
+
     except Exception as e:
         import traceback
         print(f"\n✗ Error: {e}", file=sys.stderr)
@@ -564,4 +564,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
