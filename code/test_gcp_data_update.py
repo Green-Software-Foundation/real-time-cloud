@@ -3,7 +3,7 @@ Tests for gcp_data_update.py to verify the fix for issue #151.
 
 Issue: Google CFE values were incorrectly mapped to provider-cfe-annual
 instead of provider-cfe-hourly. For Google Cloud, provider-cfe-annual
-uses GOOGLE_ANNUAL_MATCHING_CLAIM (1.0) reflecting Google's fleet-wide
+uses GOOGLE_ANNUAL_MATCHING_CLAIM (0.0) reflecting Google's fleet-wide
 annual renewable energy matching claim, while the dataset's "Google CFE"
 column represents hourly CFE values.
 """
