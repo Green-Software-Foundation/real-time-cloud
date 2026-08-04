@@ -224,7 +224,56 @@ Generating estimate for year: 2025
 Estimates saved to Cloud_Region_Metadata_estimate.csv
 ```
 
-## 5. Test Script and Simplified Input Data
+## 5. Complete Current-Year Estimate (`complete_estimate.py`)
+
+`estimate_current_region_metadata.py` (above) trends only the regions present in the latest reported
+year and leaves gaps blank. `complete_estimate.py` produces the **fully populated best-guess** table
+that is published as `Cloud_Region_Metadata_estimate.csv`: every region that has ever been reported gets
+a current-year row, and every metric we track is filled — with the region's own trended value where it
+has history, otherwise a **regional best guess**:
+
+- **grid carbon intensity** is a physical property of the grid, the same for every provider on it, so
+  it is filled from other regions sharing the same Electricity Maps zone (`em-zone-id`), then continent;
+- **provider-specific metrics** (PUE, WUE, carbon-free-energy %, market carbon, water, consumption-hourly
+  carbon) are filled **only from the same provider's** regional data (provider + continent, then
+  provider). They are **never estimated across providers** — if a provider doesn't report a metric
+  anywhere (e.g. AWS/Azure carbon-free-energy %, Google/Azure water, Google WUE), the cell is left blank
+  rather than borrowed from another provider.
+
+Columns left blank are therefore: the EU-EED disclosure fields no provider reports at all
+(`total-ICT-energy-consumption-annual`, `renewable-energy-consumption[-goe/-ppa/-onsite]`), plus any
+provider-specific metric a given provider never reports.
+
+**The reported table (`Cloud_Region_Metadata.csv`) is never touched and stays clean** — this best-guess
+table is a deliberately separate companion.
+
+```
+% python code/complete_estimate.py Cloud_Region_Metadata.csv 2026
+Complete estimate for 2026: 106 rows -> Cloud_Region_Metadata_estimate.csv
+```
+
+Because the estimate table is meant to be *the* central best-guess anyone can use today, the metric
+values are kept conservative: PUE, WUE and carbon-free-energy % are projected one capped step from the
+latest reported value, while noisy annual measurements (grid/consumption-hourly carbon, market carbon,
+water) are carried forward — extrapolating a linear trend on those produces nonsense (e.g. a low-carbon
+grid trending to 0).
+
+### Sanity check (`sanity_check_estimate.py`)
+
+Always run this after regenerating the estimate. It compares each estimate value against the reported
+data and flags anything implausible — out-of-range absolutes (PUE < 1.04 / > 2, CFE outside 0–1,
+negative carbon), large jumps from a region's latest reported value, regionally-filled cells that fall
+outside their fill group, and coverage gaps. Review any flags (some large moves are legitimate, e.g. a
+new grid or a restated value); a clean run prints `TOTAL flags: 0`.
+
+```
+% python code/sanity_check_estimate.py Cloud_Region_Metadata.csv Cloud_Region_Metadata_estimate.csv
+Estimate rows: 106 | reported pairs: 106
+...
+TOTAL flags: 0  (clean)
+```
+
+## 6. Test Script and Simplified Input Data
 ```
 % cd code
 % sh test.sh
