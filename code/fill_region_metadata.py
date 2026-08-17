@@ -17,14 +17,17 @@ Passes, in order (each is idempotent):
               resolves to the wrong city, a zone key that does not exist in
               Electricity Maps, a country mismatch. Applied only when the cell
               still holds the recorded wrong value.
-3. restate    repair rows whose grid columns were transcribed against the wrong
+3. relabel    move rows filed under the wrong cloud-region key, which would
+              otherwise make (year, cloud-provider, cloud-region) non-unique.
+              See RELABEL.
+4. restate    repair rows whose grid columns were transcribed against the wrong
               region, which moves carbon-intensity values as well as
               identifiers. See RESTATEMENTS.
-4. propagate  copy an identity value from the most recent year that has it into
+5. propagate  copy an identity value from the most recent year that has it into
               the same region's earlier years
-5. reference  fill regions that have no value in any year, from an external
+6. reference  fill regions that have no value in any year, from an external
               reference (see REFERENCE below)
-6. zone       derive cfe-region and wt-region-id from em-zone-id, using the
+7. zone       derive cfe-region and wt-region-id from em-zone-id, using the
               mapping the rest of the table already uses for that zone. This is
               what populates the Oracle rows, which carry em-zone-id and
               geolocation but no grid-region names.
@@ -45,7 +48,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(REPO, "Cloud_Region_Metadata.csv")
 
 IDENTITY = ["cfe-region", "em-zone-id", "wt-region-id", "geolocation"]
-PASSES = ["trim", "fix", "restate", "propagate", "reference", "zone"]
+PASSES = ["trim", "fix", "relabel", "restate", "propagate", "reference", "zone"]
 
 AWS = "Amazon Web Services"
 GCP = "Google Cloud"
@@ -87,7 +90,26 @@ CORRECTIONS = {
 
 
 # ---------------------------------------------------------------------------
-# Pass 3 - restatements.
+# Pass 3 - relabel rows filed under the wrong cloud-region key.
+#
+# Azure "North Europe" is Dublin, Ireland. Two extra rows describing Microsoft's
+# Helsinki site were also filed as northeurope, which made
+# (year, cloud-provider, cloud-region) non-unique for 2022 and 2023. Microsoft's
+# announced name for that region is Finland Central, so the rows keep their
+# reported PUE/WUE and grid figures under that key rather than being dropped.
+#
+# (provider, region, year, location) -> (new region, why)
+# ---------------------------------------------------------------------------
+RELABEL = {
+    (AZURE, "northeurope", "2022", "Finland"):
+        ("finlandcentral", "northeurope is Dublin; these are Microsoft's Helsinki figures"),
+    (AZURE, "northeurope", "2023", "Finland"):
+        ("finlandcentral", "northeurope is Dublin; these are Microsoft's Helsinki figures"),
+}
+
+
+# ---------------------------------------------------------------------------
+# Pass 4 - restatements.
 #
 # These rows had their *grid* columns transcribed against the wrong region, so
 # the fix moves carbon-intensity values as well as identifiers. Keyed on the
@@ -272,6 +294,12 @@ def main():
                 if fix:
                     record("fix", r, col, fix[0], fix[1])
 
+    if "relabel" in active:
+        for r in rows:
+            rl = RELABEL.get(key(r) + (r["year"], r["location"]))
+            if rl:
+                record("relabel", r, "cloud-region", rl[0], rl[1])
+
     if "restate" in active:
         for r in rows:
             for col in IDENTITY + [CONS, PROD]:
@@ -339,6 +367,12 @@ def main():
     # ---- structural checks ----
     print("\n=== CHECKS ===")
     problems = []
+    seen = defaultdict(list)
+    for r in rows:
+        seen[(r["year"], r["cloud-provider"], r["cloud-region"])].append(r["location"])
+    for k, locs in sorted(seen.items()):
+        if len(locs) > 1:
+            problems.append(f"duplicate (year, provider, region) {k}: {locs}")
     for r in rows:
         geo = r["geolocation"]
         if geo:
@@ -352,6 +386,7 @@ def main():
         print("  " + p)
     if not problems:
         print("  geolocation: all values parse as lat,lon in range")
+        print("  (year, cloud-provider, cloud-region) is unique across all rows")
 
     if args.dry_run:
         print("\n(dry run - nothing written)")
