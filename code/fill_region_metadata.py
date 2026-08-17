@@ -17,11 +17,14 @@ Passes, in order (each is idempotent):
               resolves to the wrong city, a zone key that does not exist in
               Electricity Maps, a country mismatch. Applied only when the cell
               still holds the recorded wrong value.
-3. propagate  copy an identity value from the most recent year that has it into
+3. restate    repair rows whose grid columns were transcribed against the wrong
+              region, which moves carbon-intensity values as well as
+              identifiers. See RESTATEMENTS.
+4. propagate  copy an identity value from the most recent year that has it into
               the same region's earlier years
-4. reference  fill regions that have no value in any year, from an external
+5. reference  fill regions that have no value in any year, from an external
               reference (see REFERENCE below)
-5. zone       derive cfe-region and wt-region-id from em-zone-id, using the
+6. zone       derive cfe-region and wt-region-id from em-zone-id, using the
               mapping the rest of the table already uses for that zone. This is
               what populates the Oracle rows, which carry em-zone-id and
               geolocation but no grid-region names.
@@ -42,7 +45,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(REPO, "Cloud_Region_Metadata.csv")
 
 IDENTITY = ["cfe-region", "em-zone-id", "wt-region-id", "geolocation"]
-PASSES = ["trim", "fix", "propagate", "reference", "zone"]
+PASSES = ["trim", "fix", "restate", "propagate", "reference", "zone"]
 
 AWS = "Amazon Web Services"
 GCP = "Google Cloud"
@@ -81,6 +84,60 @@ CORRECTIONS = {
     (OCI, "sa-saopaulo-1", "geolocation", "-23.5558.-46.6396"):
         ("-23.5558,-46.6396", "latitude/longitude separator was a period"),
 }
+
+
+# ---------------------------------------------------------------------------
+# Pass 3 - restatements.
+#
+# These rows had their *grid* columns transcribed against the wrong region, so
+# the fix moves carbon-intensity values as well as identifiers. Keyed on the
+# value currently in the cell, so the pass is a no-op once applied.
+#
+# Google 2019/2020 Europe: the Electricity Maps columns are shifted one row down
+# the alphabetical region list, while provider-cfe-hourly and
+# provider-carbon-intensity-average-consumption-hourly match
+# sources/google-region-carbon-info/{2019,2020}.csv exactly and are left alone.
+# Unshifting leaves Finland without a grid figure for those two years - no
+# source in this repository carries one, and per the specification a blank must
+# fail a calculation rather than return another zone's number.
+#
+# AWS 2021 eu-north-1: an isolated row - every other AWS 2021 row matches its
+# location. It carried Spain's grid figures (174.36 / 175.13, identical to
+# Google europe-southwest1 Madrid 2021); no 2021 row in this table covers the
+# SE zone, so the figures are cleared rather than replaced.
+#
+# (provider, region, year, column, current) -> (new, why)
+# ---------------------------------------------------------------------------
+_G20 = [
+    # region,            cfe from,          cfe to,       zone from, zone to, wt from,   wt to, cons from, cons to,  prod from, prod to
+    ("europe-north1", "Belgium",       "Finland",       "BE",    "FI", "BE",  "FI", "221.1",  "",       "214.14", ""),
+    ("europe-west1",  "Great Britain", "Belgium",       "GB",    "BE", "UK",  "BE", "206.99", "221.1",  "209.32", "214.14"),
+    ("europe-west2",  "Germany",       "Great Britain", "DE",    "GB", "DE",  "UK", "385.61", "206.99", "399.25", "209.32"),
+    ("europe-west3",  "Netherlands",   "Germany",       "NL",    "DE", "NL",  "DE", "372.07", "385.61", "403.44", "399.25"),
+    ("europe-west4",  "Switzerland",   "Netherlands",   "CH",    "NL", "CH",  "NL", "108.24", "372.07", "68.73",  "403.44"),
+    ("europe-west6",  "North Italy",   "Switzerland",   "IT-NO", "CH", "IT",  "CH", "305.91", "108.24", "364.44", "68.73"),
+]
+
+CONS = "grid-carbon-intensity-average-consumption-annual"
+PROD = "grid-carbon-intensity-average-production-annual"
+
+RESTATEMENTS = {}
+_WHY20 = "Google 2020 Europe: grid columns were shifted one row down the region list"
+for _reg, _cf, _ct, _zf, _zt, _wf, _wt, _cof, _cot, _prf, _prt in _G20:
+    for _col, _from, _to in (("cfe-region", _cf, _ct), ("em-zone-id", _zf, _zt),
+                             ("wt-region-id", _wf, _wt), (CONS, _cof, _cot), (PROD, _prf, _prt)):
+        RESTATEMENTS[(GCP, _reg, "2020", _col, _from)] = (_to, _WHY20)
+
+_WHY19 = "Google 2019 europe-north1 carried Victoria's grid columns"
+for _col, _from, _to in (("cfe-region", "Victoria", "Finland"), ("em-zone-id", "AU-VIC", "FI"),
+                         ("wt-region-id", "NEM_VIC", "FI"), (CONS, "648.97", ""), (PROD, "648.97", "")):
+    RESTATEMENTS[(GCP, "europe-north1", "2019", _col, _from)] = (_to, _WHY19)
+
+_WHY21 = "AWS 2021 eu-north-1 (Stockholm) carried Spain's grid columns"
+for _col, _from, _to in (("cfe-region", "Spain", "Sweden"), ("em-zone-id", "ES", "SE"),
+                         (CONS, "174.36", ""), (PROD, "175.13", "")):
+    RESTATEMENTS[(AWS, "eu-north-1", "2021", _col, _from)] = (_to, _WHY21)
+
 
 # ---------------------------------------------------------------------------
 # Pass 4 - regions with no value for a column in any year.
@@ -214,6 +271,13 @@ def main():
                 fix = CORRECTIONS.get(key(r) + (col, r[col]))
                 if fix:
                     record("fix", r, col, fix[0], fix[1])
+
+    if "restate" in active:
+        for r in rows:
+            for col in IDENTITY + [CONS, PROD]:
+                rs = RESTATEMENTS.get(key(r) + (r["year"], col, r[col]))
+                if rs:
+                    record("restate", r, col, rs[0], rs[1])
 
     if "propagate" in active:
         latest = defaultdict(dict)
