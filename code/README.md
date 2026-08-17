@@ -273,7 +273,51 @@ Estimate rows: 106 | reported pairs: 106
 TOTAL flags: 0  (clean)
 ```
 
-## 6. Test Script and Simplified Input Data
+## 6. Fill Region Identity Metadata (`fill_region_metadata.py`)
+
+The identity columns - `cfe-region`, `em-zone-id`, `wt-region-id` and `geolocation` - are static per
+region (Annex A of the specification lists them as "Static"), so a blank in one year's row is a gap
+rather than a different value. This script fills those gaps in `Cloud_Region_Metadata.csv` and repairs
+values that are demonstrably wrong.
+
+```
+% python code/fill_region_metadata.py --dry-run     # report only
+% python code/fill_region_metadata.py               # apply
+% python code/fill_region_metadata.py --passes fix  # run a single pass
+```
+
+It runs five idempotent passes, and prints every cell it changes with the reason:
+
+1. **trim** - strip stray whitespace from the identity columns.
+2. **fix** - replace values that are demonstrably wrong: a coordinate that resolves to the wrong city,
+   a zone key that does not exist in Electricity Maps, a country mismatch. Each correction is keyed on
+   the wrong value, so the pass is a no-op once applied and never silently rewrites new data.
+3. **propagate** - copy an identity value from the most recent year that has it into the same region's
+   earlier years.
+4. **reference** - fill regions that have no value in any year, from the external reference table in
+   the script (each entry carries the city it was looked up for).
+5. **zone** - derive `cfe-region` and `wt-region-id` from `em-zone-id`, using the mapping the rest of
+   the table already uses for that zone. This is what populates the Oracle rows, which arrive with
+   `em-zone-id` and `geolocation` but no grid-region names. Where one Electricity Maps zone spans
+   several WattTime sub-regions (`US-MIDA-PJM`, `US-MIDW-MISO`, `US-CAL-CISO`) the sub-region is chosen
+   per region by city rather than from the zone.
+
+Values filled by passes 4 and 5 are inferred by this project, not reported by the provider - the same
+status as the `cfe-region` names already carried for AWS and Azure, which do not publish carbon-free
+energy regions.
+
+The script finishes with a structural check that every `geolocation` parses as a `lat,lon` pair in
+range, and a list of any remaining blanks.
+
+`Cloud_Region_Metadata.csv` is the only file written. **Regenerate the estimate table afterwards**,
+since it is derived from the reported table:
+
+```
+% python code/complete_estimate.py Cloud_Region_Metadata.csv 2026
+% python code/sanity_check_estimate.py Cloud_Region_Metadata.csv Cloud_Region_Metadata_estimate.csv
+```
+
+## 7. Test Script and Simplified Input Data
 ```
 % cd code
 % sh test.sh
