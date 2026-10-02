@@ -17,14 +17,14 @@ sources/<data-year>/<company>/[fact-sheets/]<document>
   several of these documents are corporate-wide reports that cover far more than the cloud business.
 - `fact-sheets/` holds the per-region / per-country sheets where a provider publishes them.
 
-88 files. Retrieved **2026-07-14** unless noted.
+89 files. Retrieved **2026-07-14** unless noted (`google-region-carbon-info/2025.csv` retrieved 2026-09-25).
 
 ```
 2022/  amazon (1)  google (1)  microsoft (27, incl. 26 fact sheets)
 2023/  amazon (2)  google (1)  microsoft (1)
 2024/  amazon (2)  google (1)  microsoft (1)
 2025/  amazon (41, incl. 30 fact sheets)  google (1)  microsoft (1)  oracle (1)
-google-region-carbon-info/  6 CSVs (2019-2024)
+google-region-carbon-info/  7 CSVs (2019-2025)
 ```
 
 ## Archived
@@ -57,7 +57,7 @@ CY2022–2025 PUE, WUE and water withdrawal — there is no need for a per-year 
 | `2023/google/google-2024-environmental-report.pdf` | Google Environmental Report 2024 | `gstatic.com/…/google-2024-environmental-report.pdf` | CY2023 |
 | `2024/google/google-2025-environmental-report.pdf` | Google Environmental Report 2025 | `gstatic.com/gumdrop/sustainability/google-2025-environmental-report.pdf` | CY2024 |
 | `2025/google/google-2026-environmental-report.pdf` | Google Environmental Report 2026 | `storage.googleapis.com/gweb-mobius-cdn/sustainability/uploads/7f477…pdf` (issue #159) | CY2025 |
-| `google-region-carbon-info/2019.csv` … `2024.csv` | Google per-region carbon-free energy and grid carbon intensity | `github.com/GoogleCloudPlatform/region-carbon-info` → `data/yearly/` | 2019–2024 |
+| `google-region-carbon-info/2019.csv` … `2025.csv` | Google per-region carbon-free energy and grid carbon intensity | `github.com/GoogleCloudPlatform/region-carbon-info` → `data/yearly/` (2025.csv added upstream 2026-09-15) | 2019–2025 |
 
 Note that Google names each report for its *publication* year, one ahead of the data year it is filed
 under here.
