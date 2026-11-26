@@ -224,15 +224,106 @@ Generating estimate for year: 2025
 Estimates saved to Cloud_Region_Metadata_estimate.csv
 ```
 
-## 5. Test Script and Simplified Input Data
+## 5. Complete Current-Year Estimate (`complete_estimate.py`)
 
-The project includes two different approaches for testing.
+`estimate_current_region_metadata.py` (above) trends only the regions present in the latest reported
+year and leaves gaps blank. `complete_estimate.py` produces the **fully populated best-guess** table
+that is published as `Cloud_Region_Metadata_estimate.csv`: every region that has ever been reported gets
+a current-year row, and every metric we track is filled — with the region's own trended value where it
+has history, otherwise a **regional best guess**:
 
-### 5a. Legacy Shell Test (`test.sh`)
+- **grid carbon intensity** is a physical property of the grid, the same for every provider on it, so
+  it is filled from other regions sharing the same Electricity Maps zone (`em-zone-id`), then continent;
+- **provider-specific metrics** (PUE, WUE, carbon-free-energy %, market carbon, water, consumption-hourly
+  carbon) are filled **only from the same provider's** regional data (provider + continent, then
+  provider). They are **never estimated across providers** — if a provider doesn't report a metric
+  anywhere (e.g. AWS/Azure carbon-free-energy %, Google/Azure water, Google WUE), the cell is left blank
+  rather than borrowed from another provider.
 
-This approach runs the estimation script with simplified test data:
+Columns left blank are therefore: the EU-EED disclosure fields no provider reports at all
+(`total-ICT-energy-consumption-annual`, `renewable-energy-consumption[-goe/-ppa/-onsite]`), plus any
+provider-specific metric a given provider never reports.
 
-```bash
+**The reported table (`Cloud_Region_Metadata.csv`) is never touched and stays clean** — this best-guess
+table is a deliberately separate companion.
+
+```
+% python code/complete_estimate.py Cloud_Region_Metadata.csv 2026
+Complete estimate for 2026: 106 rows -> Cloud_Region_Metadata_estimate.csv
+```
+
+Because the estimate table is meant to be *the* central best-guess anyone can use today, the metric
+values are kept conservative: PUE, WUE and carbon-free-energy % are projected one capped step from the
+latest reported value, while noisy annual measurements (grid/consumption-hourly carbon, market carbon,
+water) are carried forward — extrapolating a linear trend on those produces nonsense (e.g. a low-carbon
+grid trending to 0).
+
+### Sanity check (`sanity_check_estimate.py`)
+
+Always run this after regenerating the estimate. It compares each estimate value against the reported
+data and flags anything implausible — out-of-range absolutes (PUE < 1.04 / > 2, CFE outside 0–1,
+negative carbon), large jumps from a region's latest reported value, regionally-filled cells that fall
+outside their fill group, and coverage gaps. Review any flags (some large moves are legitimate, e.g. a
+new grid or a restated value); a clean run prints `TOTAL flags: 0`.
+
+```
+% python code/sanity_check_estimate.py Cloud_Region_Metadata.csv Cloud_Region_Metadata_estimate.csv
+Estimate rows: 106 | reported pairs: 106
+...
+TOTAL flags: 0  (clean)
+```
+
+## 6. Fill Region Identity Metadata (`fill_region_metadata.py`)
+
+The identity columns - `cfe-region`, `em-zone-id`, `wt-region-id` and `geolocation` - are static per
+region (Annex A of the specification lists them as "Static"), so a blank in one year's row is a gap
+rather than a different value. This script fills those gaps in `Cloud_Region_Metadata.csv` and repairs
+values that are demonstrably wrong.
+
+```
+% python code/fill_region_metadata.py --dry-run     # report only
+% python code/fill_region_metadata.py               # apply
+% python code/fill_region_metadata.py --passes fix  # run a single pass
+```
+
+It runs seven idempotent passes, and prints every cell it changes with the reason:
+
+1. **trim** - strip stray whitespace from the identity columns.
+2. **fix** - replace values that are demonstrably wrong: a coordinate that resolves to the wrong city,
+   a zone key that does not exist in Electricity Maps, a country mismatch. Each correction is keyed on
+   the wrong value, so the pass is a no-op once applied and never silently rewrites new data.
+3. **relabel** - move rows filed under the wrong `cloud-region` key, which would otherwise make
+   `(year, cloud-provider, cloud-region)` non-unique.
+4. **restate** - repair rows whose grid columns were transcribed against the wrong region. Unlike the
+   other passes this also moves carbon-intensity values, so each cell is listed explicitly in
+   `RESTATEMENTS` with the value it replaces.
+5. **propagate** - copy an identity value from the most recent year that has it into the same region's
+   earlier years.
+6. **reference** - fill regions that have no value in any year, from the external reference table in
+   the script (each entry carries the city it was looked up for).
+7. **zone** - derive `cfe-region` and `wt-region-id` from `em-zone-id`, using the mapping the rest of
+   the table already uses for that zone. This is what populates the Oracle rows, which arrive with
+   `em-zone-id` and `geolocation` but no grid-region names. Where one Electricity Maps zone spans
+   several WattTime sub-regions (`US-MIDA-PJM`, `US-MIDW-MISO`, `US-CAL-CISO`) the sub-region is chosen
+   per region by city rather than from the zone.
+
+Values filled by passes 6 and 7 are inferred by this project, not reported by the provider - the same
+status as the `cfe-region` names already carried for AWS and Azure, which do not publish carbon-free
+energy regions.
+
+The script finishes with structural checks - every `geolocation` parses as a `lat,lon` pair in range,
+and `(year, cloud-provider, cloud-region)` is unique - plus a list of any remaining blanks.
+
+`Cloud_Region_Metadata.csv` is the only file written. **Regenerate the estimate table afterwards**,
+since it is derived from the reported table:
+
+```
+% python code/complete_estimate.py Cloud_Region_Metadata.csv 2026
+% python code/sanity_check_estimate.py Cloud_Region_Metadata.csv Cloud_Region_Metadata_estimate.csv
+```
+
+## 7. Test Script and Simplified Input Data
+```
 % cd code
 % sh test.sh
 Running estimation on test_input.csv...
